@@ -1,0 +1,136 @@
+#include <iostream>
+using namespace std;
+
+int main
+  return 0;
+}
+
+float aimSmooth = 0.05f;
+float shakefix = 0.95f;
+int fpslevel = 120;
+int Latency = 0.15;
+int butterysmooth = 0.95;
+int refreshrate = 120;
+}
+
+bool ENABLE_QUICKSWIPE = true;
+bool ENABLE_SMOOTH = true;
+bool ENABLE_RECOIL = false;
+bool ENABLE_HEADFIX = true;
+bool ENABLE_SHAKEFIX = true;
+bool ENABLE_AIMLOCK = true;
+bool ENABLE_STAYFOCUSED = true;
+}
+
+class RecoilModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "Recoil: " << RECOIL << endl;
+    }
+};
+
+class FPSModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "FPS Level: " << FPS_LEVEL << endl;
+    }
+};
+
+class QuickswipeModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "Quickswipe: " << Quickswipe << endl;
+    }
+};
+
+class AimlockModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "Aimlock: " << Aimlock << endl;
+    }
+};
+
+class SmoothModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "Smooth: " << Smooth << endl;
+    }
+};
+
+class HeadfixModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "Headfix: " << Headfix << endl;
+    }
+};
+
+class ShakefixModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "Shakefix: " << Shakefix << endl;
+    }
+};
+
+class STAYFOCUSEDModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "STAYFOCUSED: " << STAYFOCUSED << endl;
+    }
+};
+
+class refreshrateModule {
+public:
+    void Apply() {
+        cout << "refreshrate: " << refreshrate << endl;
+    }
+};
+
+class butterysmoothModule {
+public:
+    void Apply() {
+        cout << "butterysmooth: " << butterysmooth << endl;
+    }
+};
+
+class LatencyModule {
+public:
+    void Apply() {
+        cout << "Latency: " << Latency << endl;
+    }
+};
+
+class AimsmoothModule {
+public:
+    void Apply() {
+        if (!ENABLE) return;
+        cout << "Aimsmooth: " << Aimsmooth << endl;
+    }
+};
+
+int main() {
+    AimlockModule aimlock;
+    RecoilModule recoil;
+    QuickswipeModule quickswipe;
+    HeadfixModule headFix;
+    ShakefixModule shakefix;
+    AimsmoothModule aimsmooth;
+    StayfocusedModule stayfocused;
+
+
+    aimlock.Apply();
+    recoil.Apply();
+    quickswipe.Apply();
+    headFix.Apply();
+    shakefix.Apply();
+    aimsmooth.Apply();
+    stayfocused.Apply();
+    return 0;
+}

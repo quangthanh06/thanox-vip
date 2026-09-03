@@ -1,0 +1,133 @@
+Total slides: 44
+Slide 1 | Sec: 🔥 Mở đầu — Gây sốc | Title: Ngay lúc này —AI đang biết bạnđang ở đâu,đang nghĩ gì,sẽ mua gì tiếp theo.Bạn có biết điều đó không?
+  Notes: Không giải thích ngay. Để câu hỏi treo lơ lửng 5 giây. Sau đó hỏi: "Có bao nhiêu bạn dùng TikTok, YouTube, Shopee hôm nay? AI của các app đó đang theo dõi từng thao tác của bạn — và hôm nay chúng ta sẽ nói về điều đó." Mục tiêu: tạo tò mò, kéo sự chú ý ngay từ đầu. (1-2 phút)
+
+Slide 2 | Sec: 🔥 Mở đầu — Số liệu | Title: No Title
+  Notes: Đọc to con số. Hỏi: "Các bạn có nằm trong 700 triệu đó không?" Nhấn: AI không còn là tương lai — AI đang là hiện tại, ngay hôm nay. (30 giây)
+
+Slide 3 | Sec: 🔥 Mở đầu — Số liệu | Title: Tương lai đang đếnnhanh hơn bạn nghĩ
+  Notes: Nhấn vào con số 85%: "Nghề bạn sẽ làm sau này có thể chưa có tên hôm nay. Vì vậy học cách làm việc với AI quan trọng hơn là học thuộc lòng kiến thức." (1 phút)
+
+Slide 4 | Sec: 📘 Phần 1 · Quyền con người | Title: Quyền của con ngườitrong dự án AI
+  Notes: Giới thiệu ngắn: "Phần 1 chúng ta sẽ trả lời câu hỏi: nếu AI làm sai — ai bảo vệ bạn? Và bạn có những quyền gì?" (30 giây)
+
+Slide 5 | Sec: 📘 Phần 1 · Quyền con người | Title: Vì sao cần nói vềquyền con ngườitrong AI?
+  Notes: Hỏi học sinh: "Các bạn đã từng thấy quảng cáo đúng thứ mình vừa tìm kiếm chưa? Đó chính là AI thu thập dữ liệu của bạn." Dẫn vào phần quyền con người tự nhiên hơn. (3 phút)
+
+Slide 6 | Sec: 📘 Phần 1 · Quyền con người | Title: Quyền liên quan đếndữ liệu cá nhân
+  Notes: Nhấn vào "quyền được quên" — đây là khái niệm mới và hay. Ví dụ: ảnh xấu hồi nhỏ bị đưa lên mạng → bạn có quyền yêu cầu xóa. Hỏi: "Bạn có biết Google cho phép yêu cầu xóa thông tin cá nhân không?" (3 phút)
+
+Slide 7 | Sec: 📘 Phần 1 · Quyền con người | Title: Quyền liên quan đếnquyết định của AI
+  Notes: Nhấn: "Hãy tưởng tượng AI từ chối đơn vay tiền của bạn mà không nói lý do — bạn có quyền yêu cầu giải thích. Đây là quyền rất thực tế." (3 phút)
+
+Slide 8 | Sec: 📘 Phần 1 · Quyền con người | Title: Khi quyền bị vi phạm —3 câu chuyện có thật
+  Notes: Kể ngắn từng câu chuyện — học sinh rất thích ví dụ thật. Có thể hỏi: "Nếu bạn là người phụ nữ trong tình huống 1, bạn cảm thấy thế nào?" Tạo đồng cảm trước khi đi vào lý thuyết. (4 phút)
+
+Slide 9 | Sec: 📘 Phần 1 · Quyền con người | Title: Dự án AIlà gì?
+  Notes: Dùng ví dụ đơn giản: "Xây một cái app gợi ý nhạc — phải thu thập dữ liệu nghe nhạc của bạn, huấn luyện AI, rồi triển khai. Mỗi bước đó đều có thể xâm phạm quyền nếu làm ẩu." (3 phút)
+
+Slide 10 | Sec: 📘 Phần 1 · Quyền con người | Title: Quyền con người gắn vớitừng giai đoạn
+  Notes: Slide này là bảng tóm tắt — đọc nhanh từng dòng, không cần giải thích sâu vì đã phân tích ở các slide trước. Nhấn: "Không có giai đoạn nào là an toàn tuyệt đối." (2 phút)
+
+Slide 11 | Sec: 📘 Phần 1 · Quyền con người | Title: AI xâm phạm quyền riêng tưnhư thế nào?
+  Notes: Hỏi: "Bạn có bao giờ tắt định vị nhưng app vẫn biết bạn ở đâu không? Đó là thu thập ngầm." Làm cho lý thuyết gần với trải nghiệm thực tế của học sinh. (3 phút)
+
+Slide 12 | Sec: 📘 Phần 1 · Quyền con người | Title: 5 nguyên tắcbảo vệ quyền con người
+  Notes: 5 từ khóa cần học sinh nhớ: Minh bạch — Công bằng — Trách nhiệm — Bảo mật — Kiểm soát. Có thể cho học sinh đọc to cùng một lần. (3 phút)
+
+Slide 13 | Sec: 📘 Phần 1 · Quyền con người | Title: Thế giới đã làm gì? —AI và pháp luật
+  Notes: Nhấn: "Việt Nam đang đi theo đúng hướng — nhưng luật chưa hoàn thiện. Trong khi chờ pháp luật, bạn phải tự bảo vệ mình." Tạo cảm giác trách nhiệm cá nhân. (3 phút)
+
+Slide 14 | Sec: 📘 Phần 1 · Quyền con người | Title: Học sinh có quyền gìkhi dùng AI?
+  Notes: Làm cho thực tế: "Lần tới khi cài app — đọc xem nó xin quyền gì. Nếu app xin quyền đọc danh bạ mà chỉ là app đèn pin → từ chối." (2 phút)
+
+Slide 15 | Sec: 📘 Phần 1 · Quyền con người | Title: 3 điềucần nhớ
+  Notes: Tóm tắt nhanh 3 điểm — hỏi: "Ai nhớ được cả 3 điểm không?" Có thể cho 30 giây trao đổi với bạn bên cạnh. (2 phút)
+
+Slide 16 | Sec: ⚡ Chuyển phần | Title: Hai mặt củamột đồng xu
+  Notes: Dừng lại 30 giây. Hỏi học sinh: "Các bạn đang dùng AI để làm gì trong cuộc sống?" Nghe 2-3 câu trả lời rồi chuyển sang Phần 2. (2 phút)
+
+Slide 17 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: AI để nâng caonăng lực con người
+  Notes: "Phần 2 chuyển hướng hoàn toàn — từ 'AI có thể làm hại gì' sang 'AI có thể giúp gì cho bạn'. Hai phần này như hai mặt của một đồng xu." (30 giây)
+
+Slide 18 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: AIthay thếhaynâng cao năng lực?
+  Notes: Hỏi: "Bạn nào đồng ý với quan điểm sai?" (cho giơ tay) — rồi phân tích tại sao đó là sai lầm. Con số trong bảng rất ấn tượng với học sinh. (3 phút)
+
+Slide 19 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: AI nâng cao năng lực ở3 cấp độ
+  Notes: Hỏi học sinh đang dùng AI ở cấp độ nào. Hầu hết sẽ trả lời cấp 1. Khuyến khích hướng đến cấp 2-3. (3 phút)
+
+Slide 20 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: AI nâng cao năng lựchọc tập
+  Notes: Ví dụ thực tế: "Thay vì hỏi bạn bè rồi chờ — hỏi AI ngay, giải thích đi giải thích lại đến khi hiểu." Nhấn vào yếu tố 24/7 và không phán xét — học sinh rất ngại hỏi đi hỏi lại giáo viên. (3 phút)
+
+Slide 21 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: AI nâng cao năng lựcsáng tạo
+  Notes: Hỏi: "Ai đã thử Canva AI hoặc Midjourney rồi?" Nếu có học sinh dùng rồi — mời chia sẻ trải nghiệm. Đây là slide sinh động nhất Phần 2. (3 phút)
+
+Slide 22 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: AI nâng cao năng lựcnghề nghiệp
+  Notes: Nhấn thông điệp: "AI không lấy việc của bác sĩ, luật sư hay kĩ sư — nhưng bác sĩ biết dùng AI sẽ lấy việc của bác sĩ không biết dùng AI." (3 phút)
+
+Slide 23 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: Mô hình hợp tácNgười + AI
+  Notes: "Bảng này là cốt lõi của toàn bài — AI không có đạo đức, không có cảm xúc, không chịu trách nhiệm. Đó là lý do AI không thể thay thế hoàn toàn con người." (3 phút)
+
+Slide 24 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: 5 kĩ năngdùng AI hiệu quả
+  Notes: Cho học sinh đoán xem kĩ năng nào quan trọng nhất. Hầu hết sẽ chọn Prompt Engineering — nhưng thực ra Tư duy phản biện mới là nền tảng, vì AI có thể sai. (3 phút)
+
+Slide 25 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: 4 sai lầm phổ biếnkhi học cùng AI
+  Notes: Hỏi thẳng: "Ai đã từng copy nguyên bài từ AI nộp chưa?" (không cần trả lời thật) — rồi phân tích hệ quả. Sai lầm 4 rất quan trọng với học sinh làm bài nghiên cứu. (3 phút)
+
+Slide 26 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: Thực hànhngay hôm nay— Prompt mẫu dùng được liền
+  Notes: Nếu có máy tính / điện thoại — cho học sinh thử 1 prompt ngay tại chỗ trong 3 phút. Slide này là thực hành — không cần giảng nhiều. (5 phút)
+
+Slide 27 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: Khi nàoKHÔNG nênphụ thuộc AI?
+  Notes: "Ranh giới đỏ này rất quan trọng — đặc biệt với chọn ngành học. AI có thể tư vấn, nhưng quyết định phải là của bạn vì bạn mới là người sống với lựa chọn đó." (2 phút)
+
+Slide 28 | Sec: 📗 Phần 2 · Nâng cao năng lực | Title: Kết nối 2 chủ đề:Quyền & Năng lực
+  Notes: "Đây là slide quan trọng nhất của cả bài — hai phần không mâu thuẫn mà bổ sung cho nhau. Người hiểu quyền mới dùng AI an toàn. Người dùng AI an toàn mới phát triển năng lực thật sự." (2 phút)
+
+Slide 29 | Sec: 🏁 Tổng kết | Title: Hai phần —một thông điệp
+  Notes: Tóm tắt nhanh — không cần giải thích thêm. Slide này để học sinh chụp ảnh ghi nhớ. (1 phút)
+
+Slide 30 | Sec: 🏁 Thảo luận | Title: 4 câu hỏi mở —chọn 1 câu và tranh luận
+  Notes: Chia nhóm 4-5 người, mỗi nhóm chọn 1 câu. Sau 5 phút mời đại diện trình bày. Câu 4 thường tạo ra tranh luận hay nhất. (7-10 phút)
+
+Slide 31 | Sec: 📺 Video thực tế | Title: Video tình huốngthực tế
+  Notes: Chọn 1 trong 3 video tùy thời gian tiết học. Sau video cho 2 phút thảo luận cặp đôi trước khi hỏi cả lớp. (5-7 phút)
+
+Slide 32 | Sec: 🎮 Mini Quiz · AI Challenge | Title: 10 câu —Ai nhanh nhất?
+  Notes: Tạo không khí sôi nổi — có thể cho nhạc nền. Phát bảng A/B/C/D nhỏ cho mỗi học sinh nếu có. (1 phút)
+
+Slide 33 | Sec: 🎮 Mini Quiz · Câu 1/10 | Title: AI viết tắt của từ nào?
+  Notes: Câu dễ nhất — khởi động. Nếu có học sinh chọn sai thì rất vui. (20 giây + 10 giây giải thích)
+
+Slide 34 | Sec: 🎮 Mini Quiz · Câu 2/10 | Title: Khi app thu thập dữ liệu của bạnmà không nói trước, bạn có quyền:
+  Notes: Nhiều học sinh sẽ chọn B — phân tích tại sao B sai: việc đã cài app không đồng nghĩa với từ bỏ mọi quyền. (20 giây + 15 giây)
+
+Slide 35 | Sec: 🎮 Mini Quiz · Câu 3/10 | Title: AI có thể giúp học sinh ôn tập bằng cách nào?
+  Notes: Câu hài hước — A và B sẽ làm học sinh cười. Tạo không khí thoải mái. (20 giây + 10 giây)
+
+Slide 36 | Sec: 🎮 Mini Quiz · Câu 4/10 | Title: Điều nào sau đây AIKHÔNGlàm được?
+  Notes: Câu này gây tranh luận — một số học sinh nghĩ AI có cảm xúc. Cơ hội giải thích: AI giả lập cảm xúc nhưng không thực sự cảm nhận. (20 giây + 20 giây)
+
+Slide 37 | Sec: 🎮 Mini Quiz · Câu 5/10 | Title: Bạn hỏi AI và nhận được kết quả. Việc cần làm tiếp theo là gì?
+  Notes: Hỏi: "Ai đã từng thấy AI đưa thông tin sai chưa?" Chia sẻ nhanh 1-2 ví dụ nếu có. (20 giây + 15 giây)
+
+Slide 38 | Sec: 🎮 Mini Quiz · Câu 6/10 | Title: "Prompt" trong AI nghĩa là gì?
+  Notes: Hỏi: "Ai đã nghe từ 'prompt engineering' chưa?" Giải thích ngắn: đây là kĩ năng được trả lương rất cao hiện nay. (20 giây + 15 giây)
+
+Slide 39 | Sec: 🎮 Mini Quiz · Câu 7/10 | Title: Dữ liệu cá nhân bao gồm những gì?
+  Notes: Gây ngạc nhiên: "Cả lịch sử xem video, thời gian ngủ, tốc độ đọc chữ — TikTok đều thu thập hết." (20 giây + 20 giây)
+
+Slide 40 | Sec: 🎮 Mini Quiz · Câu 8/10 | Title: Câu nào mô tả đúng nhất quan hệ giữa người và AI?
+  Notes: Nhắc lại công thức vàng của bài. (20 giây + 10 giây)
+
+Slide 41 | Sec: 🎮 Mini Quiz · Câu 9/10 | Title: AI có thể phân biệt đối xử không công bằng khi nào?
+  Notes: Nhắc lại ví dụ Amazon tuyển dụng ở Phần 1 — học sinh sẽ nhớ ra ngay. (20 giây + 15 giây)
+
+Slide 42 | Sec: 🎮 Mini Quiz · Câu 10/10 | Title: Khi AI đưa ra quyết định ảnh hưởng đến bạn, bạn có quyền gì?
+  Notes: Câu cuối — kết nối lại với Phần 1. "Và đây chính là lý do chúng ta học Phần 1 trước." (20 giây + 15 giây)
+
+Slide 43 | Sec: 🎮 Mini Quiz · Kết quả | Title: Bạn được bao nhiêu điểm? —Đối chiếu danh hiệu
+  Notes: Hỏi tổng điểm lớp — xem có ai đạt 10/10 không. Trao điểm cộng hoặc phần thưởng nhỏ nếu có. (2 phút)
+
+Slide 44 | Sec: 🏁 Kết thúc | Title: No Title
+  Notes: Kết thúc bằng cách hỏi: "Sau buổi học hôm nay, một điều bạn sẽ thay đổi trong cách dùng AI là gì?" Cho 1 phút viết ra rồi chia sẻ. (3-5 phút)
+

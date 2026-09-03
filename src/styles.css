@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #050505;
+  --color-bg-2: #0b0b0d;
+  --color-surface: #111113;
+  --color-elevated: #18181b;
+  --color-glass: rgb(255 255 255 / 0.06);
+  --color-accent: #ff2d2d;
+  --color-accent-bright: #ff3b30;
+  --color-accent-dark: #8b0000;
+  --color-crimson: #d70018;
+  --color-fg: #ffffff;
+  --color-fg-2: #b8b8b8;
+  --color-muted: #777777;
+  --color-success: #34c759;
+  --color-warning: #ffcc00;
+  --color-danger: #ff2d2d;
+  --color-separator: rgb(255 255 255 / 0.08);
+  --color-track: rgb(255 255 255 / 0.1);
+  --color-island: #000000;
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+  --shadow-card: 0 0 0 1px rgb(255 255 255 / 0.06);
+  --shadow-card-hover: 0 0 0 1px rgb(255 255 255 / 0.12);
+  --shadow-glow: 0 0 0 1px rgb(255 45 45 / 0.32), 0 8px 28px rgb(255 45 45 / 0.12);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-ios-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --dur-fast: 160ms;
+  --dur-std: 280ms;
+  --dur-slow: 480ms;
+  --dur-ring: 920ms;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+  body {
+    margin: 0;
+    background: #050505;
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+[data-theme="light"] {
+  --color-bg: #f3eeea;
+  --color-bg-2: #e8e1db;
+  --color-surface: #fffaf7;
+  --color-elevated: #ffffff;
+  --color-glass: rgb(20 8 8 / 0.04);
+  --color-fg: #14110f;
+  --color-fg-2: #5c5551;
+  --color-muted: #8a827c;
+  --color-separator: rgb(20 8 8 / 0.08);
+  --color-track: rgb(20 8 8 / 0.1);
+  --shadow-card: 0 0 0 1px rgb(20 8 8 / 0.06), 0 8px 24px rgb(20 8 8 / 0.06);
+  --shadow-card-hover: 0 0 0 1px rgb(215 0 24 / 0.2);
+  --shadow-glow: 0 0 0 1px rgb(215 0 24 / 0.28), 0 10px 28px rgb(215 0 24 / 0.12);
+}
+
+[data-compact="true"] {
+  --compact-pad: 0.7;
+}
+
+@layer components {
+  .thanox-wordmark-svg {
+    display: block;
+    overflow: visible;
+    filter: drop-shadow(0 0 14px rgb(215 0 24 / 0.35));
+  }
+  .thanox-wordmark {
+    margin: 0;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 0.22em;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(185deg, #ffffff 0%, #f4f4f6 46%, #c8c8ce 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 18px rgb(215 0 24 / 0.38));
+  }
+  .thanox-wordmark-lg {
+    font-size: 32px;
+    letter-spacing: 0.26em;
+    font-weight: 500;
+  }
+  .thanox-wordmark-sm {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .thanox-studio {
+    min-height: 100dvh;
+    width: 100%;
+    height: 100dvh;
+    background: var(--color-bg);
+    display: block;
+    padding: 0;
+    pointer-events: auto;
+  }
+
+  .thanox-phone {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    background: var(--color-bg);
+    box-shadow: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+  }
+
+  .thanox-ambient {
+    position: absolute;
+    inset: -30%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(42% 32% at 28% 18%, rgb(215 0 24 / 0.22), transparent 62%),
+      radial-gradient(36% 28% at 78% 82%, rgb(139 0 0 / 0.16), transparent 60%);
+    animation: glow-drift 16s var(--ease-ios) infinite alternate;
+    will-change: transform;
+  }
+
+  .thanox-island {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 118px;
+    height: 34px;
+    border-radius: 20px;
+    background: #000;
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  .thanox-homebar {
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    transform: translateX(-50%);
+    width: 128px;
+    height: 5px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.28);
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  .thanox-screen {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background:
+      radial-gradient(620px 300px at 50% -50px, rgb(215 0 24 / 0.18), transparent 62%),
+      var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  .thanox-card {
+    position: relative;
+    isolation:
+... 
