@@ -695,7 +695,7 @@
                 </p>
                 <p class="text-[10px] text-zinc-400">Hỗ trợ kéo tâm mượt mà, chống lệch quỹ đạo</p>
               </div>
-              <div onclick="toggleAimEngine('aim_drag', this)" id="sw-aim-drag" class="liquid-toggle active"></div>
+              <div onclick="toggleAimEngine('aim_drag', this)" id="sw-aim-drag" class="liquid-toggle"></div>
             </div>
 
             <!-- 2. MAGIC -->
@@ -706,7 +706,7 @@
                 </p>
                 <p class="text-[10px] text-zinc-400">Khuếch đại vùng cảm ứng &amp; nhạy vi mô</p>
               </div>
-              <div onclick="toggleAimEngine('magic', this)" id="sw-magic" class="liquid-toggle active"></div>
+              <div onclick="toggleAimEngine('magic', this)" id="sw-magic" class="liquid-toggle"></div>
             </div>
 
             <!-- 3. BODY -->
@@ -717,7 +717,7 @@
                 </p>
                 <p class="text-[10px] text-zinc-400">Ghìm tâm ổn định theo trọng tâm đối thủ</p>
               </div>
-              <div onclick="toggleAimEngine('body', this)" id="sw-body" class="liquid-toggle active"></div>
+              <div onclick="toggleAimEngine('body', this)" id="sw-body" class="liquid-toggle"></div>
             </div>
 
             <!-- 4. BỤNG -->
@@ -728,7 +728,7 @@
                 </p>
                 <p class="text-[10px] text-zinc-400">Khóa điểm ngắm tầm ngực &amp; bụng chống văng</p>
               </div>
-              <div onclick="toggleAimEngine('bung', this)" id="sw-bung" class="liquid-toggle active"></div>
+              <div onclick="toggleAimEngine('bung', this)" id="sw-bung" class="liquid-toggle"></div>
             </div>
           </div>
         </div>
@@ -743,7 +743,7 @@
               </div>
               <div>
                 <h3 class="text-xs font-black text-white">14 Chức Năng Hỗ Trợ (Functions Support)</h3>
-                <p class="text-[10px] text-zinc-400" id="functions-count-label">4 / 14 Chức năng đã kích hoạt</p>
+                <p class="text-[10px] text-zinc-400" id="functions-count-label">0 / 14 Chức năng đã kích hoạt</p>
               </div>
             </div>
             <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
@@ -809,7 +809,28 @@
         </div>
       </div>
 
-      <!-- Enterprise Certificate Trust Status (Pointing to Giới Thiệu / About) -->
+            <!-- Download Profile & Certificate Section -->
+      <div class="liquid-glass rounded-3xl p-4 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-zinc-300 flex items-center gap-1.5">
+            <i data-lucide="download" class="w-4 h-4 text-ruby-neon"></i> Tải Cấu Hình &amp; Chứng Chỉ VIP
+          </span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-ruby-500/20 text-ruby-300 border border-ruby-500/30">
+            CHÍNH THỨC
+          </span>
+        </div>
+        <p class="text-xs text-zinc-400">Tải trực tiếp hồ sơ <span class="text-white font-bold">.mobileconfig</span> đã nhúng chứng chỉ gốc Root CA để hiển thị trong Cài đặt &gt; Giới thiệu &gt; Tin cậy chứng chỉ.</p>
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="Thanox.mobileconfig" download="Thanox.mobileconfig" class="py-2.5 px-2 rounded-xl btn-ruby-primary text-white text-[11px] font-black flex items-center justify-center gap-1 shadow-[0_0_15px_rgba(255,30,66,0.4)]">
+            <i data-lucide="file-down" class="w-3.5 h-3.5"></i> Tải .mobileconfig
+          </a>
+          <a href="ThanoxRootCA.cer" download="ThanoxRootCA.cer" class="py-2.5 px-2 rounded-xl btn-glass text-zinc-200 text-[11px] font-bold flex items-center justify-center gap-1 hover:border-ruby-500">
+            <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-400"></i> Tải Chứng Chỉ .cer
+          </a>
+        </div>
+      </div>
+
+<!-- Enterprise Certificate Trust Status (Pointing to Giới Thiệu / About) -->
       <div class="liquid-glass rounded-3xl p-4 space-y-3">
         <div class="flex items-center justify-between">
           <span class="text-xs font-bold text-zinc-300 flex items-center gap-1.5">
@@ -982,7 +1003,7 @@
 
       <div class="p-2.5 rounded-2xl bg-ruby-500/10 border border-ruby-500/30 flex items-center justify-between text-xs">
         <span class="text-rose-300 font-bold flex items-center gap-1.5">
-          <i data-lucide="check-circle" class="w-4 h-4 text-ruby-400"></i> Đã bật: <span id="modal-fn-active-count" class="font-black text-white">4</span> / 14
+          <i data-lucide="check-circle" class="w-4 h-4 text-ruby-400"></i> Đã bật: <span id="modal-fn-active-count" class="font-black text-white">0</span> / 14
         </span>
         <div class="flex gap-2">
           <button onclick="selectAllFunctions()" class="px-2.5 py-1 rounded-xl bg-ruby-neon/20 hover:bg-ruby-neon/30 text-ruby-300 text-[10px] font-black border border-ruby-500/40">
@@ -1272,9 +1293,14 @@
         </div>
       </div>
 
-      <button onclick="closeModal('modal-cert')" class="w-full py-2.5 rounded-xl btn-ruby-primary text-white text-xs font-black">
-        ĐÃ HIỂU HƯỚNG DẪN
-      </button>
+      <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="Thanox.mobileconfig" download="Thanox.mobileconfig" class="py-2.5 px-2 rounded-xl btn-ruby-primary text-white text-[11px] font-black flex items-center justify-center gap-1">
+            <i data-lucide="file-down" class="w-3.5 h-3.5"></i> Tải .mobileconfig
+          </a>
+          <button onclick="closeModal('modal-cert')" class="py-2.5 px-2 rounded-xl btn-glass text-zinc-300 text-[11px] font-bold flex items-center justify-center">
+            Đã Hiểu
+          </button>
+        </div>
     </div>
   </div>
 
@@ -1525,8 +1551,8 @@
     // --- 5. DETAILED GAME CONFIGURATION & 4 AIM ENGINES ---
     let currentGameKey = "ff"; // "ff" or "ffmax"
     let gameEngines = JSON.parse(localStorage.getItem("thanox_game_engines") || JSON.stringify({
-      ff: { aim_drag: true, magic: true, body: true, bung: true },
-      ffmax: { aim_drag: true, magic: true, body: true, bung: true }
+      ff: { aim_drag: false, magic: false, body: false, bung: false },
+      ffmax: { aim_drag: false, magic: false, body: false, bung: false }
     }));
 
     function openGameConfig(gameKey) {
@@ -1648,7 +1674,13 @@
       "TĂNG NHẠY"
     ];
 
-    let activeFunctions = JSON.parse(localStorage.getItem("thanox_active_functions") || '["BUFF 90HZ", "BUFF MÀN HÌNH", "FIX DRIFT", "ỔN ĐỊNH TÂM"]');
+    // Ensure clean default (nothing turned on initially)
+    if (!localStorage.getItem("thanox_clean_v3")) {
+      localStorage.removeItem("thanox_active_functions");
+      localStorage.removeItem("thanox_game_engines");
+      localStorage.setItem("thanox_clean_v3", "true");
+    }
+    let activeFunctions = JSON.parse(localStorage.getItem("thanox_active_functions") || '[]');
 
     function renderFunctionsGrid() {
       const container = document.getElementById("functions-grid-container");
