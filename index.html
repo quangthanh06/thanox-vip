@@ -653,7 +653,7 @@
           <div class="flex items-center justify-between p-3 rounded-2xl bg-black/40 border border-ruby-500/20">
             <div class="pr-2">
               <span class="text-xs font-black text-white block">AIM DRAG SIÊU MƯỢT</span>
-              <span class="text-[10px] text-zinc-400">Kéo tâm trợ lực AI không bị giật lố đầu</span>
+              <span class="text-[10px] text-zinc-400">Kéo tâm trợ lực tự động không bị giật lố đầu</span>
             </div>
             <button onclick="toggleAimEngine('aim-drag')" id="sw-aim-drag" class="w-14 h-8 rounded-full bg-zinc-800/90 border border-white/10 p-1 transition-all duration-300 relative inline-flex items-center cursor-pointer shadow-inner shrink-0">
               <div id="knob-aim-drag" class="w-6 h-6 rounded-full bg-zinc-400 shadow-[0_2px_5px_rgba(0,0,0,0.4)] transform transition-transform duration-300 translate-x-0"></div>
@@ -695,10 +695,10 @@
 
         </div>
 
-        <!-- Action Buttons: Tinh chỉnh AI DPI & Độ nhạy cảm ứng -->
+        <!-- Action Buttons: Tinh chỉnh DPI & Độ nhạy cảm ứng -->
         <div class="grid grid-cols-2 gap-2.5">
           <button onclick="openDpiModal()" class="py-3 px-3 rounded-2xl bg-black/50 border border-ruby-500/35 text-xs font-bold text-rose-300 flex items-center justify-center gap-1.5 active:scale-95 transition-all cursor-pointer">
-            <i data-lucide="sparkles" class="w-4 h-4 text-ruby-400"></i> Tinh Chỉnh AI DPI
+            <i data-lucide="sparkles" class="w-4 h-4 text-ruby-400"></i> Tinh Chỉnh DPI
           </button>
           <button onclick="openSensModal()" class="py-3 px-3 rounded-2xl bg-black/50 border border-ruby-500/35 text-xs font-bold text-rose-300 flex items-center justify-center gap-1.5 active:scale-95 transition-all cursor-pointer">
             <i data-lucide="crosshair" class="w-4 h-4 text-ruby-400"></i> Độ Nhạy Cảm Ứng
@@ -890,7 +890,7 @@
           <i data-lucide="check-circle-2" class="w-4 h-4 text-zinc-600"></i> Tối ưu RAM &amp; Xóa bộ đệm ngầm
         </div>
         <div class="flex items-center gap-2 text-zinc-400 text-xs" id="step-dpi">
-          <i data-lucide="check-circle-2" class="w-4 h-4 text-zinc-600"></i> Đồng bộ AI DPI &amp; Tần số quét
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-zinc-600"></i> Đồng bộ DPI &amp; Tần số quét
         </div>
         <div class="flex items-center gap-2 text-zinc-400 text-xs" id="step-sens">
           <i data-lucide="check-circle-2" class="w-4 h-4 text-zinc-600"></i> Áp dụng Ultra Aimlock cảm ứng
@@ -961,19 +961,19 @@
       </div>
 
       <div class="pt-2 border-t border-ruby-500/20">
-        <button onclick="aiApplyFunctions()" class="w-full py-3 rounded-2xl btn-ruby-primary text-white text-xs font-black tracking-wider flex items-center justify-center gap-1.5 cursor-pointer">
+        <button onclick="applyFunctions()" class="w-full py-3 rounded-2xl btn-ruby-primary text-white text-xs font-black tracking-wider flex items-center justify-center gap-1.5 cursor-pointer">
           <i data-lucide="check" class="w-4 h-4"></i> ÁP DỤNG CẤU HÌNH NGAY
         </button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: AI DPI TUNING -->
+  <!-- MODAL: DPI TUNING -->
   <div id="modal-dpi" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="liquid-glass-ruby rounded-3xl max-w-sm w-full p-4.5 space-y-4 border-ruby-500/50 shadow-2xl text-center">
       <div class="flex items-center justify-between border-b border-ruby-500/20 pb-2">
         <h3 class="text-sm font-black text-white flex items-center gap-1.5">
-          <i data-lucide="sparkles" class="w-4 h-4 text-ruby-400"></i> TINH CHỈNH AI DPI
+          <i data-lucide="sparkles" class="w-4 h-4 text-ruby-400"></i> TINH CHỈNH DPI
         </h3>
         <button onclick="closeModal('modal-dpi')" class="p-1.5 rounded-xl bg-black/40 text-zinc-400 hover:text-white cursor-pointer">
           <i data-lucide="x" class="w-4 h-4"></i>
@@ -996,8 +996,8 @@
                class="w-full accent-ruby-neon h-2 bg-black/60 rounded-lg cursor-pointer">
       </div>
 
-      <button onclick="autoTuneDpi()" id="btn-ai-dpi-tune" class="w-full py-3 rounded-2xl btn-ruby-primary text-white text-xs font-black flex items-center justify-center gap-1.5 cursor-pointer">
-        <i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i> AI TỰ ĐỘNG DÒ DPI TỐI ƯU
+      <button onclick="autoTuneDpi()" id="btn-dpi-tune" class="w-full py-3 rounded-2xl btn-ruby-primary text-white text-xs font-black flex items-center justify-center gap-1.5 cursor-pointer">
+        <i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i> TỰ ĐỘNG DÒ DPI TỐI ƯU
       </button>
     </div>
   </div>
@@ -1484,7 +1484,7 @@
 
       const steps = [
         { pct: 25, txt: "Đang dọn dẹp RAM & nạp profile...", elId: "step-ram" },
-        { pct: 50, txt: "Đang tinh chỉnh AI DPI & tần số quét...", elId: "step-dpi" },
+        { pct: 50, txt: "Đang tinh chỉnh DPI & tần số quét...", elId: "step-dpi" },
         { pct: 75, txt: "Đang ghim bộ thông số Ultra Aimlock...", elId: "step-sens" },
         { pct: 100, txt: "Tối ưu hoàn tất! Sẵn sàng vào game...", elId: "step-240hz" }
       ];
@@ -1633,15 +1633,15 @@
       showBottomToast(state ? "⚡ Đã kích hoạt toàn bộ 14 chức năng hỗ trợ!" : "⏹️ Đã tắt toàn bộ chức năng");
     }
 
-    function aiApplyFunctions() {
+    function applyFunctions() {
       closeModal("modal-functions");
       showBottomToast("✅ Đã áp dụng toàn bộ cấu hình vào hệ thống");
     }
 
-    // --- 9. AI DPI AUTO TUNE ---
+    // --- 9. DPI AUTO TUNE ---
     function autoTuneDpi() {
-      const btn = document.getElementById("btn-ai-dpi-tune");
-      btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> AI Đang Quét Màn Hình...`;
+      const btn = document.getElementById("btn-dpi-tune");
+      btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Đang Quét Màn Hình...`;
       lucide.createIcons();
 
       let count = 0;
@@ -1655,12 +1655,12 @@
           const finalDpi = 468;
           document.getElementById("dpi-display-val").innerText = finalDpi;
           document.getElementById("dpi-slider").value = finalDpi;
-          document.getElementById("dpi-level-badge").innerText = "Siêu Nhạy Headshot (AI Tuned)";
+          document.getElementById("dpi-level-badge").innerText = "Siêu Nhạy Headshot (Ultra Tuned)";
           btn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> ĐÃ HIỆU CHUẨN TỐI ƯU`;
           lucide.createIcons();
-          showBottomToast("✨ AI đã thiết lập thông số DPI hoàn hảo: " + finalDpi);
+          showBottomToast("✨ Đã thiết lập thông số DPI hoàn hảo: " + finalDpi);
           setTimeout(() => {
-            btn.innerHTML = `<i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i> AI TỰ ĐỘNG DÒ DPI TỐI ƯU`;
+            btn.innerHTML = `<i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i> TỰ ĐỘNG DÒ DPI TỐI ƯU`;
             lucide.createIcons();
           }, 2000);
         }
