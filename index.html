@@ -946,7 +946,7 @@
       </div>
 
       <!-- Quick actions: Select All / Turn Off All -->
-      <div class="flex items-center justify-between text-xs">
+      <div class="flex items-center justify-between text-xs px-1">
         <button onclick="selectAllFunctions(true)" class="text-[11px] font-bold text-ruby-400 hover:text-ruby-300 cursor-pointer">
           ⚡ Bật tất cả 14 chức năng
         </button>
@@ -1141,22 +1141,28 @@
   <script>
     // --- 0. SMART DEVICE DETECTION (DETECT USER'S EXACT PHONE MODEL) ---
     function detectIosDevice() {
-      const w = window.screen.width;
-      const h = window.screen.height;
+      const sw = window.screen.width || window.innerWidth;
+      const sh = window.screen.height || window.innerHeight;
+      const iw = window.innerWidth;
+      const ih = window.innerHeight;
       const r = window.devicePixelRatio || 1;
-      const min = Math.min(w, h);
-      const max = Math.max(w, h);
+      let min = Math.min(sw, sh);
+      let max = Math.max(sw, sh);
+
+      if (min > 500 && iw <= 500) {
+        min = Math.min(iw, ih);
+        max = Math.max(iw, ih);
+      }
 
       if (/iPad/.test(navigator.userAgent)) return "iPad Pro";
-      if (min === 430 && max === 932) return "iPhone 16 Pro Max";
-      if (min === 393 && max === 852) return "iPhone 16 Pro";
-      if (min === 428 && max === 926) return "iPhone 14 Plus";
-      if (min === 390 && max === 844) return "iPhone 15 / 14";
-      if (min === 414 && max === 896) return r === 3 ? "iPhone 11 Pro Max" : "iPhone XR / 11";
-      if (min === 375 && max === 812) return "iPhone 13 mini / X";
-      if (min === 375 && max === 667) return "iPhone SE";
-      if (/iPhone/.test(navigator.userAgent)) return "iPhone iOS 27";
-      return "iPhone VIP";
+      if (min >= 420 && max >= 920) return "iPhone 16 Pro Max";
+      if (min >= 390 && max >= 845 && max <= 860) return "iPhone 16 Pro";
+      if (min >= 385 && max >= 835 && max <= 850) return "iPhone 15 / 14";
+      if (min >= 410 && max >= 890 && max <= 910) return r === 3 ? "iPhone 11 Pro Max" : "iPhone XR / 11";
+      if (min >= 370 && max >= 800 && max <= 820) return "iPhone 13 mini / X";
+      if (min >= 370 && max <= 700) return "iPhone SE";
+      if (/iPhone/.test(navigator.userAgent)) return "iPhone 16 Pro Max";
+      return "iPhone 16 Pro Max";
     }
 
     const USER_DEVICE_MODEL = detectIosDevice();
