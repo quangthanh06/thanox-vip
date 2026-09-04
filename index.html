@@ -2064,9 +2064,11 @@
     // 0.3. SMART DEVICE SELECTION & AUTO HARDWARE MAPPING
     // =========================================================================
     function detectIosDevice() {
+      // 1. Check if user already manually selected or saved a device
       const saved = localStorage.getItem("thanox_custom_device");
       if (saved && DEVICE_HARDWARE_PROFILES[saved]) return saved;
 
+      // 2. Query hardware viewport & pixel metrics
       const sw = window.screen.width || window.innerWidth;
       const sh = window.screen.height || window.innerHeight;
       const iw = window.innerWidth;
@@ -2080,50 +2082,52 @@
         max = Math.max(iw, ih);
       }
 
-      // Precise logical resolution mapping for iOS
-      // 430 x 932 pt -> iPhone 14 Pro Max, 15 Pro Max, 16 Pro Max
-      if (min >= 420 && max >= 900) {
+      // 3. Measure safe-area-inset-top to detect Dynamic Island vs Notch vs Home button
+      let safeTop = 0;
+      try {
+        const testEl = document.createElement("div");
+        testEl.style.cssText = "position:fixed;top:0;left:0;height:env(safe-area-inset-top, 0px);visibility:hidden;pointer-events:none;";
+        document.body.appendChild(testEl);
+        safeTop = testEl.offsetHeight || 0;
+        document.body.removeChild(testEl);
+      } catch(e) {}
+
+      // 4. Exact Hardware Tier Mapping
+      // A. Dynamic Island Tier (safeTop >= 50px or screen >= 430x932)
+      if (safeTop >= 50 || (min >= 420 && max >= 920)) {
+        if (min >= 420 && max >= 920) return "iPhone 14 Pro Max";
+        if (min >= 390 && max >= 840) return "iPhone 14 Pro";
         return "iPhone 14 Pro Max";
       }
-      // 393 x 852 pt -> iPhone 14 Pro, 15, 15 Pro, 16
-      if (min >= 390 && max >= 850 && max < 900) {
-        return "iPhone 14 Pro";
-      }
-      // 428 x 926 pt -> iPhone 13 Pro Max, 12 Pro Max
-      if (min >= 420 && max >= 920 && max < 930) {
-        return "iPhone 13 Pro Max";
-      }
-      // 390 x 844 pt -> iPhone 13, 13 Pro, 12, 12 Pro
-      if (min >= 385 && max >= 840 && max < 850) {
-        return "iPhone 13";
-      }
-      // 414 x 896 pt -> iPhone 14 Plus, 15 Plus, 16 Plus, 11 Pro Max, Xs Max
-      if (min >= 410 && max >= 890 && max < 900) {
-        if (dpr >= 3) return "iPhone 14 Plus";
-        return "iPhone 11";
-      }
-      // 375 x 812 pt -> iPhone X, Xs, 11 Pro
-      if (min >= 370 && max >= 800 && max < 820) {
-        return "iPhone 11 Pro";
-      }
-      // 375 x 667 pt -> iPhone SE (2022), SE (2020), 8, 7
-      if (min >= 370 && max <= 700) {
-        return "iPhone SE (2022)";
-      }
-      // 320 x 568 pt -> iPhone SE (2016)
-      if (min <= 320) {
-        return "iPhone SE (2016)";
+
+      // B. Notch Tier (safeTop >= 40px or standard notch resolutions)
+      if (safeTop >= 40 || (max >= 800 && max < 920)) {
+        if (min >= 420 && max >= 910) return "iPhone 13 Pro Max";
+        if (min >= 385 && max >= 835) return "iPhone 13";
+        if (min >= 410 && max >= 890) {
+          return dpr >= 3 ? "iPhone 11 Pro Max" : "iPhone 11";
+        }
+        if (min >= 370 && max >= 800) return "iPhone 11 Pro";
       }
 
-      // Fallback default
+      // C. Classic Home Button Tier
+      if (min >= 410 && max <= 750) return "iPhone 8 Plus";
+      if (min >= 370 && max <= 700) return "iPhone SE (2022)";
+      if (min <= 320) return "iPhone SE (2016)";
+
+      // D. Final intelligent default based on screen width
+      if (min >= 420) return "iPhone 14 Pro Max";
+      if (min >= 390) return "iPhone 14 Pro";
+      if (min >= 370) return "iPhone 11 Pro";
       return "iPhone 14 Pro Max";
     }
 
+
     let USER_DEVICE_MODEL = detectIosDevice();
-    let ACTIVE_DEVICE_PROFILE = DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] || DEVICE_HARDWARE_PROFILES["iPhone 16 Plus"];
+    let ACTIVE_DEVICE_PROFILE = DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] || DEVICE_HARDWARE_PROFILES["iPhone 14 Pro Max"];
 
     function getActiveHardwareProfile() {
-      return DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] || DEVICE_HARDWARE_PROFILES["iPhone 16 Plus"];
+      return DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] || DEVICE_HARDWARE_PROFILES["iPhone 14 Pro Max"];
     }
 
     function selectDeviceModel(modelName) {
