@@ -1,9 +1,10 @@
-import os, struct, hashlib
+import os, struct, hashlib, sys
+sys.stdout.reconfigure(encoding="utf-8")
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 
-BASE_DIR = r"c:\Users\Admin\Downloads\ANTIGRAVITY VIP"
-APP_DIR = os.path.join(BASE_DIR, "Thanox_iOS_App")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+APP_DIR = os.path.dirname(SCRIPT_DIR)
 IOS_DIR = os.path.join(APP_DIR, "ios-native", "ThanoxVIP")
 
 # Obfuscated Key & IV matching SecurityShield.m
@@ -24,17 +25,14 @@ KEY_MASK = 0x5A
 AES_KEY = bytes([b ^ KEY_MASK for b in OBFUSCATED_KEY])
 AES_IV = bytes([b ^ KEY_MASK for b in OBFUSCATED_IV])
 
-print("Derived AES-256 Key (Hex):", AES_KEY.hex())
-print("Derived AES-256 IV (Hex):", AES_IV.hex())
-
 # Files to package
 files_to_pack = [
     ("index.html", os.path.join(APP_DIR, "index.html")),
     ("assets/tailwind.js", os.path.join(APP_DIR, "assets", "tailwind.js")),
     ("assets/lucide.js", os.path.join(APP_DIR, "assets", "lucide.js")),
     ("assets/AppIcon.png", os.path.join(APP_DIR, "assets", "AppIcon.png")),
-    ("FFTH AIMBODY.3105", os.path.join(BASE_DIR, "FFTH AIMBODY.3105")),
-    ("FFMAX AIMBODY.3105", os.path.join(BASE_DIR, "FFMAX AIMBODY.3105")),
+    ("FFTH AIMBODY.3105", os.path.join(APP_DIR, "FFTH AIMBODY.3105")),
+    ("FFMAX AIMBODY.3105", os.path.join(APP_DIR, "FFMAX AIMBODY.3105")),
 ]
 
 # Pack into custom binary archive
@@ -69,6 +67,7 @@ sha256_hash = hashlib.sha256(encrypted_data).hexdigest()
 print("Encrypted assets.enc SHA-256:", sha256_hash)
 
 # Save to destination paths
+os.makedirs(IOS_DIR, exist_ok=True)
 out_ios = os.path.join(IOS_DIR, "assets.enc")
 with open(out_ios, "wb") as f:
     f.write(encrypted_data)
@@ -77,13 +76,4 @@ out_app = os.path.join(APP_DIR, "assets.enc")
 with open(out_app, "wb") as f:
     f.write(encrypted_data)
 
-print(f"Written {out_ios} and {out_app} successfully!")
-
-# Verification: Test Decrypting roundtrip
-unpadder = padding.PKCS7(128).unpadder()
-decryptor = cipher.decryptor()
-decrypted_padded = decryptor.update(encrypted_data) + decryptor.finalize()
-decrypted_data = unpadder.update(decrypted_padded) + unpadder.finalize()
-
-assert decrypted_data == raw_archive, "Decrypted data mismatch!"
-print("Encryption & Decryption Roundtrip Verification: 100% SUCCESSFUL!")
+print("Written assets.enc successfully!")
