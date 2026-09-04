@@ -243,7 +243,7 @@
   <!-- ========================================== -->
   <!-- PERSISTENT TOP HEADER (ALWAYS VISIBLE) -->
   <!-- ========================================== -->
-  <header id="top-bar" class="relative z-30 pt-3.5 px-4 pb-2 max-w-sm mx-auto w-full flex items-center justify-between shrink-0">
+  <header id="top-bar" class="relative z-30 pt-3.5 px-4 pb-2 max-w-md mx-auto w-full flex items-center justify-between shrink-0">
     <!-- Thanox Avatar on Top-Left matching old version -->
     <div onclick="openDeviceSelectorModal()" class="flex items-center gap-2.5 cursor-pointer active:scale-95 transition-transform" title="Xem thông tin thiết bị &amp; chứng chỉ">
       <div class="w-9 h-9 rounded-2xl overflow-hidden bg-black/60 border border-ruby-500/40 p-0.5 shadow-[0_0_12px_rgba(255,30,66,0.35)] flex items-center justify-center backdrop-blur-md">
@@ -277,7 +277,7 @@
   <!-- ========================================== -->
   <!-- 1. AUTH SCREEN (EXACT 3-CARD LAYOUT) -->
   <!-- ========================================== -->
-  <div id="auth-screen" class="relative z-20 flex flex-col px-4 py-2 space-y-3.5 max-w-sm mx-auto w-full select-none pb-12">
+  <div id="auth-screen" class="relative z-20 flex flex-col px-4 py-2 space-y-3.5 max-w-md mx-auto w-full select-none pb-12">
     
     <!-- CARD 1: HERO & DEVICE ID CARD -->
     <div class="liquid-glass-ruby rounded-3xl p-4 text-center space-y-3 animate-springUp" style="animation-delay: 0.05s;">
@@ -392,7 +392,7 @@
   <!-- ========================================== -->
   <!-- 2. MAIN APP CONTENT (AFTER LOGIN) -->
   <!-- ========================================== -->
-  <div id="main-app" class="relative z-20 max-w-sm mx-auto w-full pb-36 hidden">
+  <div id="main-app" class="relative z-20 max-w-md mx-auto w-full pb-36 hidden">
 
     <!-- ---------------- TAB 1: HOME (ĐẦY ĐỦ TIỆN NGHI CAO CẤP) ---------------- -->
     <div id="tab-home" class="tab-content px-4 space-y-4 pt-1">
@@ -1090,7 +1090,7 @@
   <!-- 3. GROUNDED FULL-WIDTH BOTTOM NAVIGATION DOCK -->
   <!-- ========================================== -->
   <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 z-40 w-full transition-all duration-300 hidden">
-    <div class="max-w-sm mx-auto px-4 h-16 flex items-center justify-around relative">
+    <div class="max-w-md mx-auto px-4 h-16 flex items-center justify-around relative">
       <button onclick="switchTab('home')" id="nav-btn-home" class="nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-ruby-400 bg-ruby-neon/15 border border-ruby-500/40 shadow-[0_0_15px_rgba(255,30,66,0.3)] cursor-pointer">
         <i data-lucide="home" class="w-5 h-5"></i>
         <span class="text-[10px] font-black tracking-wide">Trang Chủ</span>
@@ -1122,7 +1122,7 @@
 
   <!-- MODAL: LAUNCH SEQUENCE WITH DIRECT 1-TAP PLAY BUTTON -->
   <div id="modal-launch" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-4 text-center border-ruby-500/50 shadow-2xl">
+    <div class="relative liquid-glass-ruby rounded-3xl max-w-md w-full p-5 space-y-4 text-center border-ruby-500/50 shadow-2xl">
       <!-- Top-Right Close Button -->
       <button onclick="closeLaunchModal()" class="absolute top-3.5 right-3.5 p-2 rounded-xl bg-black/60 hover:bg-black/80 text-zinc-400 hover:text-white border border-white/10 transition-all active:scale-90 cursor-pointer z-20" title="Đóng">
         <i data-lucide="x" class="w-4 h-4"></i>
@@ -1173,7 +1173,7 @@
 
   <!-- MODAL: INTERACTIVE QUICK ACTION APPLYING MODAL -->
   <div id="modal-quick-action" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-4 text-center border-ruby-500/50 shadow-2xl">
+    <div class="liquid-glass-ruby rounded-3xl max-w-md w-full p-5 space-y-4 text-center border-ruby-500/50 shadow-2xl">
       <div class="w-12 h-12 rounded-2xl bg-ruby-neon/20 border border-ruby-500/40 flex items-center justify-center mx-auto text-ruby-400">
         <i data-lucide="zap" class="w-6 h-6 text-amber-300 animate-pulse"></i>
       </div>
@@ -1196,7 +1196,7 @@
 
   <!-- MODAL: 14 SUPPORT FUNCTIONS -->
   <div id="modal-functions" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="liquid-glass-ruby rounded-3xl max-w-sm w-full p-4.5 space-y-3.5 border-ruby-500/50 shadow-2xl max-h-[90vh] flex flex-col">
+    <div class="liquid-glass-ruby rounded-3xl max-w-md w-full p-4.5 space-y-3.5 border-ruby-500/50 shadow-2xl max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-ruby-500/20 pb-3">
         <div>
           <h3 class="text-sm font-black text-white">14 CHỨC NĂNG HỖ TRỢ VIP</h3>
@@ -1232,7 +1232,7 @@
 
   <!-- MODAL: DPI TUNING -->
   <div id="modal-dpi" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="liquid-glass-ruby rounded-3xl max-w-sm w-full p-4.5 space-y-4 border-ruby-500/50 shadow-2xl text-center">
+    <div class="liquid-glass-ruby rounded-3xl max-w-md w-full p-4.5 space-y-4 border-ruby-500/50 shadow-2xl text-center">
       <div class="flex items-center justify-between border-b border-ruby-500/20 pb-2">
         <h3 class="text-sm font-black text-white flex items-center gap-1.5">
           <i data-lucide="sparkles" class="w-4 h-4 text-ruby-400"></i> TINH CHỈNH DPI
@@ -1266,7 +1266,7 @@
 
   <!-- MODAL: SENSITIVITY SLIDERS (0 - 200%) -->
   <div id="modal-sens" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="liquid-glass-ruby rounded-3xl max-w-sm w-full p-4.5 space-y-4 border-ruby-500/50 shadow-2xl max-h-[90vh] flex flex-col">
+    <div class="liquid-glass-ruby rounded-3xl max-w-md w-full p-4.5 space-y-4 border-ruby-500/50 shadow-2xl max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-ruby-500/20 pb-2">
         <h3 class="text-sm font-black text-white flex items-center gap-1.5">
           <i data-lucide="crosshair" class="w-4 h-4 text-ruby-400"></i> ĐỘ NHẠY KÉO TÂM (MAX 200%)
@@ -1293,7 +1293,7 @@
 
   <!-- MODAL: RESET DEVICE -->
   <div id="modal-reset" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-4 border-ruby-500/50 shadow-2xl text-center">
+    <div class="liquid-glass-ruby rounded-3xl max-w-md w-full p-5 space-y-4 border-ruby-500/50 shadow-2xl text-center">
       <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center mx-auto text-amber-400">
         <i data-lucide="refresh-cw" class="w-6 h-6"></i>
       </div>
@@ -1321,7 +1321,7 @@
 
   <!-- MODAL: CERTIFICATE GUIDE (HƯỚNG DẪN TIN CẬY CHỨNG CHỈ) -->
   <div id="modal-cert" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-3.5 border-ruby-500/50 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
+    <div class="liquid-glass-ruby rounded-3xl max-w-md w-full p-5 space-y-3.5 border-ruby-500/50 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
       <div class="flex items-center justify-between border-b border-ruby-500/20 pb-2.5">
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
@@ -1507,7 +1507,7 @@
   
   <!-- MODAL: KHO 100 MÃ CẤU HÌNH VIP OB53 -->
   <div id="modal-100-codes" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-4.5 space-y-3.5 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] flex flex-col">
+    <div class="relative liquid-glass-ruby rounded-3xl max-w-md w-full p-4.5 space-y-3.5 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] flex flex-col">
       <!-- Close X button -->
       <button onclick="closeModal('modal-100-codes')" class="absolute top-4 right-4 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-400 hover:text-white border border-white/10 transition-all active:scale-95 cursor-pointer z-20" title="Đóng">
         <i data-lucide="x" class="w-4 h-4"></i>
@@ -1562,7 +1562,7 @@
 
   <!-- MODAL: KHO MODULE THUẬT TOÁN & BỘ MÃ VIP (OB53/OB54) -->
   <div id="modal-algo-modules" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-3.5 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] flex flex-col no-scrollbar">
+    <div class="relative liquid-glass-ruby rounded-3xl max-w-md w-full p-5 space-y-3.5 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] flex flex-col no-scrollbar">
       <!-- Close X button -->
       <button onclick="closeModal('modal-algo-modules')" class="absolute top-4 right-4 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-400 hover:text-white border border-white/10 transition-all active:scale-95 cursor-pointer z-20" title="Đóng">
         <i data-lucide="x" class="w-4 h-4"></i>
@@ -1628,7 +1628,7 @@
 
   <!-- MODAL: DEVICE INSPECTION, CERTIFICATE STATUS & HARDWARE SELECTOR -->
   <div id="modal-device-selector" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-4 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
+    <div class="relative liquid-glass-ruby rounded-3xl max-w-md w-full p-5 space-y-4 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
       <!-- Close X button -->
       <button onclick="closeModal('modal-device-selector')" class="absolute top-4 right-4 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-400 hover:text-white border border-white/10 transition-all active:scale-95 cursor-pointer z-20" title="Đóng">
         <i data-lucide="x" class="w-4 h-4"></i>

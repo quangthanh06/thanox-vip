@@ -28,7 +28,8 @@
         config.defaultWebpagePreferences.allowsContentJavaScript = YES;
     }
 
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
+    self.webView = [[WKWebView alloc] initWithFrame:[[UIScreen mainScreen] bounds] configuration:config];
+    self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.webView.navigationDelegate = self;
     self.webView.UIDelegate = self;
     self.webView.opaque = NO;
@@ -60,6 +61,12 @@
 
 - (BOOL)prefersHomeIndicatorAutoHidden {
     return YES;
+}
+
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.webView.frame = self.view.bounds;
 }
 
 @end
