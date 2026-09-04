@@ -77,8 +77,21 @@
       padding-top: max(54px, calc(env(safe-area-inset-top, 0px) + 12px)) !important;
     }
 
+    /* Bottom Navigation - Grounded Edge-to-Edge iOS Glass Dock */
     #bottom-nav {
-      bottom: max(14px, calc(env(safe-area-inset-bottom, 0px) + 10px)) !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      padding-bottom: max(14px, env(safe-area-inset-bottom, 0px)) !important;
+      background: linear-gradient(180deg, rgba(16, 7, 12, 0.90) 0%, rgba(6, 3, 5, 0.98) 100%) !important;
+      backdrop-filter: blur(28px) !important;
+      -webkit-backdrop-filter: blur(28px) !important;
+      border-top: 1px solid rgba(255, 30, 66, 0.32) !important;
+      box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.85), 0 -1px 0 rgba(255, 255, 255, 0.05) !important;
     }
 
 
@@ -378,7 +391,7 @@
   <!-- ========================================== -->
   <!-- 2. MAIN APP CONTENT (AFTER LOGIN) -->
   <!-- ========================================== -->
-  <div id="main-app" class="relative z-20 max-w-sm mx-auto w-full pb-28 hidden">
+  <div id="main-app" class="relative z-20 max-w-sm mx-auto w-full pb-36 hidden">
 
     <!-- ---------------- TAB 1: HOME (ĐẦY ĐỦ TIỆN NGHI CAO CẤP) ---------------- -->
     <div id="tab-home" class="tab-content px-4 space-y-4 pt-1">
@@ -692,23 +705,55 @@
           </div>
         </div>
 
-        <!-- NẠP FILE PATCH & CODE VIP CARD -->
-        <div class="liquid-glass-ruby rounded-3xl p-3.5 flex items-center justify-between border-ruby-500/40 shadow-md">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-ruby-600/30 to-amber-500/20 border border-ruby-500/50 flex items-center justify-center text-ruby-400 shadow-sm">
-              <i data-lucide="file-code" class="w-5 h-5 text-amber-300"></i>
+        <!-- KHO THUẬT TOÁN & BỘ MÃ VIP ĐỘC QUYỀN (OB53/OB54) -->
+        <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3.5 border-ruby-500/40 shadow-lg">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-ruby-600/30 to-amber-500/20 border border-ruby-500/50 flex items-center justify-center text-ruby-400 shadow-sm">
+                <i data-lucide="cpu" class="w-5 h-5 text-amber-300"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <h3 class="text-xs font-black text-white">KHO THUẬT TOÁN &amp; MÃ VIP</h3>
+                  <span id="algo-active-count-badge" class="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">14/14 ĐÃ BẬT</span>
+                </div>
+                <p class="text-[10px] text-zinc-400 font-medium">HeadLock • SoftAim • Sensi X10 • Ultra OB53</p>
+              </div>
+            </div>
+            <button onclick="openAlgoModulesModal()" class="px-3 py-1.5 rounded-xl btn-ruby-primary text-white text-xs font-black flex items-center gap-1 cursor-pointer">
+              Bảng Module <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <!-- Algorithm Real-time Status Micro-Grid -->
+          <div class="grid grid-cols-4 gap-1.5 p-2 rounded-2xl bg-black/60 border border-white/5 text-center font-mono text-[9px]">
+            <div>
+              <span class="text-zinc-500 block">BÁM ĐẦU</span>
+              <span id="stat-algo-lock" class="text-emerald-400 font-bold block">0.58 Lerp</span>
             </div>
             <div>
-              <div class="flex items-center gap-1.5">
-                <h3 class="text-xs font-black text-white">NẠP FILE PATCH &amp; CODE VIP</h3>
-                <span id="patch-card-status" class="px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-zinc-800 text-zinc-400 border border-white/10">CHƯA NẠP</span>
-              </div>
-              <p class="text-[10px] text-zinc-400 font-medium" id="patch-card-desc">Nạp file .txt, .plist, .dat, .ips, Hex bytecode</p>
+              <span class="text-zinc-500 block">SENSI GAIN</span>
+              <span id="stat-algo-sens" class="text-amber-300 font-bold block">10.0x</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">ÊM TÂM</span>
+              <span id="stat-algo-soft" class="text-cyan-400 font-bold block">0.26 Anti</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">TRỄ MÀN</span>
+              <span id="stat-algo-latency" class="text-rose-400 font-bold block">0.08ms</span>
             </div>
           </div>
-          <button onclick="openModal('modal-patch-injector')" class="px-3 py-1.5 rounded-xl btn-ruby-primary text-white text-xs font-black flex items-center gap-1 cursor-pointer">
-            Nạp Patch <i data-lucide="upload" class="w-3.5 h-3.5"></i>
-          </button>
+
+          <!-- Quick Action Buttons -->
+          <div class="grid grid-cols-2 gap-2 pt-0.5">
+            <button onclick="applyAllAlgoModules()" class="py-2.5 px-2 rounded-xl bg-gradient-to-r from-ruby-600/30 to-rose-600/20 hover:from-ruby-600/40 hover:to-rose-600/30 border border-ruby-500/40 text-[10px] font-black text-white flex items-center justify-center gap-1.5 active:scale-98 transition-all cursor-pointer">
+              <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-300"></i> Kích Hoạt 14 Module
+            </button>
+            <button onclick="openModal('modal-100-codes')" class="py-2.5 px-2 rounded-xl bg-black/50 hover:bg-white/5 border border-white/10 text-[10px] font-bold text-zinc-300 hover:text-white flex items-center justify-center gap-1.5 active:scale-98 transition-all cursor-pointer">
+              <i data-lucide="database" class="w-3.5 h-3.5 text-emerald-400"></i> Kho 100 Mã Code
+            </button>
+          </div>
         </div>
 
         <!-- Game 1: Free Fire -->
@@ -993,27 +1038,29 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- 3. FLOATING BOTTOM NAVIGATION DOCK -->
+  <!-- 3. GROUNDED FULL-WIDTH BOTTOM NAVIGATION DOCK -->
   <!-- ========================================== -->
-  <nav id="bottom-nav" class="fixed bottom-3 left-4 right-4 z-40 max-w-sm mx-auto h-16 rounded-3xl liquid-dock px-4 flex items-center justify-around hidden">
-    <button onclick="switchTab('home')" id="nav-btn-home" class="nav-item flex flex-col items-center gap-1 transition-all text-ruby-neon scale-105 cursor-pointer">
-      <i data-lucide="home" class="w-5 h-5"></i>
-      <span class="text-[10px] font-bold">Trang Chủ</span>
-    </button>
-    <button onclick="switchTab('games')" id="nav-btn-games" class="nav-item flex flex-col items-center gap-1 transition-all text-zinc-500 hover:text-zinc-300 cursor-pointer">
-      <i data-lucide="gamepad-2" class="w-5 h-5"></i>
-      <span class="text-[10px] font-bold">Game VIP</span>
-    </button>
-    <button onclick="switchTab('profile')" id="nav-btn-profile" class="nav-item flex flex-col items-center gap-1 transition-all text-zinc-500 hover:text-zinc-300 cursor-pointer">
-      <i data-lucide="user" class="w-5 h-5"></i>
-      <span class="text-[10px] font-bold">Cá Nhân</span>
-    </button>
+  <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 z-40 w-full transition-all duration-300 hidden">
+    <div class="max-w-sm mx-auto px-4 h-16 flex items-center justify-around relative">
+      <button onclick="switchTab('home')" id="nav-btn-home" class="nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-ruby-400 bg-ruby-neon/15 border border-ruby-500/40 shadow-[0_0_15px_rgba(255,30,66,0.3)] cursor-pointer">
+        <i data-lucide="home" class="w-5 h-5"></i>
+        <span class="text-[10px] font-black tracking-wide">Trang Chủ</span>
+      </button>
+      <button onclick="switchTab('games')" id="nav-btn-games" class="nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer">
+        <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+        <span class="text-[10px] font-bold tracking-wide">Game VIP</span>
+      </button>
+      <button onclick="switchTab('profile')" id="nav-btn-profile" class="nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer">
+        <i data-lucide="user" class="w-5 h-5"></i>
+        <span class="text-[10px] font-bold tracking-wide">Cá Nhân</span>
+      </button>
+    </div>
   </nav>
 
   <!-- ========================================== -->
   <!-- 4. BOTTOM TOAST (BOTTOM-20: WON'T COVER NOTCH) -->
   <!-- ========================================== -->
-  <div id="bottom-toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-300 transform translate-y-4 opacity-0 max-w-[90vw] w-auto">
+  <div id="bottom-toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-300 transform translate-y-4 opacity-0 max-w-[90vw] w-auto">
     <div class="bg-black/95 text-white px-4 py-2.5 rounded-2xl border border-ruby-500/50 shadow-[0_10px_30px_rgba(255,30,66,0.4)] flex items-center gap-2 backdrop-blur-xl text-xs font-bold text-center">
       <i data-lucide="bell-ring" class="w-4 h-4 text-ruby-400 shrink-0"></i>
       <span id="toast-message">Thông báo</span>
@@ -1383,104 +1430,67 @@
     </div>
   </div>
 
-  <!-- MODAL: CUSTOM PATCH INJECTOR (NẠP FILE PATCH & CODE VIP) -->
-  <div id="modal-patch-injector" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-3.5 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
+  <!-- MODAL: KHO MODULE THUẬT TOÁN & BỘ MÃ VIP (OB53/OB54) -->
+  <div id="modal-algo-modules" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-3.5 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] flex flex-col no-scrollbar">
       <!-- Close X button -->
-      <button onclick="closeModal('modal-patch-injector')" class="absolute top-4 right-4 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-400 hover:text-white border border-white/10 transition-all active:scale-95 cursor-pointer z-20" title="Đóng">
+      <button onclick="closeModal('modal-algo-modules')" class="absolute top-4 right-4 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-400 hover:text-white border border-white/10 transition-all active:scale-95 cursor-pointer z-20" title="Đóng">
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
 
       <!-- Header -->
-      <div class="pr-8 space-y-0.5">
+      <div class="pr-8 space-y-0.5 shrink-0">
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded-xl bg-ruby-neon/20 border border-ruby-500/40 flex items-center justify-center text-ruby-400">
-            <i data-lucide="file-code" class="w-4 h-4 text-amber-300"></i>
+            <i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i>
           </div>
           <div>
-            <h3 class="text-sm font-black text-white">NẠP FILE PATCH &amp; CODE VIP</h3>
-            <p class="text-[10px] text-zinc-400 font-medium">Bộ nạp Bytecode, Plist, Hex Stream &amp; C++ Config</p>
+            <h3 class="text-sm font-black text-white">KHO MODULE THUẬT TOÁN &amp; MÃ VIP</h3>
+            <p class="text-[10px] text-zinc-400 font-medium">Tích hợp đầy đủ mã nguồn C++, C#, Plist &amp; Bytecode</p>
           </div>
         </div>
       </div>
 
-      <!-- Live Patch Status HUD -->
-      <div class="grid grid-cols-4 gap-1.5 p-2 rounded-2xl bg-black/60 border border-white/5 text-center font-mono text-[9px]">
+      <!-- Live Overall Status HUD -->
+      <div class="grid grid-cols-4 gap-1.5 p-2 rounded-2xl bg-black/60 border border-white/5 text-center font-mono text-[9px] shrink-0">
         <div>
-          <span class="text-zinc-500 block">ĐỊNH DẠNG</span>
-          <span id="patch-stat-format" class="text-rose-300 font-bold truncate block">MẶC ĐỊNH</span>
+          <span class="text-zinc-500 block">TRẠNG THÁI</span>
+          <span id="modal-algo-status" class="text-emerald-400 font-bold block">14/14 BẬT</span>
         </div>
         <div>
           <span class="text-zinc-500 block">SENSI GAIN</span>
-          <span id="patch-stat-sensi" class="text-amber-300 font-bold block">1.07x</span>
+          <span id="modal-algo-sensi" class="text-amber-300 font-bold block">10.0x</span>
         </div>
         <div>
-          <span class="text-zinc-500 block">LOCK GAIN</span>
-          <span id="patch-stat-lock" class="text-emerald-400 font-bold block">0.58</span>
+          <span class="text-zinc-500 block">BÁM TÂM</span>
+          <span id="modal-algo-lock" class="text-emerald-400 font-bold block">0.58</span>
         </div>
         <div>
-          <span class="text-zinc-500 block">ÊM TÂM</span>
-          <span id="patch-stat-soft" class="text-cyan-400 font-bold block">0.26</span>
+          <span class="text-zinc-500 block">ĐỘ TRỄ</span>
+          <span id="modal-algo-latency" class="text-rose-400 font-bold block">0.08ms</span>
         </div>
       </div>
 
-      <!-- Option 1: File Upload -->
-      <div class="space-y-1.5">
-        <label class="text-[11px] font-bold text-zinc-300 flex items-center justify-between">
-          <span class="flex items-center gap-1"><i data-lucide="upload-cloud" class="w-3.5 h-3.5 text-ruby-400 inline"></i> Tải Lên Tệp Patch</span>
-          <span class="text-[9px] text-zinc-500 font-normal">.txt, .plist, .dat, .ips, .json</span>
-        </label>
-        <input type="file" id="patch-file-uploader" accept=".txt,.plist,.dat,.ips,.json,.config" onchange="handlePatchFileSelection(event)" class="hidden">
-        <button onclick="document.getElementById('patch-file-uploader').click()" class="w-full py-2.5 px-3 rounded-xl bg-black/50 hover:bg-white/5 border border-dashed border-ruby-500/40 text-xs font-bold text-white flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-98">
-          <i data-lucide="folder-open" class="w-4 h-4 text-amber-300"></i>
-          <span id="patch-file-btn-text">Chọn File Patch (.txt, .plist, .dat...)</span>
+      <!-- Category Filter Tabs -->
+      <div class="flex gap-1.5 overflow-x-auto no-scrollbar py-0.5 shrink-0" id="algo-cat-pills">
+        <button onclick="filterAlgoModules('all')" id="algo-pill-all" class="px-3 py-1 rounded-xl text-[10px] font-bold bg-ruby-neon text-white border border-ruby-400 whitespace-nowrap cursor-pointer">Tất Cả (14)</button>
+        <button onclick="filterAlgoModules('aim')" id="algo-pill-aim" class="px-3 py-1 rounded-xl text-[10px] font-bold bg-black/60 text-zinc-400 hover:text-white border border-white/10 whitespace-nowrap cursor-pointer">Khóa Tâm &amp; Aim (6)</button>
+        <button onclick="filterAlgoModules('sensi')" id="algo-pill-sensi" class="px-3 py-1 rounded-xl text-[10px] font-bold bg-black/60 text-zinc-400 hover:text-white border border-white/10 whitespace-nowrap cursor-pointer">Cảm Ứng &amp; Sensi (4)</button>
+        <button onclick="filterAlgoModules('hardware')" id="algo-pill-hardware" class="px-3 py-1 rounded-xl text-[10px] font-bold bg-black/60 text-zinc-400 hover:text-white border border-white/10 whitespace-nowrap cursor-pointer">Phần Cứng &amp; Plist (4)</button>
+      </div>
+
+      <!-- Scrollable Modules List Container -->
+      <div class="flex-1 overflow-y-auto space-y-2 pr-1 no-scrollbar max-h-64" id="algo-modules-list">
+        <!-- Dynamically populated module cards -->
+      </div>
+
+      <!-- Bottom Action Buttons -->
+      <div class="pt-2 space-y-1.5 shrink-0">
+        <button onclick="applyAllAlgoModules()" id="btn-apply-all-algo" class="w-full py-2.5 rounded-xl btn-ruby-primary text-white text-xs font-black flex items-center justify-center gap-1.5 cursor-pointer shadow-lg active:scale-98">
+          <i data-lucide="zap" class="w-4 h-4"></i> ĐỒNG BỘ TOÀN BỘ 14 MODULE VÀO THIẾT BỊ
         </button>
-      </div>
-
-      <!-- Option 2: Paste Raw Hex/Text -->
-      <div class="space-y-1.5">
-        <div class="flex items-center justify-between">
-          <label class="text-[11px] font-bold text-zinc-300 flex items-center gap-1">
-            <i data-lucide="terminal" class="w-3.5 h-3.5 text-cyan-400"></i> Hoặc Dán Chuỗi Hex / XML / Config
-          </label>
-          <button onclick="pasteFromClipboardToPatch()" class="text-[10px] text-ruby-400 font-bold hover:underline cursor-pointer flex items-center gap-0.5">
-            <i data-lucide="clipboard-paste" class="w-3 h-3"></i> Dán nhanh
-          </button>
-        </div>
-        <textarea id="patch-raw-textarea" rows="3" placeholder="Dán chuỗi Hex (72 61 49...), Bitstream (00101111...), Base64, Plist XML hoặc C++ config..."
-                  class="w-full bg-[#05060a] border border-white/10 rounded-xl p-2.5 text-[10px] font-mono text-white placeholder-zinc-500 outline-none focus:border-ruby-500/60 no-scrollbar"></textarea>
-      </div>
-
-      <!-- Quick Presets -->
-      <div class="space-y-1">
-        <span class="text-[9px] font-bold text-zinc-400 block">NẠP NHANH BỘ PATCH CÓ SẴN (OB53):</span>
-        <div class="grid grid-cols-2 gap-1.5">
-          <button onclick="loadSamplePatch('ultra_ob53')" class="px-2 py-1.5 rounded-lg bg-black/40 border border-white/5 hover:border-ruby-500/40 text-[9px] font-bold text-zinc-300 hover:text-white text-left truncate cursor-pointer transition-all">
-            ⚡ ULTRA OB53 (Bitstream)
-          </button>
-          <button onclick="loadSamplePatch('dam_tam_ob53')" class="px-2 py-1.5 rounded-lg bg-black/40 border border-white/5 hover:border-ruby-500/40 text-[9px] font-bold text-zinc-300 hover:text-white text-left truncate cursor-pointer transition-all">
-            🎯 ĐẦM TÂM OB53 (Hex)
-          </button>
-          <button onclick="loadSamplePatch('aimlock_smooth')" class="px-2 py-1.5 rounded-lg bg-black/40 border border-white/5 hover:border-ruby-500/40 text-[9px] font-bold text-zinc-300 hover:text-white text-left truncate cursor-pointer transition-all">
-            🔒 ULTRA AIMLOCK (C++)
-          </button>
-          <button onclick="loadSamplePatch('tang_nhay_60')" class="px-2 py-1.5 rounded-lg bg-black/40 border border-white/5 hover:border-ruby-500/40 text-[9px] font-bold text-zinc-300 hover:text-white text-left truncate cursor-pointer transition-all">
-            🚀 TĂNG NHẠY 60% (Hex)
-          </button>
-        </div>
-      </div>
-
-      <!-- Terminal Output Box -->
-      <div id="patch-terminal-log" class="hidden p-2.5 rounded-xl bg-[#030408] border border-emerald-500/30 text-[9px] font-mono text-emerald-400 space-y-1 max-h-24 overflow-y-auto no-scrollbar">
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="pt-1 space-y-1.5">
-        <button onclick="executeCustomPatchInjection()" id="btn-apply-patch" class="w-full py-2.5 rounded-xl btn-ruby-primary text-white text-xs font-black flex items-center justify-center gap-1.5 cursor-pointer shadow-lg active:scale-98">
-          <i data-lucide="zap" class="w-4 h-4"></i> ÁP DỤNG &amp; NẠP VÀO ENGINE
-        </button>
-        <button onclick="resetCustomPatchToDefault()" class="w-full py-2 rounded-xl bg-black/50 border border-white/10 hover:border-rose-500/30 text-[10px] font-bold text-zinc-400 hover:text-rose-300 flex items-center justify-center gap-1 cursor-pointer transition-all">
-          <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Xóa Patch &amp; Đặt Lại Mặc Định
+        <button onclick="resetAlgoModulesToDefault()" class="w-full py-2 rounded-xl bg-black/50 border border-white/10 hover:border-rose-500/30 text-[10px] font-bold text-zinc-400 hover:text-rose-300 flex items-center justify-center gap-1 cursor-pointer transition-all">
+          <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Đặt Lại Trạng Thái Mặc Định
         </button>
       </div>
     </div>
@@ -1696,344 +1706,380 @@
       anti_delay: { gameLoopPriority: 1, frameProcessingBoost: 4, inputLatencyReduce: true },
       giam_lac_dan: { bulletDispersionFix: true, randomSpreadControl: 4, sprayPatternTweak: true }
     };
-
-
     // =========================================================================
-    // 0.25. CUSTOM PATCH INJECTOR & DYNAMIC PARSER ENGINE
+    // 0.25. KHO MODULE THUẬT TOÁN ĐỘC QUYỀN & ENGINE ĐỒNG BỘ PHẦN CỨNG (OB53/OB54)
     // =========================================================================
-    let ACTIVE_CUSTOM_PATCH = null;
-
-    function parseCustomPatch(rawContent) {
-      if (!rawContent || typeof rawContent !== "string") {
-        return null;
+    const VIP_ALGORITHM_MODULES = [
+      {
+        id: "headlock",
+        name: "HeadLock (Bám Đầu C++)",
+        file: "BÁM ĐẦU.txt",
+        cat: "aim",
+        desc: "Thuật toán Lerp Target Snap khóa chặt tâm vùng đầu mục tiêu",
+        stats: "Lerp: 0.58f | Snap: 65px",
+        lockGain: 0.58,
+        trackGain: 0.88,
+        softness: 0.22,
+        sensMultiplier: 1.15
+      },
+      {
+        id: "softaim",
+        name: "SoftAim (Êm Tâm Súng)",
+        file: "Êm Tâm Súng.txt",
+        cat: "aim",
+        desc: "Bộ giảm chấn triệt tiêu rung giật đạn khi xả sấy liên thanh",
+        stats: "Softness: 0.26f | AntiShake: 0.95",
+        lockGain: 0.45,
+        trackGain: 0.75,
+        softness: 0.26,
+        sensMultiplier: 1.08
+      },
+      {
+        id: "lightaim",
+        name: "LightAim (Nhẹ Tâm C#)",
+        file: "NHẸ TÂM.txt",
+        cat: "aim",
+        desc: "Hỗ trợ vuốt tâm nhẹ lướt gió, gia tốc nhạy vi điểm 5f",
+        stats: "Radius: 5f | Strength: 0.3f",
+        lockGain: 0.52,
+        trackGain: 0.82,
+        softness: 0.24,
+        sensMultiplier: 1.18
+      },
+      {
+        id: "sensix10",
+        name: "EffectAmplifier (Sensi X10)",
+        file: "Tối Ưu Sensi.txt",
+        cat: "sensi",
+        desc: "Khuếch đại độ nhạy cảm ứng ProMotion tần số quét cao",
+        stats: "Gain: 10.0x | Clamp: 0.05-5.0",
+        lockGain: 0.60,
+        trackGain: 0.90,
+        softness: 0.20,
+        sensMultiplier: 1.35
+      },
+      {
+        id: "aimsmooth",
+        name: "AimLock Smooth & FrameSync",
+        file: "AIMLOCK SMOOTH.txt",
+        cat: "aim",
+        desc: "Đồng bộ khung hình 120Hz/240Hz, giảm độ trễ ngắm bắn xuống 0.15ms",
+        stats: "Latency: 0.15ms | FPS: 120-240Hz",
+        lockGain: 0.55,
+        trackGain: 0.85,
+        softness: 0.25,
+        sensMultiplier: 1.12
+      },
+      {
+        id: "fixdelay",
+        name: "Fix Delay Màn & Cảm Ứng",
+        file: "FIX DELAY MÀN - CẢM ỨNG.txt",
+        cat: "sensi",
+        desc: "Bytecode stream triệt tiêu độ trễ vuốt chạm phản xạ tức thì",
+        stats: "Zero Lag | Buffer: 0.08ms",
+        lockGain: 0.50,
+        trackGain: 0.80,
+        softness: 0.28,
+        sensMultiplier: 1.20
+      },
+      {
+        id: "ultra_ob53",
+        name: "Ultra Damper (OB53/OB54)",
+        file: "ULTRA OB53.txt",
+        cat: "aim",
+        desc: "Bitstream ổn định đường đạn chống lệch tâm trên phiên bản OB mới",
+        stats: "Steady Aim | Bitstream 36KB",
+        lockGain: 0.58,
+        trackGain: 0.86,
+        softness: 0.23,
+        sensMultiplier: 1.14
+      },
+      {
+        id: "damtam_ob53",
+        name: "Đầm Tâm OB53 Bytecode",
+        file: "ĐẦM TÂM OB53.txt",
+        cat: "aim",
+        desc: "Khóa điểm trọng tâm ngực - đầu, triệt tiêu độ văng nòng súng",
+        stats: "Lock Point: Head/Chest | Hex 307KB",
+        lockGain: 0.62,
+        trackGain: 0.88,
+        softness: 0.21,
+        sensMultiplier: 1.10
+      },
+      {
+        id: "tangnhay60",
+        name: "Tăng Nhạy Vuốt Màn 60%",
+        file: "TĂNG NHẠY 60%.txt",
+        cat: "sensi",
+        desc: "Gia tốc đường vuốt hỗ trợ xoay 180 độ và ke tâm cực nhanh",
+        stats: "Boost: +60% | Speed: 1.6x",
+        lockGain: 0.54,
+        trackGain: 0.84,
+        softness: 0.25,
+        sensMultiplier: 1.25
+      },
+      {
+        id: "cpu_gpu_asm",
+        name: "Tối Ưu CPU & GPU ASM",
+        file: "TỐI ƯU CPU.txt",
+        cat: "hardware",
+        desc: "Phân bổ nhân P-Core và xung nhịp GPU xử lý khung hình tối đa",
+        stats: "GPU.asm | Core Affinity",
+        lockGain: 0.48,
+        trackGain: 0.78,
+        softness: 0.30,
+        sensMultiplier: 1.05
+      },
+      {
+        id: "feature_activator",
+        name: "CoreFX FeatureActivator",
+        file: "KÍCH HOẠT CHỨC NĂNG.txt",
+        cat: "hardware",
+        desc: "Trình điều khiển kích hoạt hạt nhân hệ thống Thanox iOS",
+        stats: "Active State: Enabled",
+        lockGain: 0.50,
+        trackGain: 0.80,
+        softness: 0.25,
+        sensMultiplier: 1.05
+      },
+      {
+        id: "plist_aim_assist",
+        name: "Aim Assist Plist Engine",
+        file: "aim_assist_new_config.plist",
+        cat: "aim",
+        desc: "Cấu hình gốc Apple iOS: AimTrackingStability 4, SnapRadius 65",
+        stats: "Stability: 4 | Snap: 65px",
+        lockGain: 0.56,
+        trackGain: 0.86,
+        softness: 0.24,
+        sensMultiplier: 1.12
+      },
+      {
+        id: "plist_anti_delay",
+        name: "Anti-Delay Loop Plist",
+        file: "anti_delay_config.plist",
+        cat: "hardware",
+        desc: "GameLoopPriority 1, InputLatencyReduce kích hoạt độ trễ thấp",
+        stats: "Priority: 1 | Polling: 240Hz",
+        lockGain: 0.49,
+        trackGain: 0.79,
+        softness: 0.27,
+        sensMultiplier: 1.15
+      },
+      {
+        id: "plist_touch_recoil",
+        name: "Touch Response & Giảm Lạc Đạn",
+        file: "touch_sensitivity_config.plist",
+        cat: "sensi",
+        desc: "Khuếch đại cảm ứng TouchResponseBoost và kiểm soát đạn lạc Spread = 0",
+        stats: "Spread: 0 | Prediction: 3",
+        lockGain: 0.53,
+        trackGain: 0.83,
+        softness: 0.26,
+        sensMultiplier: 1.20
       }
-      const trimmed = rawContent.trim();
-      if (trimmed.length < 5) return null;
+    ];
 
-      let format = "C++ THUẬT TOÁN";
-      let trackGain = 0.42;
-      let lockGain = 0.58;
-      let deadZone = 0.012;
-      let snapCap = 0.45;
-      let softness = 0.26;
-      let sensMultiplier = 1.08;
-      let extractedDesc = "Đã nhận diện thuật toán tối ưu";
+    let ALGO_MODULE_STATES = {};
+    let CURRENT_ALGO_FILTER = "all";
 
-      // 1. Detect XML Plist
-      if (trimmed.includes("<plist") || trimmed.includes("<!DOCTYPE plist") || trimmed.includes("<dict>")) {
-        format = "APPLE PLIST XML";
-        extractedDesc = "Hồ sơ cấu hình XML Plist";
-        const sensMatch = trimmed.match(/<key>TouchSensitivity<\/key>\s*<real>([0-9.]+)<\/real>/i);
-        if (sensMatch) sensMultiplier = parseFloat(sensMatch[1]);
-        const aimMatch = trimmed.match(/<key>AimTrackingStability<\/key>\s*<integer>([0-9]+)<\/integer>/i);
-        if (aimMatch) lockGain = Math.min(0.85, 0.5 + parseInt(aimMatch[1]) * 0.04);
-        const deadMatch = trimmed.match(/<key>deadZone<\/key>\s*<real>([0-9.]+)<\/real>/i);
-        if (deadMatch) deadZone = parseFloat(deadMatch[1]);
-        const softMatch = trimmed.match(/<key>softness<\/key>\s*<real>([0-9.]+)<\/real>/i);
-        if (softMatch) softness = parseFloat(softMatch[1]);
-      }
-      // 2. Detect Binary Bitstream (00101111 00101111...)
-      else if (/^[01\s]{20,}$/.test(trimmed.substring(0, 200))) {
-        format = "BITSTREAM DAMPER (OB53)";
-        extractedDesc = "Damping Spring Reticle OB53";
+    function getSavedAlgoStates() {
+      const saved = localStorage.getItem("thanox_algo_modules_states");
+      if (saved) {
         try {
-          const bitTokens = trimmed.split(/\s+/).slice(0, 300);
-          let decodedChars = "";
-          for (let b of bitTokens) {
-            if (b.length === 8) decodedChars += String.fromCharCode(parseInt(b, 2));
-          }
-          if (decodedChars.includes("stiffness") || decodedChars.includes("damper")) {
-            extractedDesc = "Hệ thống giảm xóc tâm Spring-Damper OB53";
-          }
-        } catch (e) {}
-        sensMultiplier = 1.15;
-        lockGain = 0.65;
-        trackGain = 0.46;
-        softness = 0.30;
-        deadZone = 0.008;
-      }
-      // 3. Detect Hex Stream (65 72 76 6E 20... or 72 61 49...)
-      else if (/^([0-9a-fA-F]{2}[\s\n\r]+){5,}/.test(trimmed.substring(0, 100)) || (/^[0-9a-fA-F\s]+$/.test(trimmed.substring(0, 200)) && trimmed.substring(0, 50).includes(" "))) {
-        format = "HEX BYTECODE STREAM";
-        extractedDesc = "Mã nhị phân Hex can thiệp nhân đồ họa & tâm";
-        sensMultiplier = 1.14;
-        lockGain = 0.66;
-        trackGain = 0.48;
-        softness = 0.20;
-        deadZone = 0.010;
-        const byteCount = Math.floor(trimmed.length / 3);
-        if (byteCount > 1000) {
-          extractedDesc += ` (${byteCount.toLocaleString()} bytes)`;
-        }
-      }
-      // 4. Detect Base64
-      else if (/^[A-Za-z0-9+/=\s]{40,}$/.test(trimmed.substring(0, 200)) && !trimmed.includes(" ") && !trimmed.includes("<") && !trimmed.includes("{")) {
-        format = "BASE64 BYTECODE";
-        extractedDesc = "Mã Base64 đóng gói C++ CoreFX";
-        try {
-          const decoded = atob(trimmed.replace(/\s+/g, ''));
-          if (decoded.includes("trackGain") || decoded.includes("HeadLock")) {
-            format = "BASE64 C++ KHOÁ TÂM";
-            extractedDesc = "Thuật toán khóa tâm từ trường HeadLock";
-          }
-          const tMatch = decoded.match(/trackGain\s*[:=,]\s*([0-9.]+)/);
-          if (tMatch) trackGain = parseFloat(tMatch[1]);
-          const lMatch = decoded.match(/lockGain\s*[:=,]\s*([0-9.]+)/);
-          if (lMatch) lockGain = parseFloat(lMatch[1]);
-          const dMatch = decoded.match(/deadZone\s*[:=,]\s*([0-9.]+)/);
-          if (dMatch) deadZone = parseFloat(dMatch[1]);
-          const sMatch = decoded.match(/snapCap\s*[:=,]\s*([0-9.]+)/);
-          if (sMatch) snapCap = parseFloat(sMatch[1]);
+          return JSON.parse(saved);
         } catch(e) {}
-        sensMultiplier = 1.12;
       }
-      // 5. C++ / C# Config
-      else {
-        format = "C++ CONFIG THUẬT TOÁN";
-        extractedDesc = "Cấu hình thuật toán khóa tâm & ổn định";
-        const aimSmoothMatch = trimmed.match(/(?:aimSmooth|smooth|softness)\s*[:=]\s*([0-9.]+)/i);
-        if (aimSmoothMatch) softness = parseFloat(aimSmoothMatch[1]);
-        const trackMatch = trimmed.match(/trackGain\s*[:=]\s*([0-9.]+)/i);
-        if (trackMatch) trackGain = parseFloat(trackMatch[1]);
-        const lockMatch = trimmed.match(/(?:lockGain|aimlock|lock)\s*[:=]\s*([0-9.]+)/i);
-        if (lockMatch) lockGain = parseFloat(lockMatch[1]);
-        const deadMatch = trimmed.match(/deadZone\s*[:=]\s*([0-9.]+)/i);
-        if (deadMatch) deadZone = parseFloat(deadMatch[1]);
-        const sensMatch = trimmed.match(/(?:sensitivity|sensi|gain)\s*[:=]\s*([0-9.]+)/i);
-        if (sensMatch) sensMultiplier = parseFloat(sensMatch[1]);
-      }
-
-      trackGain = Math.max(0.1, Math.min(0.95, trackGain));
-      lockGain = Math.max(0.2, Math.min(0.98, lockGain));
-      softness = Math.max(0.05, Math.min(0.8, softness));
-      deadZone = Math.max(0.0, Math.min(0.05, deadZone));
-      sensMultiplier = Math.max(0.5, Math.min(2.0, sensMultiplier));
-
-      return {
-        format: format,
-        desc: extractedDesc,
-        trackGain: trackGain,
-        lockGain: lockGain,
-        softness: softness,
-        deadZone: deadZone,
-        snapCap: snapCap,
-        sensMultiplier: sensMultiplier,
-        rawLength: trimmed.length,
-        timestamp: new Date().toISOString()
-      };
+      const initial = {};
+      VIP_ALGORITHM_MODULES.forEach(m => { initial[m.id] = true; });
+      return initial;
     }
 
-    function syncPatchToEngines(patch) {
-      if (!patch) return;
-      ACTIVE_CUSTOM_PATCH = patch;
-
-      HeadLockEngine.trackGain = patch.trackGain;
-      HeadLockEngine.lockGain = patch.lockGain;
-      HeadLockEngine.deadZone = patch.deadZone;
-      HeadLockEngine.snapCap = patch.snapCap;
-      SoftAimEngine.softness = patch.softness;
-
-      const baseSens = (DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] && DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL].TouchSensitivity) || 1.07;
-      ACTIVE_DEVICE_PROFILE.TouchSensitivity = Number((baseSens * patch.sensMultiplier).toFixed(2));
-
-      const fEl = document.getElementById("patch-stat-format");
-      if (fEl) fEl.innerText = patch.format;
-      const sEl = document.getElementById("patch-stat-sensi");
-      if (sEl) sEl.innerText = `${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x`;
-      const lEl = document.getElementById("patch-stat-lock");
-      if (lEl) lEl.innerText = patch.lockGain.toFixed(2);
-      const sfEl = document.getElementById("patch-stat-soft");
-      if (sfEl) sfEl.innerText = patch.softness.toFixed(2);
-
-      const cardStatus = document.getElementById("patch-card-status");
-      if (cardStatus) {
-        cardStatus.innerText = "ACTIVE ✓";
-        cardStatus.className = "px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
-      }
-      const cardDesc = document.getElementById("patch-card-desc");
-      if (cardDesc) cardDesc.innerText = `${patch.format} • ${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x Sensi`;
-
-      const arenaSens = document.getElementById("arena-stat-sens");
-      if (arenaSens) arenaSens.innerText = `${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x`;
-      const headerDev = document.getElementById("header-device-text");
-      if (headerDev) {
-        headerDev.innerHTML = `${USER_DEVICE_MODEL} • ${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-ruby-400 inline"></i>`;
-      }
+    function saveAlgoStates(states) {
+      ALGO_MODULE_STATES = states;
+      localStorage.setItem("thanox_algo_modules_states", JSON.stringify(states));
     }
 
-    function executeCustomPatchInjection() {
-      const textarea = document.getElementById("patch-raw-textarea");
-      const content = textarea ? textarea.value : "";
-      if (!content || content.trim().length < 5) {
-        showBottomToast("⚠️ Vui lòng chọn file hoặc dán nội dung patch/bytecode!");
-        return;
+    function renderAlgoModulesList(filter = "all") {
+      CURRENT_ALGO_FILTER = filter;
+      const container = document.getElementById("algo-modules-list");
+      if (!container) return;
+
+      if (!ALGO_MODULE_STATES || Object.keys(ALGO_MODULE_STATES).length === 0) {
+        ALGO_MODULE_STATES = getSavedAlgoStates();
       }
 
-      const patch = parseCustomPatch(content);
-      if (!patch) {
-        showBottomToast("❌ Không nhận diện được định dạng patch!");
-        return;
-      }
+      const filtered = VIP_ALGORITHM_MODULES.filter(m => {
+        if (filter === "all") return true;
+        return m.cat === filter;
+      });
 
-      const logBox = document.getElementById("patch-terminal-log");
-      const btn = document.getElementById("btn-apply-patch");
-      if (btn) btn.disabled = true;
+      let html = "";
+      filtered.forEach(m => {
+        const isActive = ALGO_MODULE_STATES[m.id] !== false;
+        const iconName = m.cat === "aim" ? "crosshair" : (m.cat === "sensi" ? "zap" : "cpu");
+        const iconColor = m.cat === "aim" ? "text-emerald-400" : (m.cat === "sensi" ? "text-amber-400" : "text-cyan-400");
+        const catBadge = m.cat === "aim" ? "Khóa Tâm" : (m.cat === "sensi" ? "Cảm Ứng" : "Hệ Thống");
 
-      if (logBox) {
-        logBox.classList.remove("hidden");
-        logBox.innerHTML = `
-          <div>[KERNEL] Bắt đầu giải mã: ${patch.format}...</div>
-          <div>[STREAM] Đọc ${patch.rawLength.toLocaleString()} ký tự bytecode...</div>
-          <div>[PARAMS] trackGain=${patch.trackGain} | lockGain=${patch.lockGain} | softness=${patch.softness}</div>
-          <div>[SENSI] Hệ số gia tốc: ${patch.sensMultiplier}x -> Tổng: ${(ACTIVE_DEVICE_PROFILE.TouchSensitivity * patch.sensMultiplier).toFixed(2)}x</div>
+        html += `
+          <div class="p-3 rounded-2xl bg-black/60 border ${isActive ? 'border-ruby-500/40 bg-ruby-950/15' : 'border-white/5'} transition-all flex items-center justify-between gap-2.5">
+            <div class="flex items-center gap-2.5 flex-1 min-w-0">
+              <div class="w-8 h-8 rounded-xl ${isActive ? 'bg-ruby-neon/20 text-ruby-400' : 'bg-white/5 text-zinc-500'} border border-white/10 flex items-center justify-center shrink-0">
+                <i data-lucide="${iconName}" class="w-4 h-4 ${isActive ? iconColor : 'text-zinc-500'}"></i>
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="text-xs font-black text-white truncate">${m.name}</span>
+                  <span class="px-1.5 py-0.2 rounded text-[8px] font-bold ${isActive ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-zinc-800 text-zinc-500'}">${catBadge}</span>
+                </div>
+                <p class="text-[9px] text-zinc-400 truncate">${m.desc}</p>
+                <div class="flex items-center gap-2 text-[8px] font-mono text-zinc-500 mt-0.5">
+                  <span class="text-rose-300 font-bold">${m.file}</span>
+                  <span>•</span>
+                  <span>${m.stats}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Switch -->
+            <button onclick="toggleAlgoModule('${m.id}')" class="w-11 h-6 rounded-full p-0.5 transition-colors cursor-pointer shrink-0 ${isActive ? 'bg-ruby-neon' : 'bg-zinc-800'}" title="${isActive ? 'Bật' : 'Tắt'}">
+              <div class="w-5 h-5 rounded-full bg-white shadow-md transform transition-transform ${isActive ? 'translate-x-5' : 'translate-x-0'}"></div>
+            </button>
+          </div>
         `;
-      }
+      });
 
-      setTimeout(() => {
-        syncPatchToEngines(patch);
-        localStorage.setItem("thanox_custom_patch", JSON.stringify(patch));
-
-        if (logBox) {
-          const okEl = document.createElement("div");
-          okEl.className = "text-emerald-300 font-bold mt-1";
-          okEl.innerText = `✓ NẠP THÀNH CÔNG VÀO BỘ NHỚ RAM CỦA ${USER_DEVICE_MODEL}!`;
-          logBox.appendChild(okEl);
-          logBox.scrollTop = logBox.scrollHeight;
-        }
-
-        if (btn) {
-          btn.disabled = false;
-          btn.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i> ĐÃ NẠP THÀNH CÔNG`;
-          setTimeout(() => {
-            if (btn) btn.innerHTML = `<i data-lucide="zap" class="w-4 h-4"></i> ÁP DỤNG &amp; NẠP VÀO ENGINE`;
-            if (window.lucide) lucide.createIcons();
-          }, 2000);
-        }
-
-        showBottomToast(`⚡ Đã nạp thành công: ${patch.format}!`);
-        if (window.lucide) lucide.createIcons();
-      }, 400);
-    }
-
-    function handlePatchFileSelection(event) {
-      const file = event.target.files && event.target.files[0];
-      if (!file) return;
-
-      const btnText = document.getElementById("patch-file-btn-text");
-      if (btnText) btnText.innerText = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const text = e.target.result;
-        const textarea = document.getElementById("patch-raw-textarea");
-        if (textarea) textarea.value = text;
-        executeCustomPatchInjection();
-      };
-      reader.readAsText(file);
-    }
-
-    function pasteFromClipboardToPatch() {
-      if (navigator.clipboard && navigator.clipboard.readText) {
-        navigator.clipboard.readText().then(text => {
-          const clean = (text || "").trim();
-          if (clean) {
-            const ta = document.getElementById("patch-raw-textarea");
-            if (ta) ta.value = clean;
-            showBottomToast("📋 Đã dán nội dung patch từ clipboard");
-          }
-        }).catch(() => {
-          showBottomToast("Vui lòng giữ vào ô và chọn Dán (Paste)");
-        });
-      } else {
-        showBottomToast("Vui lòng giữ vào ô và chọn Dán (Paste)");
-      }
-    }
-
-    function loadSamplePatch(presetKey) {
-      const presets = {
-        ultra_ob53: {
-          code: "00101111 00101111 00100000 01110011 01110100 01100101 01100001 01100100 01111001 01011111 01100001 01101001 01101101 01011111 01100100 01100001 01101101 01110000 01100101 01110010 00101110 01101011 01110011 // stiffness=40 dampingRatio=1.1 mass=1 deadzone=0.008 inputSmoothing=0.25",
-          note: "ULTRA OB53 Spring-Damper"
-        },
-        dam_tam_ob53: {
-          code: "65 72 76 6E 20 69 44 6F 73 50 20 28 6F 22 72 72 6C 3E 74 49 3C 50 73 6F 3A 66 20 69 64 20 69 65 65 43 72 46 73 3A 0A 65 6D 20 6F 65 76 73 22 20 43 3D 74 20 63 66 6E // Recoil Fix 0.95, LockGain 0.65",
-          note: "ĐẦM TÂM OB53 Recoil Reducer"
-        },
-        aimlock_smooth: {
-          code: "float aimSmooth = 0.22f;\nfloat shakefix = 0.95f;\nint fpslevel = 120;\nfloat trackGain = 0.48f;\nfloat lockGain = 0.70f;\nfloat deadZone = 0.005f;\nbool ENABLE_QUICKSWIPE = true;\nbool ENABLE_AIMLOCK = true;",
-          note: "ULTRA AIMLOCK C++ Config"
-        },
-        tang_nhay_60: {
-          code: "72 61 49 20 65 78 74 65 6E 73 69 6F 6E 20 73 65 6E 73 69 74 69 76 69 74 79 5F 62 6F 6F 73 74 3D 31 2E 32 35 // Sensi Gain +60%, Fast Touch 240Hz",
-          note: "TĂNG NHẠY 60% Touch Acceleration"
-        }
-      };
-
-      const sel = presets[presetKey];
-      if (!sel) return;
-
-      const ta = document.getElementById("patch-raw-textarea");
-      if (ta) ta.value = sel.code;
-      const btnText = document.getElementById("patch-file-btn-text");
-      if (btnText) btnText.innerText = sel.note;
-
-      executeCustomPatchInjection();
-    }
-
-    function resetCustomPatchToDefault() {
-      localStorage.removeItem("thanox_custom_patch");
-      ACTIVE_CUSTOM_PATCH = null;
-
-      HeadLockEngine.trackGain = 0.42;
-      HeadLockEngine.lockGain = 0.58;
-      HeadLockEngine.deadZone = 0.012;
-      HeadLockEngine.snapCap = 0.45;
-      SoftAimEngine.softness = 0.26;
-
-      const baseSens = (DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] && DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL].TouchSensitivity) || 1.07;
-      ACTIVE_DEVICE_PROFILE.TouchSensitivity = baseSens;
-
-      const fEl = document.getElementById("patch-stat-format");
-      if (fEl) fEl.innerText = "MẶC ĐỊNH";
-      const sEl = document.getElementById("patch-stat-sensi");
-      if (sEl) sEl.innerText = `${baseSens.toFixed(2)}x`;
-      const lEl = document.getElementById("patch-stat-lock");
-      if (lEl) lEl.innerText = "0.58";
-      const sfEl = document.getElementById("patch-stat-soft");
-      if (sfEl) sfEl.innerText = "0.26";
-
-      const cardStatus = document.getElementById("patch-card-status");
-      if (cardStatus) {
-        cardStatus.innerText = "CHƯA NẠP";
-        cardStatus.className = "px-1.5 py-0.2 rounded text-[8px] font-mono font-bold bg-zinc-800 text-zinc-400 border border-white/10";
-      }
-      const cardDesc = document.getElementById("patch-card-desc");
-      if (cardDesc) cardDesc.innerText = "Nạp file .txt, .plist, .dat, .ips, Hex bytecode";
-
-      const arenaSens = document.getElementById("arena-stat-sens");
-      if (arenaSens) arenaSens.innerText = `${baseSens.toFixed(2)}x`;
-      const headerDev = document.getElementById("header-device-text");
-      if (headerDev) {
-        headerDev.innerHTML = `${USER_DEVICE_MODEL} • ${baseSens.toFixed(2)}x <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-ruby-400 inline"></i>`;
-      }
-
-      const ta = document.getElementById("patch-raw-textarea");
-      if (ta) ta.value = "";
-      const logBox = document.getElementById("patch-terminal-log");
-      if (logBox) logBox.classList.add("hidden");
-
-      showBottomToast("🔄 Đã đặt lại cấu hình patch về mặc định thiết bị");
+      container.innerHTML = html;
       if (window.lucide) lucide.createIcons();
     }
 
-    function syncSavedCustomPatch() {
-      const saved = localStorage.getItem("thanox_custom_patch");
-      if (saved) {
-        try {
-          const patch = JSON.parse(saved);
-          syncPatchToEngines(patch);
-        } catch(e) {}
+    function toggleAlgoModule(moduleId) {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(12); } catch(e) {}
       }
+      if (!ALGO_MODULE_STATES || Object.keys(ALGO_MODULE_STATES).length === 0) {
+        ALGO_MODULE_STATES = getSavedAlgoStates();
+      }
+      ALGO_MODULE_STATES[moduleId] = !ALGO_MODULE_STATES[moduleId];
+      saveAlgoStates(ALGO_MODULE_STATES);
+      syncAlgoModulesToEngine();
+      renderAlgoModulesList(CURRENT_ALGO_FILTER);
+    }
+
+    function filterAlgoModules(category) {
+      CURRENT_ALGO_FILTER = category;
+      const pills = ["all", "aim", "sensi", "hardware"];
+      pills.forEach(p => {
+        const btn = document.getElementById("algo-pill-" + p);
+        if (btn) {
+          if (p === category) {
+            btn.className = "px-3 py-1 rounded-xl text-[10px] font-bold bg-ruby-neon text-white border border-ruby-400 whitespace-nowrap cursor-pointer";
+          } else {
+            btn.className = "px-3 py-1 rounded-xl text-[10px] font-bold bg-black/60 text-zinc-400 hover:text-white border border-white/10 whitespace-nowrap cursor-pointer";
+          }
+        }
+      });
+      renderAlgoModulesList(category);
+    }
+
+    function openAlgoModulesModal() {
+      openModal('modal-algo-modules');
+      ALGO_MODULE_STATES = getSavedAlgoStates();
+      filterAlgoModules('all');
+      syncAlgoModulesToEngine();
+    }
+
+    function applyAllAlgoModules() {
+      if (navigator.vibrate) {
+        try { navigator.vibrate([15, 30, 15]); } catch(e) {}
+      }
+      const states = {};
+      VIP_ALGORITHM_MODULES.forEach(m => { states[m.id] = true; });
+      saveAlgoStates(states);
+      syncAlgoModulesToEngine();
+      renderAlgoModulesList(CURRENT_ALGO_FILTER);
+      showBottomToast(`⚡ Đã kích hoạt toàn bộ 14/14 Module Thuật Toán vào ${USER_DEVICE_MODEL}!`);
+    }
+
+    function resetAlgoModulesToDefault() {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(15); } catch(e) {}
+      }
+      const states = {};
+      VIP_ALGORITHM_MODULES.forEach((m, idx) => {
+        states[m.id] = (idx < 10);
+      });
+      saveAlgoStates(states);
+      syncAlgoModulesToEngine();
+      renderAlgoModulesList(CURRENT_ALGO_FILTER);
+      showBottomToast("🔄 Đã đặt lại cấu hình 14 Module về mặc định!");
+    }
+
+    function syncAlgoModulesToEngine() {
+      if (!ALGO_MODULE_STATES || Object.keys(ALGO_MODULE_STATES).length === 0) {
+        ALGO_MODULE_STATES = getSavedAlgoStates();
+      }
+
+      let activeCount = 0;
+      let totalLockGain = 0;
+      let totalSoftness = 0;
+      let totalSensMult = 1.0;
+      let aimCount = 0;
+      let softCount = 0;
+
+      VIP_ALGORITHM_MODULES.forEach(m => {
+        if (ALGO_MODULE_STATES[m.id] !== false) {
+          activeCount++;
+          totalLockGain += m.lockGain;
+          aimCount++;
+          totalSoftness += m.softness;
+          softCount++;
+          totalSensMult *= (1 + (m.sensMultiplier - 1) * 0.45);
+        }
+      });
+
+      const avgLock = aimCount > 0 ? (totalLockGain / aimCount) : 0.58;
+      const avgSoft = softCount > 0 ? (totalSoftness / softCount) : 0.26;
+      const clampedSensMult = Math.min(1.85, Math.max(1.0, totalSensMult));
+
+      // 1. Sync directly to HeadLock and SoftAim engines
+      HeadLockEngine.lockGain = Number(avgLock.toFixed(2));
+      HeadLockEngine.trackGain = 0.88;
+      SoftAimEngine.softness = Number(avgSoft.toFixed(2));
+
+      // 2. Sync to active hardware profile sensitivity
+      const baseSens = ACTIVE_DEVICE_PROFILE.BaseTouchSensitivity || 1.07;
+      ACTIVE_DEVICE_PROFILE.TouchSensitivity = Number((baseSens * clampedSensMult).toFixed(2));
+
+      // 3. Update Tab Games status HUD
+      const countBadge = document.getElementById("algo-active-count-badge");
+      if (countBadge) countBadge.innerText = `${activeCount}/14 ĐÃ BẬT`;
+      const statLock = document.getElementById("stat-algo-lock");
+      if (statLock) statLock.innerText = `${avgLock.toFixed(2)} Lerp`;
+      const statSens = document.getElementById("stat-algo-sens");
+      if (statSens) statSens.innerText = `${clampedSensMult.toFixed(2)}x Gain`;
+      const statSoft = document.getElementById("stat-algo-soft");
+      if (statSoft) statSoft.innerText = `${avgSoft.toFixed(2)} Anti`;
+      const statLatency = document.getElementById("stat-algo-latency");
+      if (statLatency) statLatency.innerText = activeCount > 10 ? "0.08ms" : "0.15ms";
+
+      // 4. Update Modal status HUD
+      const modalStatus = document.getElementById("modal-algo-status");
+      if (modalStatus) modalStatus.innerText = `${activeCount}/14 BẬT`;
+      const modalSensi = document.getElementById("modal-algo-sensi");
+      if (modalSensi) modalSensi.innerText = `${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x`;
+      const modalLock = document.getElementById("modal-algo-lock");
+      if (modalLock) modalLock.innerText = avgLock.toFixed(2);
+      const modalLatency = document.getElementById("modal-algo-latency");
+      if (modalLatency) modalLatency.innerText = activeCount > 10 ? "0.08ms" : "0.15ms";
+
+      // 5. Update Arena HUD stats
+      const arenaSens = document.getElementById("arena-stat-sens");
+      if (arenaSens) arenaSens.innerText = `${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x`;
+      const arenaLatency = document.getElementById("arena-stat-latency");
+      if (arenaLatency) arenaLatency.innerText = activeCount > 10 ? "0.8 ms" : "1.2 ms";
+
+      if (window.lucide) lucide.createIcons();
     }
 
     function verifyAndActivateCertificate() {
@@ -2374,27 +2420,17 @@
         <integer>4</integer>
         <key>BulletDispersionFix</key>
         <true/>
-        <!-- DYNAMIC CUSTOM PATCH PAYLOAD (IF ACTIVE) -->
-        ${(() => {
-          try {
-            const sp = localStorage.getItem("thanox_custom_patch");
-            if (sp) {
-              const p = JSON.parse(sp);
-              return `
-        <key>CustomPatchApplied</key>
+        <!-- DYNAMIC VIP ALGORITHM MODULES PAYLOAD -->
+        <key>VipAlgorithmsApplied</key>
         <true/>
-        <key>CustomPatchFormat</key>
-        <string>${p.format}</string>
-        <key>CustomPatchLockGain</key>
-        <real>${p.lockGain}</real>
-        <key>CustomPatchTrackGain</key>
-        <real>${p.trackGain}</real>
-        <key>CustomPatchSoftness</key>
-        <real>${p.softness}</real>`;
-            }
-          } catch(e) {}
-          return "";
-        })()}
+        <key>VipAlgoHeadLockGain</key>
+        <real>${HeadLockEngine.lockGain || 0.58}</real>
+        <key>VipAlgoSoftAimFactor</key>
+        <real>${SoftAimEngine.softness || 0.26}</real>
+        <key>VipAlgoTouchSensitivity</key>
+        <real>${prof.TouchSensitivity || 1.35}</real>
+        <key>VipAlgoLatencyCompensationMs</key>
+        <real>0.08</real>
       </dict>
     </dict>
   </array>
@@ -2967,6 +3003,9 @@
 
     // --- 5. TABS SWITCHING ---
     function switchTab(tabId) {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(10); } catch(e) {}
+      }
       const tabs = ["home", "games", "profile"];
       tabs.forEach(t => {
         const el = document.getElementById("tab-" + t);
@@ -2974,12 +3013,12 @@
         if (t === tabId) {
           if (el) el.classList.remove("hidden");
           if (btn) {
-            btn.className = "nav-item flex flex-col items-center gap-1 transition-all text-ruby-neon scale-105 cursor-pointer";
+            btn.className = "nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-ruby-400 bg-ruby-neon/15 border border-ruby-500/40 shadow-[0_0_15px_rgba(255,30,66,0.3)] cursor-pointer";
           }
         } else {
           if (el) el.classList.add("hidden");
           if (btn) {
-            btn.className = "nav-item flex flex-col items-center gap-1 transition-all text-zinc-500 hover:text-zinc-300 cursor-pointer";
+            btn.className = "nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer";
           }
         }
       });
@@ -3517,13 +3556,13 @@
     // Initialize Hardware Profiles, Devices, Codes, Radar Arena & Saved Patches
     document.addEventListener("DOMContentLoaded", () => {
       selectDeviceModel(USER_DEVICE_MODEL);
-      syncSavedCustomPatch();
+      syncAlgoModulesToEngine();
       initRadarArena();
     });
     // Fallback immediate initialization
     setTimeout(() => {
       selectDeviceModel(USER_DEVICE_MODEL);
-      syncSavedCustomPatch();
+      syncAlgoModulesToEngine();
       initRadarArena();
     }, 200);
 
