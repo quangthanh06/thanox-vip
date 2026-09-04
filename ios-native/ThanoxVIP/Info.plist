@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>vi</string>
+	<key>CFBundleDisplayName</key>
+	<string>Thanox VIP</string>
+	<key>CFBundleExecutable</key>
+	<string>ThanoxVIP</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.thanox.ios.vip</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ThanoxVIP</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>AppIcon-20@2x.png</string>
+				<string>AppIcon-20@3x.png</string>
+				<string>AppIcon-29@2x.png</string>
+				<string>AppIcon-29@3x.png</string>
+				<string>AppIcon-40@2x.png</string>
+				<string>AppIcon-40@3x.png</string>
+				<string>AppIcon-60@2x.png</string>
+				<string>AppIcon-60@3x.png</string>
+				<string>AppIcon60x60@2x.png</string>
+				<string>AppIcon60x60@3x.png</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

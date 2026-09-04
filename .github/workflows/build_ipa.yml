@@ -1,0 +1,113 @@
+name: Build Thanox VIP Offline Protected IPA
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-ipa:
+    name: Build & Package Protected iOS IPA
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install cryptography Pillow
+
+      - name: Generate Encrypted Assets Bundle (assets.enc)
+        run: |
+          python Thanox_iOS_App/scripts/encrypt_bundle.py
+
+      - name: Generate iOS App Iconset
+        run: |
+          python Thanox_iOS_App/scripts/generate_icons.py
+
+      - name: Select Xcode Version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Build Native Mach-O Executable (Release ARM64)
+        run: |
+          cd Thanox_iOS_App/ios-native
+          xcodebuild clean build \
+            -project ThanoxVIP.xcodeproj \
+            -scheme ThanoxVIP \
+            -configuration Release \
+            -destination "generic/platform=iOS" \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES
+
+      - name: Assemble & Package ThanoxVIP.ipa
+        run: |
+          mkdir -p ipa_build/Payload
+          
+          # Copy built .app into Payload
+          APP_SRC=$(find Thanox_iOS_App/ios-native/build/Build/Products/Release-iphoneos -name "ThanoxVIP.app" -type d | head -n 1)
+          echo "Found built app at: $APP_SRC"
+          cp -R "$APP_SRC" ipa_build/Payload/
+          
+          # Ensure assets.enc is inside the .app bundle
+          cp Thanox_iOS_App/assets.enc ipa_build/Payload/ThanoxVIP.app/assets.enc
+          
+          # Ensure offline www fallback is inside the .app bundle
+          mkdir -p ipa_build/Payload/ThanoxVIP.app/www/assets
+          cp Thanox_iOS_App/index.html ipa_build/Payload/ThanoxVIP.app/www/index.html
+          cp -R Thanox_iOS_App/assets/* ipa_build/Payload/ThanoxVIP.app/www/assets/
+          if [ -f "FFTH AIMBODY.3105" ]; then
+            cp "FFTH AIMBODY.3105" ipa_build/Payload/ThanoxVIP.app/www/
+          fi
+          if [ -f "FFMAX AIMBODY.3105" ]; then
+            cp "FFMAX AIMBODY.3105" ipa_build/Payload/ThanoxVIP.app/www/
+          fi
+          
+          # Package into IPA
+          cd ipa_build
+          zip -r -y ../ThanoxVIP_v1.0.0_Offline_Protected.ipa Payload/
+          cd ..
+          
+          echo "IPA Packaging complete: ThanoxVIP_v1.0.0_Offline_Protected.ipa"
+          ls -lh ThanoxVIP_v1.0.0_Offline_Protected.ipa
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ThanoxVIP_v1.0.0_Offline_Protected_IPA
+          path: ThanoxVIP_v1.0.0_Offline_Protected.ipa
+          retention-days: 30
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
+        with:
+          tag_name: v1.0.0-ipa-release
+          name: "Thanox VIP v1.0.0 - Ban Cai Dat IPA Offline Bao Mat"
+          body: |
+            ## Goi Cai Dat Thanox VIP iOS (Doc Lap Ngoai Tuyen 100%)
+            
+            - **Dinh dang**: `.ipa` (Chuan cai dat cho iPhone/iPad).
+            - **Kha nang tuong thich**: Ky truc tiep qua **ESign**, Scarlet, TrollStore, AltStore.
+            - **Bao mat**: Tich hop la chan chong be khoa native (Anti-Ptrace, Anti-Frida, In-Memory Decryption).
+            - **Hieu nang**: 100% Offline, ho tro man hinh 120Hz ProMotion.
+            
+            ### Huong dan cai dat qua ESign:
+            1. Tai tep `ThanoxVIP_v1.0.0_Offline_Protected.ipa` ben duoi ve iPhone.
+            2. Mo ung dung **ESign** -> Chon **Nhap tep (Import)** -> Chon tep IPA vua tai.
+            3. Chon tep trong ESign -> Nhan **Ky (Signature)** -> Chon chung chi P12 cua ban.
+            4. Nhan **Cai dat** de dua Thanox VIP ra man hinh chinh.
+          files: ThanoxVIP_v1.0.0_Offline_Protected.ipa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
