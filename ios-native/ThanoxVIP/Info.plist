@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>freefiremobile</string>
+		<string>freefiremax</string>
+		<string>freefire</string>
+		<string>garena</string>
+		<string>fb385480215177319</string>
+		<string>fb1460596327663248</string>
+		<string>tg</string>
+		<string>zalo</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>vi</string>
 	<key>CFBundleDisplayName</key>

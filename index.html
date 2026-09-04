@@ -261,7 +261,7 @@
     
     <!-- Top-Right: Support & Status -->
     <div class="flex items-center gap-2">
-      <a href="https://zalo.me/0889696810" target="_blank" class="p-2 rounded-xl bg-black/50 border border-white/10 text-zinc-400 hover:text-white transition-all active:scale-95 cursor-pointer" title="Liên hệ Admin Zalo">
+      <a href="javascript:void(0)" onclick="openExternalUrl('https://zalo.me/0889696810'); triggerNativeHaptic('light');" target="_blank" class="p-2 rounded-xl bg-black/50 border border-white/10 text-zinc-400 hover:text-white transition-all active:scale-95 cursor-pointer" title="Liên hệ Admin Zalo">
         <i data-lucide="headphones" class="w-4 h-4 text-ruby-400"></i>
       </a>
       <div class="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-1.5 shadow-[0_0_8px_rgba(16,185,129,0.2)]">
@@ -375,7 +375,7 @@
         <a href="https://zalo.me/0889696810" target="_blank" class="py-2.5 px-3 rounded-2xl btn-glass flex items-center justify-center gap-2 text-xs font-black text-white hover:border-blue-400 active:scale-95 transition-all shadow-sm">
           <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6]"></span> Zalo Admin
         </a>
-        <a href="https://t.me/quang_thank" target="_blank" class="py-2.5 px-3 rounded-2xl btn-glass flex items-center justify-center gap-2 text-xs font-black text-white hover:border-sky-400 active:scale-95 transition-all shadow-sm">
+        <a href="javascript:void(0)" onclick="openExternalUrl('https://t.me/quang_thank'); triggerNativeHaptic('light');" target="_blank" class="py-2.5 px-3 rounded-2xl btn-glass flex items-center justify-center gap-2 text-xs font-black text-white hover:border-sky-400 active:scale-95 transition-all shadow-sm">
           <span class="w-2.5 h-2.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span> Telegram
         </a>
       </div>
@@ -1164,9 +1164,9 @@
 
       <!-- Direct 1-Tap Play Button (Appears when 100% complete) -->
       <div id="launch-action-container" class="pt-2 hidden">
-        <a id="launch-direct-btn" href="freefiremobile://" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white font-black text-xs flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.55)] active:scale-95 transition-all cursor-pointer">
+        <button id="launch-direct-btn" onclick="openGameDirectly()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white font-black text-xs flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.55)] active:scale-95 transition-all cursor-pointer">
           <i data-lucide="play" class="w-4 h-4 fill-white"></i> MỞ GAME NGAY (CHẠM ĐỂ VÀO)
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -3249,6 +3249,7 @@
 
     // RULE: Chức năng hỗ trợ chỉ được phép bật 1 cái, tắt cái đang bật mới bật được cái khác
     async function toggleAimEngine(engineKey) {
+      triggerNativeHaptic('medium');
       const titles = {
         "aim-drag": "Aim Drag Siêu Mượt",
         "magic": "Magic Bullet Head",
@@ -3297,6 +3298,69 @@
         launchTimer = null;
       }
       closeModal("modal-launch");
+    }
+
+    
+    // =========================================================================
+    // NATIVE BRIDGE & ENHANCED HARDWARE INTEGRATION
+    // =========================================================================
+
+    function triggerNativeHaptic(type) {
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+        window.webkit.messageHandlers.thanoxBridge.postMessage({ action: "haptic", type: type || "medium" });
+        return;
+      }
+      if (navigator.vibrate) {
+        try { navigator.vibrate(type === 'heavy' ? 40 : 20); } catch(e) {}
+      }
+    }
+
+    function openGameDirectly(gameName) {
+      const targetGame = gameName || selectedGame || "Free Fire";
+      const isMax = targetGame.includes("MAX");
+      const scheme = isMax ? "freefiremax://" : "freefiremobile://";
+
+      triggerNativeHaptic("heavy");
+      showBottomToast(`🚀 Đang chuyển hướng mở ${targetGame}...`);
+
+      // 1. Gửi lệnh qua Native Bridge sang Objective-C
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+        window.webkit.messageHandlers.thanoxBridge.postMessage({
+          action: "launchGame",
+          game: targetGame,
+          scheme: scheme
+        });
+        return;
+      }
+
+      // 2. Chạy fallback trên trình duyệt web
+      try {
+        window.location.href = scheme;
+      } catch(e) {}
+
+      // Fallback mở scheme dự phòng sau 600ms nếu scheme chính không phản hồi
+      setTimeout(() => {
+        try {
+          window.location.href = isMax ? "freefiremax://" : "freefire://";
+        } catch(e) {}
+      }, 600);
+    }
+
+    function openExternalUrl(url) {
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+        window.webkit.messageHandlers.thanoxBridge.postMessage({ action: "openUrl", url: url });
+        return;
+      }
+      window.open(url, "_blank");
+    }
+
+    function setNativeDeviceModel(model) {
+      if (model && DEVICE_HARDWARE_PROFILES[model]) {
+        console.log("[Thanox Native] Nhận diện phần cứng máy:", model);
+        USER_DEVICE_MODEL = model;
+        selectDeviceModel(model);
+        renderCurrentDeviceHeader();
+      }
     }
 
     function launchGameSequence() {
@@ -3360,12 +3424,8 @@
           if (actContainer) actContainer.classList.remove("hidden");
           showBottomToast("🚀 Đã tối ưu 100%! Đang chuyển hướng mở " + selectedGame);
           
-          // Attempt automatic redirection
-          try {
-            window.location.href = scheme;
-          } catch(e) {
-            console.log("Auto launch attempted");
-          }
+          // Tự động mở game thông qua Native Bridge
+          openGameDirectly(selectedGame);
         }
       }, 450);
     }
