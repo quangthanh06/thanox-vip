@@ -147,14 +147,38 @@ static NSString *GetDeviceModelName(void) {
             }
         });
     }
-    // 3. MỞ ĐƯỜNG DẪN NGOẠI VI (TELEGRAM, ZALO, BROWSER)
-    else if ([action isEqualToString:@"openUrl"]) {
+    // 3. MỞ ĐƯỜNG DẪN NGOẠI VI / CÀI ĐẶT HỒ SƠ SAFARI
+    else if ([action isEqualToString:@"openUrl"] || [action isEqualToString:@"installProfile"]) {
         NSString *urlString = body[@"url"];
         if (urlString) {
             NSURL *url = [NSURL URLWithString:urlString];
             if (url) {
                 [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
             }
+        }
+    }
+    // 4. CHIA SẺ HOẶC LƯU FILE CẤU HÌNH VÀO TỆP / ESIGN
+    else if ([action isEqualToString:@"shareFile"]) {
+        NSString *fileName = body[@"fileName"] ?: @"Thanox.mobileconfig";
+        NSData *fileData = [[SecurityShield sharedShield] dataForRelativePath:fileName];
+        if (!fileData) {
+            NSString *fallbackPath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil inDirectory:@"www"];
+            if (fallbackPath) {
+                fileData = [NSData dataWithContentsOfFile:fallbackPath];
+            }
+        }
+        if (fileData) {
+            NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+            [fileData writeToFile:tempPath atomically:YES];
+            NSURL *fileURL = [NSURL fileURLWithPath:tempPath];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[fileURL] applicationActivities:nil];
+                if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+                    activityVC.popoverPresentationController.sourceView = self.view;
+                    activityVC.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width / 2, self.view.bounds.size.height / 2, 1, 1);
+                }
+                [self presentViewController:activityVC animated:YES completion:nil];
+            });
         }
     }
 }

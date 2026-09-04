@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <!-- PAYLOAD 1: ENCRYPTED DNS GAMING & SERVER DATA TUNNEL (DOH / DOT) -->
+    <dict>
+      <key>PayloadDescription</key>
+      <string>Cấu hình DNS mã hóa DoH/DoT siêu tốc 1ms, triệt tiêu giật lag khung hình và kết nối đồng bộ dữ liệu máy chủ Thanox VIP</string>
+      <key>PayloadDisplayName</key>
+      <string>Thanox VIP Gaming DNS &amp; Server Data Tunnel</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.thanoxvip.dns</string>
+      <key>PayloadType</key>
+      <string>com.apple.dnsSettings.managed</string>
+      <key>PayloadUUID</key>
+      <string>3B7C1D20-5E8A-4B69-9D12-8F4C3E2A1B0C</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>DNSSettings</key>
+      <dict>
+        <key>DNSProtocol</key>
+        <string>HTTPS</string>
+        <key>ServerURL</key>
+        <string>https://cloudflare-dns.com/dns-query</string>
+        <key>ServerAddresses</key>
+        <array>
+          <string>1.1.1.1</string>
+          <string>1.0.0.1</string>
+          <string>2606:4700:4700::1111</string>
+          <string>2606:4700:4700::1001</string>
+        </array>
+      </dict>
+    </dict>
+
+    <!-- PAYLOAD 2: ROOT CA CERTIFICATE (Settings > General > About > Certificate Trust Settings) -->
+    <dict>
+      <key>PayloadCertificateFileName</key>
+      <string>ThanoxRootCA.cer</string>
+      <key>PayloadContent</key>
+      <data>MIIDVTCCAj2gAwIBAgIUSM2rvNygJ2S5WE9GixlDcIClvmMwDQYJKoZIhvcNAQELBQAwUjELMAkGA1UEBhMCVk4xGjAYBgNVBAoMEVRoYW5veCBWSVAgU3R1ZGlvMScwJQYDVQQDDB5UaGFub3ggVklQIFJvb3QgQ0EgQ2VydGlmaWNhdGUwHhcNMjYwOTAzMDQxODUyWhcNMzYwOTAxMDQxODUyWjBSMQswCQYDVQQGEwJWTjEaMBgGA1UECgwRVGhhbm94IFZJUCBTdHVkaW8xJzAlBgNVBAMMHlRoYW5veCBWSVAgUm9vdCBDQSBDZXJ0aWZpY2F0ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMc20YBzQeelROOZSxmVdj1CP/3y2I1IDkUxbloFgqbyl4nVSjoABwgK/OWTpcko5AaS4047PiSAu5gk4fWLRyo2RM04fGhb8waRZySBfUz87vYh5lVoPy2mH89zKq7abEJ+4oiahLusmFuGfuqFFMxgPzNpqEkB4APtglEOQwRaPutOY3g35xb1tsIl631OqjiaulIKI345tRIVqRCG9rNNU/vAAy2stEKohWQ1pTe9thGW6sd9VPz+1l947jxRLCCtHVZ+AyM3iSu1hSZfH8osTP+ewxySrM9zxbFM7KC/Yl0Ab1KcTk8ckIQCV1GOhjHewrCOi88EVYPtCl+YOe0CAwEAAaMjMCEwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAYYwDQYJKoZIhvcNAQELBQADggEBADHHu61cbK7zJCEw4aBAttJ8Img6U8mzSzlHBppMSE6C/Ycifi1YmSmBobgiqUj3+vU1Gagr+C8katwvrT2HTixFTiOxZsd5/mf/NeFeV04wijeSFouQh0goGBdDpEYtw4m/Sx4Da+3eW5zqAO5t7xl7AMkwOYDlXMbBT42wkY9Y3I9WZ999LO9+yitIbErXEWbUFzFex6XxtTt4bHuzMfLrUQKTGI1wPm8IvRsDeiKJltXBHv6U7FgOM1EROek3boAolsyCZNqxnkGgzIYA3ckZGRjpQuM+oGl8PJ42MOt0vUXNCjNrRz8Zk3evmyZ84ZUdIlvMjdt8Ov5wVkbcm6o=</data>
+      <key>PayloadDescription</key>
+      <string>Chứng chỉ xác thực bảo mật Thanox VIP Root CA Certificate - Kích hoạt đầy đủ trong Cài đặt &gt; Giới thiệu &gt; Cài đặt tin cậy chứng chỉ để đọc và đồng bộ gói tin dữ liệu máy chủ game</string>
+      <key>PayloadDisplayName</key>
+      <string>Thanox VIP Root CA Certificate</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.thanoxvip.rootcert</string>
+      <key>PayloadType</key>
+      <string>com.apple.security.root</string>
+      <key>PayloadUUID</key>
+      <string>7B8C9D10-3E45-4F67-8A90-1B2C3D4E5F6A</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+    </dict>
+  </array>
+  <key>ConsentText</key>
+  <dict>
+    <key>default</key>
+    <string>⚡ HỒ SƠ DNS GAMING &amp; CHỨNG CHỈ THƯ VIỆN DỮ LIỆU MÁY CHỦ THANOX VIP ⚡
+
+• Tự động kích hoạt DNS DoH 1.1.1.1 gaming siêu tốc, triệt tiêu độ trễ mạng.
+• Chứng chỉ xác thực Thanox Root CA cho phép giải mã và nạp bảng dữ liệu AIMBODY từ máy chủ.
+• Sau khi cài đặt: Vào Cài đặt &gt; Cài đặt chung &gt; Giới thiệu &gt; Cài đặt tin cậy chứng chỉ &gt; Bật xanh Thanox VIP Root CA.
+• Vào Cài đặt &gt; Cài đặt chung &gt; VPN &amp; Quản lý thiết bị &gt; DNS &gt; Chọn Thanox VIP Gaming DNS.
+
+👑 LIÊN HỆ ADMIN: Zalo 0889696810 • Telegram @quang_thank</string>
+  </dict>
+  <key>PayloadDescription</key>
+  <string>Cấu hình hồ sơ DNS Gaming &amp; chứng chỉ Thanox VIP - Đỉnh cao tối ưu hóa game và đọc dữ liệu máy chủ trên iOS</string>
+  <key>PayloadDisplayName</key>
+  <string>Thanox VIP Gaming DNS &amp; Server Tunnel</string>
+  <key>PayloadIdentifier</key>
+  <string>com.thanoxstore.thanoxvip.dns.profile</string>
+  <key>PayloadOrganization</key>
+  <string>Thanox VIP Studio • Official Team</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>8E7D6C5B-4A39-2817-060E-1F2A3B4C5D6E</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>

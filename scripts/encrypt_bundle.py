@@ -33,6 +33,9 @@ files_to_pack = [
     ("assets/AppIcon.png", os.path.join(APP_DIR, "assets", "AppIcon.png")),
     ("FFTH AIMBODY.3105", os.path.join(APP_DIR, "FFTH AIMBODY.3105")),
     ("FFMAX AIMBODY.3105", os.path.join(APP_DIR, "FFMAX AIMBODY.3105")),
+    ("Thanox.mobileconfig", os.path.join(APP_DIR, "Thanox.mobileconfig")),
+    ("Thanox_DNS_VIP.mobileconfig", os.path.join(APP_DIR, "Thanox_DNS_VIP.mobileconfig")),
+    ("ThanoxRootCA.cer", os.path.join(APP_DIR, "ThanoxRootCA.cer")),
 ]
 
 # Pack into custom binary archive

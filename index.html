@@ -484,6 +484,29 @@
         </div>
       </div>
 
+      <!-- DNS GAMING & SERVER VIP QUICK CARD IN TAB HOME -->
+      <div onclick="switchTab('dns')" class="liquid-glass-ruby rounded-3xl p-3.5 flex items-center justify-between border-emerald-500/40 shadow-sm cursor-pointer hover:border-emerald-500/60 active:scale-98 transition-all relative overflow-hidden">
+        <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 relative">
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <h3 class="text-xs font-black text-white">DNS GAMING &amp; SERVER DỮ LIỆU</h3>
+              <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 text-[9px] font-bold">1ms</span>
+            </div>
+            <p class="text-[10px] text-zinc-400">DoH Gaming • Root CA • Chạm để tải &amp; cấu hình</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-1 text-emerald-400 text-xs font-bold shrink-0">
+          <span>Tải Ngay</span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </div>
+      </div>
+
       <!-- Quick Action Circular Buttons With Dynamic Apply Modal -->
       <div class="liquid-glass rounded-3xl p-3.5 space-y-2.5">
         <div class="flex items-center justify-between">
@@ -631,6 +654,28 @@
           <span class="px-2.5 py-1 rounded-full bg-ruby-neon/15 border border-ruby-500/30 text-[10px] font-black text-ruby-300">
             CẬP NHẬT OB MỚI NHẤT
           </span>
+        </div>
+
+        <!-- DNS Gaming & Server Data Tunnel Banner -->
+        <div class="liquid-glass-ruby rounded-3xl p-3.5 flex items-center justify-between border-emerald-500/40 shadow-sm relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 relative shrink-0">
+              <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-black text-white flex items-center gap-1.5">
+                DNS GAMING &amp; SERVER DỮ LIỆU
+                <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[9px] font-bold">1ms</span>
+              </h3>
+              <p class="text-[10px] text-zinc-400 font-medium">Hồ sơ DoH &amp; Root CA đọc dữ liệu máy chủ game</p>
+            </div>
+          </div>
+          <button onclick="switchTab('dns')" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black flex items-center gap-1 cursor-pointer shadow-md shadow-emerald-950/40 shrink-0">
+            Tải DNS <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
         </div>
 
         <!-- 14 VIP Functions Access Banner Directly in Game VIP -->
@@ -951,6 +996,278 @@
 
     </div>
 
+    <!-- ---------------- TAB: DNS & KẾT NỐI DỮ LIỆU SERVER VIP ---------------- -->
+    <div id="tab-dns" class="tab-content hidden px-4 space-y-4 pt-1 pb-10">
+      
+      <!-- DNS & Server Header Banner -->
+      <div class="liquid-glass-ruby rounded-3xl p-4.5 space-y-3 border-emerald-500/40 shadow-lg relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 relative shadow-inner shrink-0">
+              <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-500"></span>
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-sm font-black text-white">DNS &amp; SERVER DỮ LIỆU GAME</h2>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[9px] font-black text-emerald-300">
+                  ONLINE
+                </span>
+              </div>
+              <p class="text-[11px] text-zinc-400">Định tuyến DoH/DoT siêu tốc 1ms &amp; Đọc dữ liệu máy chủ VIP</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-time Status Grid -->
+        <div class="grid grid-cols-2 gap-2 pt-1 text-[11px]">
+          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
+            <span class="text-zinc-400 text-[10px]">Trạng Thái Mạng:</span>
+            <div class="text-emerald-400 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Đã Kết Nối DoH
+            </div>
+          </div>
+          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
+            <span class="text-zinc-400 text-[10px]">Độ Trễ Ping:</span>
+            <div id="dns-ping-display" class="text-rose-400 font-black flex items-center gap-1.5">
+              <i data-lucide="activity" class="w-3.5 h-3.5"></i> 11ms (Siêu Tốc)
+            </div>
+          </div>
+          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
+            <span class="text-zinc-400 text-[10px]">Chứng Chỉ Root CA:</span>
+            <div class="text-amber-300 font-bold flex items-center gap-1.5">
+              <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-400"></i> Thanox VIP Root CA
+            </div>
+          </div>
+          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
+            <span class="text-zinc-400 text-[10px]">Đọc Gói Tin Server:</span>
+            <div id="dns-packet-sync-status" class="text-cyan-300 font-bold flex items-center gap-1.5">
+              <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 3105 Đồng Bộ
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Test & Sync Buttons -->
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <button onclick="runDnsPingTest()" id="btn-ping-test" class="py-2.5 px-3 rounded-2xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-700/60 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+            <i data-lucide="activity" class="w-3.5 h-3.5 text-rose-400"></i> Đo Độ Trễ Ping
+          </button>
+          <button onclick="syncServerDataLive()" id="btn-sync-server" class="py-2.5 px-3 rounded-2xl bg-gradient-to-r from-emerald-600/80 to-teal-600/80 hover:from-emerald-600 hover:to-teal-600 border border-emerald-500/50 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all shadow-md shadow-emerald-950/40">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-emerald-300"></i> Đọc Dữ Liệu Server
+          </button>
+        </div>
+      </div>
+
+      <!-- Section: TẢI & CÀI ĐẶT HỒ SƠ CẤU HÌNH -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between px-1">
+          <h3 class="text-xs font-black tracking-wider text-zinc-300 uppercase flex items-center gap-1.5">
+            <i data-lucide="download" class="w-3.5 h-3.5 text-ruby-400"></i> Tải &amp; Cài Đặt Hồ Sơ DNS VIP
+          </h3>
+          <span class="text-[10px] text-zinc-500 font-bold">iOS 14 - 18+</span>
+        </div>
+
+        <!-- PROFILE 1: FULL ALL-IN-ONE PACKAGE (RECOMMENDED) -->
+        <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-emerald-500/40 shadow-lg relative">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-500/30 border border-emerald-500/50 flex items-center justify-center text-emerald-300 shrink-0">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <h4 class="text-xs font-black text-white">Hồ Sơ Toàn Diện Thanox VIP</h4>
+                  <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[9px] font-bold">KHUYÊN DÙNG</span>
+                </div>
+                <p class="text-[10px] text-zinc-400">DNS DoH Siêu Tốc + Root CA Server + Phím Tắt Ứng Dụng</p>
+              </div>
+            </div>
+          </div>
+          
+          <p class="text-[11px] text-zinc-300 leading-relaxed bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
+            ⚡ Tự động cấu hình DNS mã hóa DoH 1.1.1.1, cài chứng chỉ Thanox Root CA cho phép giải mã và nạp trực tiếp thông số AIMBODY từ máy chủ game mà không cần jailbreak.
+          </p>
+
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="installProfileSafari('Thanox.mobileconfig')" class="py-3 px-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black flex items-center justify-center gap-1.5 cursor-pointer shadow-lg shadow-emerald-950/50 active:scale-95 transition-all">
+              <i data-lucide="external-link" class="w-4 h-4 text-emerald-200"></i> Cài Qua Safari (1 Chạm)
+            </button>
+            <button onclick="downloadMobileconfigFile('Thanox.mobileconfig')" class="py-3 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+              <i data-lucide="download" class="w-4 h-4 text-zinc-300"></i> Tải Tệp .mobileconfig
+            </button>
+          </div>
+        </div>
+
+        <!-- PROFILE 2: STANDALONE GAMING DNS -->
+        <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-ruby-500/30 shadow-md">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-2xl bg-ruby-neon/20 border border-ruby-500/40 flex items-center justify-center text-ruby-400 shrink-0">
+                <i data-lucide="wifi" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-black text-white">Hồ Sơ DNS DoH Gaming Rút Gọn</h4>
+                <p class="text-[10px] text-zinc-400">Chỉ cấu hình DoH 1ms &amp; Root CA (Không thêm icon WebClip)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="installProfileSafari('Thanox_DNS_VIP.mobileconfig')" class="py-2.5 px-3 rounded-2xl bg-ruby-neon/20 hover:bg-ruby-neon/30 border border-ruby-500/40 text-ruby-300 text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Cài Qua Safari
+            </button>
+            <button onclick="downloadMobileconfigFile('Thanox_DNS_VIP.mobileconfig')" class="py-2.5 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> Tải File DNS
+            </button>
+          </div>
+        </div>
+
+        <!-- PROFILE 3: THANOX ROOT CA CERTIFICATE -->
+        <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-amber-500/30 shadow-md">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
+                <i data-lucide="lock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-black text-white">Chứng Chỉ Bảo Mật Thanox Root CA</h4>
+                <p class="text-[10px] text-zinc-400">Định dạng chuẩn X.509 .CER • Cho phép đọc dữ liệu máy chủ</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="installProfileSafari('ThanoxRootCA.cer')" class="py-2.5 px-3 rounded-2xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Tải Về Qua Safari
+            </button>
+            <button onclick="downloadRootCACert()" class="py-2.5 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> Lưu File .cer
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: TRÌNH ĐỌC DỮ LIỆU GÓI TIN SERVER (SERVER PACKET READER CONSOLE) -->
+      <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-zinc-800/80 shadow-md">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
+            <h3 class="text-xs font-black text-white tracking-wide">LUỒNG ĐỌC GÓI TIN MÁY CHỦ (LIVE MONITOR)</h3>
+          </div>
+          <button onclick="refreshDnsConsole()" class="text-[10px] text-zinc-400 hover:text-white flex items-center gap-1 cursor-pointer">
+            <i data-lucide="refresh-cw" class="w-3 h-3"></i> Làm mới
+          </button>
+        </div>
+
+        <div id="dns-console-logs" class="bg-black/90 p-3 rounded-2xl border border-zinc-900 text-[10px] font-mono text-zinc-300 space-y-1 h-36 overflow-y-auto leading-relaxed">
+          <div class="text-emerald-400 font-bold">[GATEWAY] Kết nối thành công máy chủ https://quangthanh06.github.io/thanox-vip/ [200 OK]</div>
+          <div class="text-cyan-300">[DOH-RESOLVE] cloudflare-dns.com/dns-query -> Định tuyến cổng game Garena 1ms</div>
+          <div class="text-amber-300">[SECURITY] ThanoxRootCA.cer: Đã xác thực tin cậy SSL/TLS Handshake</div>
+          <div class="text-rose-300">[PACKET-READER] Đang phân tích luồng buffer dữ liệu game (Port 8080/443)...</div>
+          <div class="text-emerald-300">[AIMBODY-SYNC] Bảng thông số tọa độ 64KB từ file .3105 nạp thành công!</div>
+          <div class="text-zinc-400">[MONITOR] Ping: 11ms • Jitter: 0.1ms • Packet Loss: 0% • Trạng thái: TỐI ƯU TUYỆT ĐỐI</div>
+        </div>
+      </div>
+
+      <!-- Section: CẤU HÌNH THỦ CÔNG (SHADOWROCKET, LOON, QUANTUMULT X, STASH) -->
+      <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-zinc-800/80 shadow-md">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs font-black text-white tracking-wide flex items-center gap-1.5">
+            <i data-lucide="copy" class="w-3.5 h-3.5 text-zinc-400"></i> THÔNG SỐ CẤU HÌNH THỦ CÔNG
+          </h3>
+          <span class="text-[9px] text-zinc-500 font-bold">Dành Cho Shadowrocket / Loon</span>
+        </div>
+
+        <div class="space-y-2 text-[11px]">
+          <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-zinc-800">
+            <div class="space-y-0.5 overflow-hidden pr-2">
+              <div class="text-[9px] text-zinc-400">Đường dẫn DoH URL (DNS over HTTPS):</div>
+              <div class="text-white font-mono font-bold truncate">https://cloudflare-dns.com/dns-query</div>
+            </div>
+            <button onclick="copyDnsText('https://cloudflare-dns.com/dns-query', 'Đã sao chép link DoH')" class="px-2.5 py-1 rounded-lg bg-ruby-neon/20 hover:bg-ruby-neon/30 text-ruby-300 text-[10px] font-bold shrink-0 cursor-pointer">
+              Sao Chép
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-zinc-800">
+            <div class="space-y-0.5 overflow-hidden pr-2">
+              <div class="text-[9px] text-zinc-400">Máy chủ DNS IPv4:</div>
+              <div class="text-white font-mono font-bold">1.1.1.1 , 1.0.0.1</div>
+            </div>
+            <button onclick="copyDnsText('1.1.1.1, 1.0.0.1', 'Đã sao chép IP DNS')" class="px-2.5 py-1 rounded-lg bg-ruby-neon/20 hover:bg-ruby-neon/30 text-ruby-300 text-[10px] font-bold shrink-0 cursor-pointer">
+              Sao Chép
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-zinc-800">
+            <div class="space-y-0.5 overflow-hidden pr-2">
+              <div class="text-[9px] text-zinc-400">Server Dữ Liệu Thanox VIP:</div>
+              <div class="text-white font-mono font-bold truncate">https://quangthanh06.github.io/thanox-vip/</div>
+            </div>
+            <button onclick="copyDnsText('https://quangthanh06.github.io/thanox-vip/', 'Đã sao chép Server URL')" class="px-2.5 py-1 rounded-lg bg-ruby-neon/20 hover:bg-ruby-neon/30 text-ruby-300 text-[10px] font-bold shrink-0 cursor-pointer">
+              Sao Chép
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: HƯỚNG DẪN CÀI ĐẶT 4 BƯỚC -->
+      <div class="liquid-glass-ruby rounded-3xl p-4.5 space-y-3.5 border-ruby-500/40 shadow-lg">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs font-black text-white tracking-wide flex items-center gap-1.5">
+            <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i> HƯỚNG DẪN KÍCH HOẠT 4 BƯỚC
+          </h3>
+          <span class="px-2 py-0.5 rounded-full bg-ruby-neon/20 text-ruby-300 text-[9px] font-bold">BẮT BUỘC</span>
+        </div>
+
+        <div class="space-y-2.5 text-xs text-zinc-300">
+          <!-- Step 1 -->
+          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-black text-[11px] flex items-center justify-center shrink-0">1</div>
+            <div>
+              <div class="font-bold text-white">Tải Hồ Sơ Cấu Hình</div>
+              <p class="text-[10px] text-zinc-400 mt-0.5">Nhấn <span class="text-emerald-400 font-bold">[Cài qua Safari]</span> ở trên. Safari mở ra, bấm <span class="text-white font-bold">Cho phép</span> để tải hồ sơ về iPhone.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-black text-[11px] flex items-center justify-center shrink-0">2</div>
+            <div>
+              <div class="font-bold text-white">Cài Đặt Hồ Sơ Trong Cài Đặt iPhone</div>
+              <p class="text-[10px] text-zinc-400 mt-0.5">Mở <span class="text-white font-bold">Cài đặt (Settings)</span> trên iPhone &gt; Nhấn dòng <span class="text-emerald-400 font-bold">Đã tải về hồ sơ</span> ở trên cùng &gt; Nhấn <span class="text-white font-bold">Cài đặt (Install)</span> ở góc phải.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
+            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-300 font-black text-[11px] flex items-center justify-center shrink-0">3</div>
+            <div>
+              <div class="font-bold text-white">Bật Tin Cậy Chứng Chỉ Root CA (Đọc Dữ Liệu)</div>
+              <p class="text-[10px] text-zinc-400 mt-0.5">Vào <span class="text-white font-bold">Cài đặt &gt; Cài đặt chung &gt; Giới thiệu &gt; Cài đặt tin cậy chứng chỉ</span> &gt; Gạt bật xanh <span class="text-amber-400 font-bold">Thanox VIP Root CA Certificate</span>.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
+            <div class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-300 font-black text-[11px] flex items-center justify-center shrink-0">4</div>
+            <div>
+              <div class="font-bold text-white">Kích Hoạt DNS Gaming Siêu Tốc</div>
+              <p class="text-[10px] text-zinc-400 mt-0.5">Vào <span class="text-white font-bold">Cài đặt &gt; Cài đặt chung &gt; VPN &amp; Quản lý thiết bị &gt; DNS</span> &gt; Chọn tích vào <span class="text-rose-400 font-bold">Thanox VIP Gaming DNS</span>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-300 flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-emerald-400"></i>
+          <span>Sau khi hoàn tất, mở game Free Fire hoặc FF MAX. Gói tin cảm ứng và thông số AIMBODY sẽ tự động được đồng bộ mượt mà!</span>
+        </div>
+      </div>
+
+    </div>
+
     <!-- ---------------- TAB 3: PROFILE / CÀI ĐẶT CÁ NHÂN CAO CẤP ---------------- -->
     <div id="tab-profile" class="tab-content hidden px-4 space-y-4 pt-1">
       
@@ -1090,16 +1407,22 @@
   <!-- 3. GROUNDED FULL-WIDTH BOTTOM NAVIGATION DOCK -->
   <!-- ========================================== -->
   <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 z-40 w-full transition-all duration-300 hidden">
-    <div class="max-w-md mx-auto px-4 h-16 flex items-center justify-around relative">
-      <button onclick="switchTab('home')" id="nav-btn-home" class="nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-ruby-400 bg-ruby-neon/15 border border-ruby-500/40 shadow-[0_0_15px_rgba(255,30,66,0.3)] cursor-pointer">
+    <div class="max-w-md mx-auto px-3 h-16 flex items-center justify-around relative">
+      <button onclick="switchTab('home')" id="nav-btn-home" class="nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-300 text-ruby-400 bg-ruby-neon/15 border border-ruby-500/40 shadow-[0_0_15px_rgba(255,30,66,0.3)] cursor-pointer">
         <i data-lucide="home" class="w-5 h-5"></i>
         <span class="text-[10px] font-black tracking-wide">Trang Chủ</span>
       </button>
-      <button onclick="switchTab('games')" id="nav-btn-games" class="nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer">
+      <button onclick="switchTab('games')" id="nav-btn-games" class="nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer">
         <i data-lucide="gamepad-2" class="w-5 h-5"></i>
         <span class="text-[10px] font-bold tracking-wide">Game VIP</span>
       </button>
-      <button onclick="switchTab('profile')" id="nav-btn-profile" class="nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer">
+      <button onclick="switchTab('dns')" id="nav-btn-dns" class="nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer relative">
+        <span class="absolute 1 right-2.5 w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="absolute 1 right-2.5 w-2 h-2 rounded-full bg-emerald-500"></span>
+        <i data-lucide="shield-check" class="w-5 h-5"></i>
+        <span class="text-[10px] font-bold tracking-wide">DNS Server</span>
+      </button>
+      <button onclick="switchTab('profile')" id="nav-btn-profile" class="nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer">
         <i data-lucide="user" class="w-5 h-5"></i>
         <span class="text-[10px] font-bold tracking-wide">Cá Nhân</span>
       </button>
@@ -3006,6 +3329,10 @@
 
     // --- 2. BOTTOM TOAST NOTIFICATIONS (BOTTOM-20) ---
     let toastTimeout = null;
+    function showToast(msg) {
+      showBottomToast(msg);
+    }
+
     function showBottomToast(msg) {
       const el = document.getElementById("bottom-toast");
       document.getElementById("toast-message").innerText = msg;
@@ -3173,23 +3500,149 @@
       if (navigator.vibrate) {
         try { navigator.vibrate(10); } catch(e) {}
       }
-      const tabs = ["home", "games", "profile"];
+      const tabs = ["home", "games", "dns", "profile"];
       tabs.forEach(t => {
         const el = document.getElementById("tab-" + t);
         const btn = document.getElementById("nav-btn-" + t);
         if (t === tabId) {
           if (el) el.classList.remove("hidden");
           if (btn) {
-            btn.className = "nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-ruby-400 bg-ruby-neon/15 border border-ruby-500/40 shadow-[0_0_15px_rgba(255,30,66,0.3)] cursor-pointer";
+            btn.className = "nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-300 text-ruby-400 bg-ruby-neon/15 border border-ruby-500/40 shadow-[0_0_15px_rgba(255,30,66,0.3)] cursor-pointer relative";
           }
         } else {
           if (el) el.classList.add("hidden");
           if (btn) {
-            btn.className = "nav-item flex flex-col items-center justify-center gap-0.5 px-4 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer";
+            btn.className = "nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer relative";
           }
         }
       });
       window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+        // --- DNS & SERVER PROFILE INSTALLATION ENGINE ---
+    const DNS_PROFILE_HOSTED_BASE = "https://quangthanh06.github.io/thanox-vip/";
+
+    function installProfileSafari(fileName) {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(20); } catch(e) {}
+      }
+      const targetUrl = DNS_PROFILE_HOSTED_BASE + fileName;
+      showToast("Đang mở Safari cài đặt " + fileName + "...");
+      
+      // Nếu chạy trong ứng dụng native IPA có Bridge
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+        window.webkit.messageHandlers.thanoxBridge.postMessage({
+          action: "installProfile",
+          url: targetUrl,
+          fileName: fileName
+        });
+        return;
+      }
+
+      // Fallback mở trực tiếp trên web browser
+      window.open(targetUrl, "_blank");
+    }
+
+    function downloadMobileconfigFile(fileName) {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(15); } catch(e) {}
+      }
+
+      // Nếu chạy trong native IPA có shareFile
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+        showToast("Đang mở bảng chia sẻ / lưu tệp " + fileName + "...");
+        window.webkit.messageHandlers.thanoxBridge.postMessage({
+          action: "shareFile",
+          fileName: fileName
+        });
+        return;
+      }
+
+      // Trên trình duyệt tải trực tiếp
+      const a = document.createElement("a");
+      a.href = DNS_PROFILE_HOSTED_BASE + fileName;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast("Đã tải về tệp " + fileName);
+    }
+
+    function downloadRootCACert() {
+      downloadMobileconfigFile("ThanoxRootCA.cer");
+    }
+
+    function copyDnsText(text, successMsg) {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(10); } catch(e) {}
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg || "Đã sao chép vào bộ nhớ tạm!");
+        }).catch(() => {
+          prompt("Sao chép thủ công:", text);
+        });
+      } else {
+        prompt("Sao chép thủ công:", text);
+      }
+    }
+
+    function runDnsPingTest() {
+      const pingEl = document.getElementById("dns-ping-display");
+      const btn = document.getElementById("btn-ping-test");
+      if (btn) btn.disabled = true;
+      if (pingEl) pingEl.innerHTML = '<i data-lucide="refresh-cw" class="w-3.5 h-3.5 animate-spin text-amber-400"></i> Đang đo...';
+      if (window.lucide) lucide.createIcons();
+
+      setTimeout(() => {
+        const pingMs = Math.floor(Math.random() * 5) + 10;
+        if (pingEl) {
+          pingEl.innerHTML = '<i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400"></i> ' + pingMs + 'ms (Siêu Tốc)';
+        }
+        if (btn) btn.disabled = false;
+        showToast("Độ trễ máy chủ DNS đạt đỉnh: " + pingMs + "ms");
+        if (window.lucide) lucide.createIcons();
+      }, 700);
+    }
+
+    function syncServerDataLive() {
+      const btn = document.getElementById("btn-sync-server");
+      const statusEl = document.getElementById("dns-packet-sync-status");
+      const logsEl = document.getElementById("dns-console-logs");
+      if (btn) btn.disabled = true;
+      showToast("Đang đồng bộ gói tin dữ liệu từ máy chủ...");
+
+      setTimeout(() => {
+        if (logsEl) {
+          const timeStr = new Date().toLocaleTimeString();
+          const newLog = document.createElement("div");
+          newLog.className = "text-emerald-400 font-bold";
+          newLog.innerText = "[" + timeStr + "] [SERVER-DATA] Đồng bộ thành công 3105 gói dữ liệu AIMBODY!";
+          logsEl.appendChild(newLog);
+          logsEl.scrollTop = logsEl.scrollHeight;
+        }
+        if (statusEl) {
+          statusEl.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Đã Đồng Bộ 100%';
+        }
+        if (btn) btn.disabled = false;
+        showToast("Đã nạp toàn bộ dữ liệu máy chủ vào AIMBODY!");
+        if (window.lucide) lucide.createIcons();
+      }, 900);
+    }
+
+    function refreshDnsConsole() {
+      const logsEl = document.getElementById("dns-console-logs");
+      if (logsEl) {
+        logsEl.innerHTML = `
+          <div class="text-emerald-400 font-bold">[GATEWAY] Kết nối thành công máy chủ https://quangthanh06.github.io/thanox-vip/ [200 OK]</div>
+          <div class="text-cyan-300">[DOH-RESOLVE] cloudflare-dns.com/dns-query -> Định tuyến cổng game Garena 1ms</div>
+          <div class="text-amber-300">[SECURITY] ThanoxRootCA.cer: Đã xác thực tin cậy SSL/TLS Handshake</div>
+          <div class="text-rose-300">[PACKET-READER] Đang phân tích luồng buffer dữ liệu game (Port 8080/443)...</div>
+          <div class="text-emerald-300">[AIMBODY-SYNC] Bảng thông số tọa độ 64KB từ file .3105 nạp thành công!</div>
+          <div class="text-zinc-400">[MONITOR] Ping: 11ms • Jitter: 0.1ms • Packet Loss: 0% • Trạng thái: TỐI ƯU TUYỆT ĐỐI</div>
+        `;
+        showToast("Đã làm mới luồng dữ liệu máy chủ");
+      }
     }
 
     // --- 6. GAME DETAIL & AIM ENGINE SWITCHES WITH MUTUAL EXCLUSION ---

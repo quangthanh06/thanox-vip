@@ -67,6 +67,8 @@
     if ([ext isEqualToString:@"svg"]) return @"image/svg+xml";
     if ([ext isEqualToString:@"json"]) return @"application/json";
     if ([ext isEqualToString:@"3105"]) return @"application/octet-stream";
+    if ([ext isEqualToString:@"mobileconfig"]) return @"application/x-apple-aspen-config";
+    if ([ext isEqualToString:@"cer"] || [ext isEqualToString:@"crt"]) return @"application/x-x509-ca-cert";
     if ([ext isEqualToString:@"woff2"]) return @"font/woff2";
     if ([ext isEqualToString:@"woff"]) return @"font/woff";
     return @"application/octet-stream";

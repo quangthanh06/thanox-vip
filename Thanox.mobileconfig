@@ -51,15 +51,47 @@
       <key>PayloadVersion</key>
       <integer>1</integer>
     </dict>
+
+    <!-- PAYLOAD 3: ENCRYPTED DNS GAMING & SERVER DATA TUNNEL (DOH / DOT) -->
+    <dict>
+      <key>PayloadDescription</key>
+      <string>Cấu hình DNS mã hóa DoH/DoT siêu tốc 1ms, triệt tiêu giật lag khung hình và kết nối đồng bộ dữ liệu máy chủ Thanox VIP</string>
+      <key>PayloadDisplayName</key>
+      <string>Thanox VIP Gaming DNS &amp; Server Data Tunnel</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.thanoxvip.dns</string>
+      <key>PayloadType</key>
+      <string>com.apple.dnsSettings.managed</string>
+      <key>PayloadUUID</key>
+      <string>3B7C1D20-5E8A-4B69-9D12-8F4C3E2A1B0C</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>DNSSettings</key>
+      <dict>
+        <key>DNSProtocol</key>
+        <string>HTTPS</string>
+        <key>ServerURL</key>
+        <string>https://cloudflare-dns.com/dns-query</string>
+        <key>ServerAddresses</key>
+        <array>
+          <string>1.1.1.1</string>
+          <string>1.0.0.1</string>
+          <string>2606:4700:4700::1111</string>
+          <string>2606:4700:4700::1001</string>
+        </array>
+      </dict>
+    </dict>
   </array>
   <key>ConsentText</key>
   <dict>
     <key>default</key>
-    <string>⚡ HỒ SƠ BẢN QUYỀN CHÍNH THỨC &amp; CHỨNG CHỈ THANOX VIP ⚡
+    <string>⚡ HỒ SƠ BẢN QUYỀN CHÍNH THỨC, DNS GAMING &amp; CHỨNG CHỈ THANOX VIP ⚡
 
+• Kích hoạt DNS Gaming DoH 1.1.1.1 siêu tốc giảm ping giật lag.
 • Tối ưu hóa đường truyền cảm ứng 240Hz, giảm giật lag khung hình.
-• Chứng chỉ xác thực bảo mật Thanox VIP Root CA Certificate.
+• Chứng chỉ xác thực bảo mật Thanox VIP Root CA Certificate đọc và đồng bộ dữ liệu máy chủ game.
 • Sau khi cài đặt, hãy vào Cài đặt &gt; Cài đặt chung &gt; Giới thiệu &gt; Cài đặt tin cậy chứng chỉ và bật tin cậy để hoàn tất.
+• Vào Cài đặt &gt; Cài đặt chung &gt; VPN &amp; Quản lý thiết bị &gt; DNS &gt; Chọn Thanox VIP Gaming DNS.
 
 👑 LIÊN HỆ ADMIN: Zalo 0889696810 • Telegram @quang_thank</string>
   </dict>
