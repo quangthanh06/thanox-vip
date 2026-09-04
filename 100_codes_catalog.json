@@ -1,0 +1,602 @@
+[
+  {
+    "num": 1,
+    "id": "com.gpu_boost.performance-ffx64.dat",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Ép xung nhân đồ họa Metal 3, nâng cao khả năng dựng hình"
+  },
+  {
+    "num": 2,
+    "id": "com.cpu_optimize.highspeed-core.plist",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Phân bổ luồng xử lý CPU cao tốc, chống nghẽn tác vụ"
+  },
+  {
+    "num": 3,
+    "id": "com.rendering_mode.ultra-high-graphic.ips",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Chế độ kết xuất đồ họa Ultra mượt mà, khử răng cưa"
+  },
+  {
+    "num": 4,
+    "id": "com.device_acceleration.enable-fastboot.dat",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Kích hoạt gia tốc phần cứng xử lý khung hình"
+  },
+  {
+    "num": 5,
+    "id": "com.gaming_mode.auto-optimize-setting.list",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Tối ưu hóa tài nguyên phần cứng cho chế độ chơi game"
+  },
+  {
+    "num": 6,
+    "id": "com.frame_rate.stabilizer-120fps.plist",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Khóa ổn định khung hình 120 FPS, chống drop khung"
+  },
+  {
+    "num": 7,
+    "id": "com.dpi_scaler.resolution-upscale.strings",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Nâng độ phân giải hiển thị và tăng mật độ điểm ảnh"
+  },
+  {
+    "num": 8,
+    "id": "com.thermal_control.cooling-system.config",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Kiểm soát nhiệt độ thiết bị, giảm phát nhiệt khi combat"
+  },
+  {
+    "num": 9,
+    "id": "com.device_boost.overdrive.gamingmode.dat",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Tăng cường xung nhịp tổng thể khi mở Free Fire"
+  },
+  {
+    "num": 10,
+    "id": "com.gpu_acceleration.optimize-hardware.ips",
+    "cat": "Ép GPU & Tăng Hiệu Suất",
+    "desc": "Kích hoạt tăng tốc đồ họa phần cứng cấp độ cao"
+  },
+  {
+    "num": 11,
+    "id": "com.anti_shake.fix-vibration.game.ips",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Khử rung lắc camera và ổn định tầm nhìn"
+  },
+  {
+    "num": 12,
+    "id": "com.recoil_stabilizer.gunfix.ffx64.dat",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Đầm tâm súng, triệt tiêu độ giật khi sấy liên tục"
+  },
+  {
+    "num": 13,
+    "id": "com.input_delay.minimize-response.plist",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Giảm độ trễ phản hồi cảm ứng xuống mức tối thiểu"
+  },
+  {
+    "num": 14,
+    "id": "com.network_latency.reduction-tool.config",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Tối ưu hóa gói tin mạng, giảm ping và chống giật lag"
+  },
+  {
+    "num": 15,
+    "id": "com.background_task.kill-mode.hardware.dat",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Đóng ứng dụng ngầm giải phóng RAM cho game"
+  },
+  {
+    "num": 16,
+    "id": "com.touch_lag.optimizer-response-time.ips",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Tối ưu thời gian đáp ứng cảm ứng ngón tay 240Hz"
+  },
+  {
+    "num": 17,
+    "id": "com.memory_cleaner.auto-boost-performance.list",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Tự động dọn dẹp bộ nhớ đệm real-time"
+  },
+  {
+    "num": 18,
+    "id": "com.fps_stabilizer.highrefresh-rate.config",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Giữ tần số quét màn hình luôn ở mức cao nhất"
+  },
+  {
+    "num": 19,
+    "id": "com.device_temp.reduce-overheat-control.strings",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Hạ nhiệt độ chipset, duy trì hiệu năng lâu dài"
+  },
+  {
+    "num": 20,
+    "id": "com.battery_mode.ultra-saving.gaming.ips",
+    "cat": "Fix Rung & Giảm Lag",
+    "desc": "Tối ưu hóa năng lượng cho đồ họa hiệu suất cao"
+  },
+  {
+    "num": 21,
+    "id": "com.sensitivity_tuner.max-control.ads.dat",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Kéo tâm siêu mượt, tăng độ nhạy vuốt ngón tay"
+  },
+  {
+    "num": 22,
+    "id": "com.aim_assist.lock-on-fastmode.config",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Hỗ trợ bám tâm nhanh vào mục tiêu"
+  },
+  {
+    "num": 23,
+    "id": "com.scoping_speed.optimize-fast.ips",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Tăng tốc độ bật ống ngắm ngắm là trúng"
+  },
+  {
+    "num": 24,
+    "id": "com.crosshair_precision.stabilizer-tool.strings",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Ghim tâm chuẩn xác vào mục tiêu khi di chuyển"
+  },
+  {
+    "num": 25,
+    "id": "com.auto_targeting.range-extension.list",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Mở rộng góc quét mục tiêu cho tâm súng"
+  },
+  {
+    "num": 26,
+    "id": "com.tuning_response.aim-speed.ffx64.dat",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Tăng tốc độ phản hồi lia tâm khi giao tranh"
+  },
+  {
+    "num": 27,
+    "id": "com.aimlock.boost-auto-target.config",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Khóa chặt tâm súng chống văng lệch"
+  },
+  {
+    "num": 28,
+    "id": "com.smooth_scoping.highspeed-adjustment.ips",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Chuyển động ống ngắm mượt mà không khựng"
+  },
+  {
+    "num": 29,
+    "id": "com.touch_sensitivity.scaler-fast-response.dat",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Gia tốc cảm ứng màn hình vuốt nhẹ bay đầu"
+  },
+  {
+    "num": 30,
+    "id": "com.dpi_response.time-reduction-control.list",
+    "cat": "Tăng Nhạy & Aimlock",
+    "desc": "Tăng tốc độ phản hồi điểm chạm DPI"
+  },
+  {
+    "num": 31,
+    "id": "com.hardware_acceleration.enabled.gamingmode.strings",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 32,
+    "id": "com.graphics_boost.highres-rendering.ips",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 33,
+    "id": "com.performance_mode.auto-optimize.device.dat",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 34,
+    "id": "com.render_quality.ultra-detail.gamingmode.list",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 35,
+    "id": "com.gpu_tweaks.highperformance.coreconfig.dat",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 36,
+    "id": "com.screen_refresh.highhz-mode-plist.ips",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 37,
+    "id": "com.resolution_scaling.max-quality-performance.dat",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 38,
+    "id": "com.hardware_tuner.max-response-game.list",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 39,
+    "id": "com.overclocking.safe-mode.gaming-performance.dat",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 40,
+    "id": "com.latency_optimizer.min-response-dpi.config",
+    "cat": "Buff Cấu Hình & Tăng Tốc",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 41,
+    "id": "com.anti_lag.network-stabilizer.gaming.dat",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 42,
+    "id": "com.anti_hack.secure-connection-server.ips",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 43,
+    "id": "com.packet_loss.reducer-network-gaming.list",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 44,
+    "id": "com.ping_boost.lowlatency.ffx64.config",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 45,
+    "id": "com.network_optimizer.autoscale-response-time.dat",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 46,
+    "id": "com.security_patch.update-anti-crack.plist",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 47,
+    "id": "com.network_mode.low-ping-boost.gamingmode.strings",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 48,
+    "id": "com.ddos_protection.enable-highsecurity.config",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 49,
+    "id": "com.server_latency.reduce-optimization.dat",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 50,
+    "id": "com.vpn_secure.lowping-enhancer.list",
+    "cat": "Chống Lag & Khóa Khung Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 51,
+    "id": "com.screen_sensitivity.highspeed-response.dat",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 52,
+    "id": "com.touchscreen_response.boost-control.ips",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 53,
+    "id": "com.input_speed.optimizer-response-time.list",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 54,
+    "id": "com.gesture_sensitivity.scaler-gaming-mode.plist",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 55,
+    "id": "com.swipe_response.time-reduction-enhance.dat",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 56,
+    "id": "com.screen_touch_latency.optimizer-ultra.config",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 57,
+    "id": "com.dpi_adjuster.high-speed-touch.ips",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 58,
+    "id": "com.touch_delay.reduction-highresponse.strings",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 59,
+    "id": "com.touch_screen_optimizer.scaler-gamingmode.dat",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 60,
+    "id": "com.ultra_touch_mode.highprecision-response.list",
+    "cat": "Tăng Độ Nhạy Màn Hình",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 61,
+    "id": "com.crosshair_control.stabilizer-tool.dat",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 62,
+    "id": "com.center_aim.auto-lock.ffx64.list",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 63,
+    "id": "com.aimlock_smoothness.highspeed-tuner.config",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Khóa chặt tâm súng chống văng lệch"
+  },
+  {
+    "num": 64,
+    "id": "com.recoil_reduction.gun-stability.strings",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 65,
+    "id": "com.vertical_recoil.fix-control.gamingmode.ips",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 66,
+    "id": "com.horizontal_recoil.stabilizer-tool.dat",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 67,
+    "id": "com.precision_control.stabilizer-highspeed.config",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 68,
+    "id": "com.auto_lock_range.expansion.gamingmode.list",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 69,
+    "id": "com.gun_control.smooth-scoping.highperformance.dat",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 70,
+    "id": "com.aim_adjuster.fast-response-gamingmode.ips",
+    "cat": "Fix Tâm & Ổn Định Súng",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 71,
+    "id": "com.ultra_graphics.enable-highres-performance.list",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 72,
+    "id": "com.texture_quality.highresolution-gamingmode.dat",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 73,
+    "id": "com.lighting_effects.ultra-rendering-tool.ips",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 74,
+    "id": "com.shadow_quality.highsettings-rendering.strings",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 75,
+    "id": "com.color_boost.enable-vibrancy.gamingmode.dat",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 76,
+    "id": "com.post_processing.effects-enhance-tool.config",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 77,
+    "id": "com.water_reflection.highdetail.gamingmode.list",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 78,
+    "id": "com.render_scaling.ultra-quality-adjustment.dat",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 79,
+    "id": "com.highres_textures.enable-performance.gamingmode.strings",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 80,
+    "id": "com.fog_effects.disable-ultra-rendering.ips",
+    "cat": "Độ Phân Giải & Đồ Họa",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 81,
+    "id": "com.fps_booster.highhz-performance-tool.list",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 82,
+    "id": "com.screen_response.highspeed-refresh-rate.dat",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 83,
+    "id": "com.device_frame_stabilizer.optimizer-ultra.ips",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 84,
+    "id": "com.highframe_mode.enable-120fps-tool.strings",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 85,
+    "id": "com.low_latency_mode.enable-gamingmode-performance.dat",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 86,
+    "id": "com.ultra_refresh_rate.enable-boost.gamingmode.config",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 87,
+    "id": "com.framerate_control.highstability-gamingmode.list",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 88,
+    "id": "com.fps_optimizer.lowlatency-control.gamingmode.dat",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 89,
+    "id": "com.frame_response.fastrefresh-rate.gamingmode.ips",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 90,
+    "id": "com.performance_scaling.optimizer-120hz.strings",
+    "cat": "Mở Khóa 120 FPS",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 91,
+    "id": "com.auto_focus.enable-highprecision.dat",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 92,
+    "id": "com.smart_targeting.lock-on-tool.config",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 93,
+    "id": "com.device_tweaks.optimize-performance.dat",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 94,
+    "id": "com.network_scaling.lowping-adjustment.gamingmode.list",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 95,
+    "id": "com.hardware_tweaks.enable-ultraperformance.config",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 96,
+    "id": "com.screen_optimizer.enable-highspeed-response.dat",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 97,
+    "id": "com.hardware_control.safe-mode-gaming.dat",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 98,
+    "id": "com.resource_boost.auto-cleaner-performance.list",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 99,
+    "id": "com.latency_adjuster.ultraperformance-response.ips",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  },
+  {
+    "num": 100,
+    "id": "com.device_stabilizer.optimize-control.gamingmode.config",
+    "cat": "Tối Ưu Toàn Diện Hệ Thống",
+    "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"
+  }
+]

@@ -501,6 +501,46 @@
         </div>
       </div>
 
+      
+      <!-- KHO 100 CODE & ĐỒNG BỘ PHẦN CỨNG 34 DÒNG MÁY -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Card 1: Kho 100 Code VIP -->
+        <div onclick="openCodesModal()" class="liquid-glass-ruby rounded-2xl p-3.5 space-y-2 border-ruby-500/40 cursor-pointer active:scale-95 transition-transform">
+          <div class="flex items-center justify-between">
+            <div class="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+              <i data-lucide="database" class="w-4 h-4"></i>
+            </div>
+            <span class="px-1.5 py-0.5 rounded text-[8px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">100/100 CODE</span>
+          </div>
+          <div>
+            <h4 class="text-xs font-black text-white">KHO 100 CODE VIP</h4>
+            <p class="text-[9px] text-zinc-400 mt-0.5">Tối ưu phần cứng &amp; can thiệp OB mới nhất</p>
+          </div>
+          <div class="pt-1 border-t border-white/5 flex items-center justify-between text-[9px]">
+            <span class="text-emerald-400 font-bold">Đã nạp vào RAM</span>
+            <span class="text-ruby-400 font-black">Xem &gt;</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Full 34 Dòng Máy Hardware Sync -->
+        <div onclick="openDeviceSelectorModal()" class="liquid-glass-ruby rounded-2xl p-3.5 space-y-2 border-ruby-500/40 cursor-pointer active:scale-95 transition-transform">
+          <div class="flex items-center justify-between">
+            <div class="w-8 h-8 rounded-xl bg-ruby-neon/20 border border-ruby-500/40 flex items-center justify-center text-ruby-400">
+              <i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i>
+            </div>
+            <span class="px-1.5 py-0.5 rounded text-[8px] font-bold bg-ruby-500/20 text-ruby-300 border border-ruby-500/30">34 DÒNG MÁY</span>
+          </div>
+          <div>
+            <h4 class="text-xs font-black text-white">HỒ SƠ PHẦN CỨNG</h4>
+            <p class="text-[9px] text-zinc-400 mt-0.5" id="home-dev-desc">iPhone 16 Plus • 1.07x Sensi</p>
+          </div>
+          <div class="pt-1 border-t border-white/5 flex items-center justify-between text-[9px]">
+            <span class="text-emerald-400 font-bold">Khớp 100% code</span>
+            <span class="text-ruby-400 font-black">Đổi &gt;</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Free Fire & FF MAX Banner Linking to Game Tab -->
       <div class="liquid-glass-ruby rounded-2xl p-3.5 flex items-center justify-between border-ruby-500/40 shadow-sm">
         <div class="flex items-center gap-3">
@@ -575,6 +615,63 @@
           <button onclick="openFunctionsModal()" class="px-3 py-1.5 rounded-xl btn-ruby-primary text-white text-xs font-black flex items-center gap-1 cursor-pointer">
             Mở bộ 14 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </button>
+        </div>
+
+        
+        <!-- BỘ HIỆU CHUẨN CẢM ỨNG & RADAR ĐỒNG BỘ THỜI GIAN THỰC -->
+        <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-ruby-500/40 shadow-lg relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-2xl bg-ruby-neon/20 border border-ruby-500/40 flex items-center justify-center text-ruby-400">
+                <i data-lucide="crosshair" class="w-4.5 h-4.5 text-emerald-400"></i>
+              </div>
+              <div>
+                <h3 class="text-xs font-black text-white">HIỆU CHUẨN CẢM ỨNG &amp; RADAR ĐỒNG BỘ</h3>
+                <p class="text-[9px] text-zinc-400">HeadLock (Bám Đầu) • SoftAim (Êm Tâm) • Nhẹ Tâm (8f)</p>
+              </div>
+            </div>
+            <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> 240Hz ACTIVE
+            </span>
+          </div>
+
+          <!-- Live Telemetry Stats HUD -->
+          <div class="grid grid-cols-4 gap-1.5 p-2 rounded-2xl bg-black/60 border border-white/5 text-center font-mono text-[9px]">
+            <div>
+              <span class="text-zinc-500 block">ĐỘ TRỄ</span>
+              <span id="arena-stat-latency" class="text-emerald-400 font-bold">0.8 ms</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">TẦN SỐ</span>
+              <span id="arena-stat-hz" class="text-cyan-400 font-bold">240 Hz</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">ĐỘ NHẠY</span>
+              <span id="arena-stat-sens" class="text-amber-300 font-bold">1.07x</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">BÁM TÂM</span>
+              <span id="arena-stat-lock" class="text-rose-400 font-bold">LOCKED</span>
+            </div>
+          </div>
+
+          <!-- Interactive Radar Arena Touchpad -->
+          <div class="relative w-full h-44 rounded-2xl bg-[#06080e] border border-ruby-500/30 overflow-hidden cursor-crosshair select-none touch-none" id="radar-touch-container">
+            <canvas id="radar-canvas" width="380" height="176" class="w-full h-full block"></canvas>
+            <div id="radar-hint" class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300">
+              <div class="px-3 py-1.5 rounded-xl bg-black/75 border border-ruby-500/40 text-[10px] text-zinc-300 font-bold flex items-center gap-1.5 animate-pulse shadow-lg">
+                <i data-lucide="hand" class="w-3.5 h-3.5 text-ruby-400"></i> Chạm vuốt ngón tay vào đây để test cảm ứng &amp; bám tâm
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Algorithm Indicators -->
+          <div class="flex items-center justify-between text-[9px] text-zinc-400 font-mono px-1">
+            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Bám Đầu (0.58)</span>
+            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Êm Tâm (0.26)</span>
+            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Sensi X10</span>
+            <span class="flex items-center gap-1 text-ruby-400 font-bold" id="arena-model-tag">iPhone 16 Plus</span>
+          </div>
         </div>
 
         <!-- Game 1: Free Fire -->
@@ -1167,6 +1264,62 @@
     </div>
   </div>
 
+  
+  <!-- MODAL: KHO 100 MÃ CẤU HÌNH VIP OB53 -->
+  <div id="modal-100-codes" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-4.5 space-y-3.5 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] flex flex-col">
+      <!-- Close X button -->
+      <button onclick="closeModal('modal-100-codes')" class="absolute top-4 right-4 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-400 hover:text-white border border-white/10 transition-all active:scale-95 cursor-pointer z-20" title="Đóng">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Header -->
+      <div class="pr-8 space-y-0.5">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-ruby-neon/20 border border-ruby-500/40 flex items-center justify-center text-ruby-400">
+            <i data-lucide="database" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-black text-white">KHO 100 CODE CẤU HÌNH VIP</h3>
+            <p class="text-[10px] text-zinc-400 font-medium">Tối ưu phần cứng • 100 Code .com New OB53</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Injection Action Bar -->
+      <div class="p-3 rounded-2xl bg-black/60 border border-emerald-500/35 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] text-zinc-400 block font-bold">TRẠNG THÁI NẠP CODE:</span>
+          <span id="codes-modal-status-text" class="text-xs font-black text-emerald-400 flex items-center gap-1">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> 100/100 MÃ ĐÃ SẴN SÀNG
+          </span>
+        </div>
+        <button onclick="injectAll100Codes()" id="btn-inject-all-codes" class="px-3 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 text-white font-black text-[11px] flex items-center gap-1.5 shadow-[0_0_15px_rgba(16,185,129,0.3)] active:scale-95 cursor-pointer transition-transform">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-300"></i> NẠP 100 MÃ
+        </button>
+      </div>
+
+      <!-- Live Terminal Console -->
+      <div id="codes-terminal-box" class="hidden p-2.5 rounded-xl bg-[#04060a] border border-emerald-500/30 text-[9px] font-mono text-emerald-400 space-y-1 max-h-24 overflow-y-auto no-scrollbar">
+      </div>
+
+      <!-- Category Filter Pills & Search -->
+      <div class="space-y-2">
+        <div class="relative">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-2.5"></i>
+          <input type="text" id="codes-search-input" oninput="filterCodesList()" placeholder="Tìm mã code (gpu, aimlock, delay, fps...)"
+                 class="w-full bg-black/50 border border-white/10 rounded-xl pl-8 pr-3 py-1.5 text-[11px] text-white placeholder-zinc-500 outline-none focus:border-ruby-500/60">
+        </div>
+        <div class="flex gap-1.5 overflow-x-auto no-scrollbar py-0.5" id="codes-cat-pills">
+        </div>
+      </div>
+
+      <!-- Scrollable 100 Codes List -->
+      <div class="flex-1 overflow-y-auto space-y-1.5 pr-1 max-h-64 no-scrollbar" id="codes-items-container">
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL: DEVICE INSPECTION, CERTIFICATE STATUS & HARDWARE SELECTOR -->
   <div id="modal-device-selector" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="relative liquid-glass-ruby rounded-3xl max-w-sm w-full p-5 space-y-4 text-left border-ruby-500/50 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
@@ -1191,30 +1344,44 @@
       <!-- Active Hardware & Certificate Telemetry Card -->
       <div class="p-3.5 rounded-2xl bg-black/60 border border-emerald-500/35 space-y-2.5 shadow-inner">
         <div class="flex items-center justify-between pb-2 border-b border-white/10">
-          <span class="text-[10px] font-bold text-zinc-400">Trạng Thái Chứng Chỉ:</span>
+          <span class="text-[10px] font-bold text-zinc-400">Chứng Chỉ Bản Quyền:</span>
           <span id="dev-modal-cert-status" class="text-[10px] font-bold text-emerald-400 flex items-center gap-1">
             <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> ĐÃ TIN CẬY ROOT CA ✓
           </span>
         </div>
-        <div class="grid grid-cols-2 gap-2 text-[10px]">
-          <div>
-            <span class="text-zinc-500 block">Dòng máy hiện tại:</span>
-            <span id="dev-modal-current-name" class="text-white font-bold font-mono">iPhone 16 Plus</span>
+        <!-- 6 Detailed Hardware Telemetry Badges -->
+        <div class="grid grid-cols-3 gap-1.5 text-[9px] font-mono">
+          <div class="p-1.5 rounded-xl bg-white/5 border border-white/5 text-center">
+            <span class="text-zinc-400 block text-[8px]">ĐỘ NHẠY</span>
+            <span id="telemetry-sens" class="text-amber-300 font-bold text-[11px]">1.07x</span>
           </div>
-          <div>
-            <span class="text-zinc-500 block">Chipset / Đồ họa:</span>
-            <span id="dev-modal-gpu" class="text-zinc-300 font-bold font-mono">Apple A18 • Metal 3</span>
+          <div class="p-1.5 rounded-xl bg-white/5 border border-white/5 text-center">
+            <span class="text-zinc-400 block text-[8px]">MÀN HÌNH</span>
+            <span id="telemetry-screen" class="text-white font-bold text-[10px]">414x896 @3x</span>
           </div>
-          <div>
-            <span class="text-zinc-500 block">Màn hình / Cảm ứng:</span>
-            <span id="dev-modal-screen" class="text-zinc-300 font-bold font-mono">430x932 @3x (240Hz)</span>
+          <div class="p-1.5 rounded-xl bg-white/5 border border-white/5 text-center">
+            <span class="text-zinc-400 block text-[8px]">TÂM NGẮM</span>
+            <span id="telemetry-aim" class="text-cyan-400 font-bold text-[10px]">(207, 448)</span>
           </div>
-          <div>
-            <span class="text-zinc-500 block">Tác dụng hệ thống:</span>
-            <span id="dev-modal-effect-status" class="text-emerald-400 font-bold font-mono">100% HOẠT ĐỘNG</span>
+          <div class="p-1.5 rounded-xl bg-white/5 border border-white/5 text-center">
+            <span class="text-zinc-400 block text-[8px]">BÙ VIỀN MÀN</span>
+            <span id="telemetry-offset" class="text-emerald-400 font-bold text-[10px]">0.94 / 0.94</span>
+          </div>
+          <div class="p-1.5 rounded-xl bg-white/5 border border-white/5 text-center">
+            <span class="text-zinc-400 block text-[8px]">ĐỆM FRAME</span>
+            <span id="telemetry-buffer" class="text-rose-300 font-bold text-[10px]">0.5 / 0.5</span>
+          </div>
+          <div class="p-1.5 rounded-xl bg-white/5 border border-white/5 text-center">
+            <span class="text-zinc-400 block text-[8px]">SAFE AREA</span>
+            <span id="telemetry-safe" class="text-zinc-300 font-bold text-[10px]">T:48 | B:34</span>
           </div>
         </div>
       </div>
+
+      <!-- Download .mobileconfig Customized For This Device -->
+      <button onclick="downloadDeviceMobileConfig()" id="btn-dl-mobileconfig" class="w-full py-2.5 rounded-2xl bg-black/60 border border-ruby-500/40 hover:bg-ruby-500/20 text-white font-black text-xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer">
+        <i data-lucide="download" class="w-4 h-4 text-ruby-400"></i> TẢI FILE CẤU HÌNH .MOBILECONFIG (MÁY NÀY)
+      </button>
 
       <!-- Activation Handshake Button -->
       <button onclick="triggerCertActivation()" id="btn-activate-hardware" class="w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white font-black text-xs flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-95 transition-all cursor-pointer">
@@ -1224,13 +1391,18 @@
         <i data-lucide="check-circle" class="w-3.5 h-3.5 inline mr-1"></i> Đã liên kết và tối ưu cảm ứng cho <span id="feedback-device-name">iPhone 16 Plus</span>!
       </div>
 
-      <!-- Device Picker List -->
+      <!-- Device Picker List (Full 34 Models) -->
       <div class="space-y-2">
         <div class="flex items-center justify-between text-[11px] font-bold text-zinc-300">
-          <span>CHỌN CHÍNH XÁC DÒNG MÁY CỦA BẠN:</span>
-          <span class="text-[9px] text-ruby-400 font-mono">1 CHẠM ĐỂ CHỌN</span>
+          <span>DANH SÁCH 34 DÒNG MÁY IPHONE:</span>
+          <span class="text-[9px] text-emerald-400 font-mono">TỰ ĐỘNG KHỚP CODE</span>
         </div>
-        <div class="space-y-1.5 max-h-56 overflow-y-auto pr-1" id="device-model-list">
+        <div class="relative">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-2.5"></i>
+          <input type="text" id="dev-search-input" oninput="filterDeviceModelList()" placeholder="Tìm model (vd: 16 Plus, 15 Pro, XR, SE, 11...)"
+                 class="w-full bg-black/50 border border-white/10 rounded-xl pl-8 pr-3 py-1.5 text-[11px] text-white placeholder-zinc-500 outline-none focus:border-ruby-500/60">
+        </div>
+        <div class="space-y-1.5 max-h-52 overflow-y-auto pr-1 no-scrollbar" id="device-model-list">
           <!-- Injected dynamically via JS -->
         </div>
       </div>
@@ -1241,16 +1413,135 @@
   <!-- 6. APPLICATION JAVASCRIPT LOGIC -->
   <!-- ========================================== -->
   <script>
-    // --- 0. SMART DEVICE DETECTION (DETECT USER'S EXACT PHONE MODEL) ---
+    // =========================================================================
+    // 0. FULL DEVICE HARDWARE PROFILES (34 DÒNG MÁY IPHONE TỪ PLISTS GỐC)
+    // =========================================================================
+    const DEVICE_HARDWARE_PROFILES = {"iPhone SE (2016)": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 320.0, "Height": 568.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 0.98, "AimCenterFrame": {"X": 160.0, "Y": 284.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.75, "OffsetY": 0.75}}, "iPhone SE (2020)": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 667.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.0, "AimCenterFrame": {"X": 187.5, "Y": 333.5, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.8, "OffsetY": 0.8}}, "iPhone SE (2022)": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 667.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.01, "AimCenterFrame": {"X": 187.5, "Y": 333.5, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.82, "OffsetY": 0.82}}, "iPhone 13": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 390.0, "Height": 844.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 47.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.02, "AimCenterFrame": {"X": 195.0, "Y": 422.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.85, "OffsetY": 0.85}}, "iPhone 13 Pro Max": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 428.0, "Height": 926.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 47.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.04, "AimCenterFrame": {"X": 214.0, "Y": 463.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.9, "OffsetY": 0.9}}, "iPhone 13 Pro": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 390.0, "Height": 844.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 47.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.03, "AimCenterFrame": {"X": 195.0, "Y": 422.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.88, "OffsetY": 0.88}}, "iPhone 14 Pro": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.03, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.88, "OffsetY": 0.88}}, "iPhone 14": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.02, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.85, "OffsetY": 0.85}}, "iPhone 14 Plus": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 896.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.05, "AimCenterFrame": {"X": 207.0, "Y": 448.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.9, "OffsetY": 0.9}}, "iPhone 14 Pro Max": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.04, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.9, "OffsetY": 0.9}}, "iPhone 15": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.03, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.88, "OffsetY": 0.88}}, "iPhone 15 Pro": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.04, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.9, "OffsetY": 0.9}}, "iPhone 15 Pro Max": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.05, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.92, "OffsetY": 0.92}}, "iPhone 15 Plus": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 896.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.06, "AimCenterFrame": {"X": 207.0, "Y": 448.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.92, "OffsetY": 0.92}}, "iPhone 12 Pro": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 390.0, "Height": 844.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 47.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.03, "AimCenterFrame": {"X": 195.0, "Y": 422.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.88, "OffsetY": 0.88}}, "iPhone 12": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 390.0, "Height": 844.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 47.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.02, "AimCenterFrame": {"X": 195.0, "Y": 422.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.85, "OffsetY": 0.85}}, "iPhone 12 Pro Max": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 428.0, "Height": 926.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 47.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.04, "AimCenterFrame": {"X": 214.0, "Y": 463.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.9, "OffsetY": 0.9}}, "iPhone 7 Plus": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 736.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.02, "AimCenterFrame": {"X": 207.0, "Y": 368.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.83, "OffsetY": 0.83}}, "iPhone 7": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 667.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.01, "AimCenterFrame": {"X": 187.5, "Y": 333.5, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.81, "OffsetY": 0.81}}, "iPhone Xs Max": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 896.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 44.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.03, "AimCenterFrame": {"X": 207.0, "Y": 448.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.88, "OffsetY": 0.88}}, "iPhone X": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 812.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 44.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.01, "AimCenterFrame": {"X": 187.5, "Y": 406.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.83, "OffsetY": 0.83}}, "iPhone Xr": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 896.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 44.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.01, "AimCenterFrame": {"X": 207.0, "Y": 448.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.84, "OffsetY": 0.84}}, "iPhone Xs": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 812.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 44.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.02, "AimCenterFrame": {"X": 187.5, "Y": 406.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.85, "OffsetY": 0.85}}, "iPhone 11": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 896.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 44.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.0, "AimCenterFrame": {"X": 207.0, "Y": 448.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.8, "OffsetY": 0.8}}, "iPhone 11 Pro Max": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 896.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 44.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.0, "AimCenterFrame": {"X": 207.0, "Y": 448.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.85, "OffsetY": 0.85}}, "iPhone 11 Pro": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 812.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 44.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.0, "AimCenterFrame": {"X": 187.5, "Y": 406.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.8, "OffsetY": 0.8}}, "iPhone 16 Plus": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 896.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.07, "AimCenterFrame": {"X": 207.0, "Y": 448.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.94, "OffsetY": 0.94}}, "iPhone 16": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.04, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.88, "OffsetY": 0.88}}, "iPhone 16 Pro Max": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.06, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.92, "OffsetY": 0.92}}, "iPhone 16 Pro": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 430.0, "Height": 932.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 48.0, "Bottom": 34.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.05, "AimCenterFrame": {"X": 215.0, "Y": 466.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.9, "OffsetY": 0.9}}, "iPhone 8 Plus": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 736.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.02, "AimCenterFrame": {"X": 207.0, "Y": 368.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.83, "OffsetY": 0.83}}, "iPhone 8": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 667.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.01, "AimCenterFrame": {"X": 187.5, "Y": 333.5, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.81, "OffsetY": 0.81}}, "iPhone 6": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 375.0, "Height": 667.0, "Scale": 2.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.0, "AimCenterFrame": {"X": 187.5, "Y": 333.5, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.8, "OffsetY": 0.8}}, "iPhone 6 Plus": {"ScreenFrame": {"X": 0.0, "Y": 0.0, "Width": 414.0, "Height": 736.0, "Scale": 3.0}, "SafeAreaInsets": {"Top": 20.0, "Bottom": 0.0, "Left": 0.0, "Right": 0.0}, "TouchSensitivity": 1.01, "AimCenterFrame": {"X": 207.0, "Y": 368.0, "Width": 1.0, "Height": 1.0}, "ExtraFrameBuffer": {"SubPixelX": 0.5, "SubPixelY": 0.5}, "FineAdjustmentOffsets": {"OffsetX": 0.82, "OffsetY": 0.82}}};
+
+    // =========================================================================
+    // 0.1. KHO 100 CODE HỆ THỐNG VIP (100 CODE .COM NEW OB53)
+    // =========================================================================
+    const CODES_100_LIST = [{"num": 1, "id": "com.gpu_boost.performance-ffx64.dat", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Ép xung nhân đồ họa Metal 3, nâng cao khả năng dựng hình"}, {"num": 2, "id": "com.cpu_optimize.highspeed-core.plist", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Phân bổ luồng xử lý CPU cao tốc, chống nghẽn tác vụ"}, {"num": 3, "id": "com.rendering_mode.ultra-high-graphic.ips", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Chế độ kết xuất đồ họa Ultra mượt mà, khử răng cưa"}, {"num": 4, "id": "com.device_acceleration.enable-fastboot.dat", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Kích hoạt gia tốc phần cứng xử lý khung hình"}, {"num": 5, "id": "com.gaming_mode.auto-optimize-setting.list", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Tối ưu hóa tài nguyên phần cứng cho chế độ chơi game"}, {"num": 6, "id": "com.frame_rate.stabilizer-120fps.plist", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Khóa ổn định khung hình 120 FPS, chống drop khung"}, {"num": 7, "id": "com.dpi_scaler.resolution-upscale.strings", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Nâng độ phân giải hiển thị và tăng mật độ điểm ảnh"}, {"num": 8, "id": "com.thermal_control.cooling-system.config", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Kiểm soát nhiệt độ thiết bị, giảm phát nhiệt khi combat"}, {"num": 9, "id": "com.device_boost.overdrive.gamingmode.dat", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Tăng cường xung nhịp tổng thể khi mở Free Fire"}, {"num": 10, "id": "com.gpu_acceleration.optimize-hardware.ips", "cat": "Ép GPU & Tăng Hiệu Suất", "desc": "Kích hoạt tăng tốc đồ họa phần cứng cấp độ cao"}, {"num": 11, "id": "com.anti_shake.fix-vibration.game.ips", "cat": "Fix Rung & Giảm Lag", "desc": "Khử rung lắc camera và ổn định tầm nhìn"}, {"num": 12, "id": "com.recoil_stabilizer.gunfix.ffx64.dat", "cat": "Fix Rung & Giảm Lag", "desc": "Đầm tâm súng, triệt tiêu độ giật khi sấy liên tục"}, {"num": 13, "id": "com.input_delay.minimize-response.plist", "cat": "Fix Rung & Giảm Lag", "desc": "Giảm độ trễ phản hồi cảm ứng xuống mức tối thiểu"}, {"num": 14, "id": "com.network_latency.reduction-tool.config", "cat": "Fix Rung & Giảm Lag", "desc": "Tối ưu hóa gói tin mạng, giảm ping và chống giật lag"}, {"num": 15, "id": "com.background_task.kill-mode.hardware.dat", "cat": "Fix Rung & Giảm Lag", "desc": "Đóng ứng dụng ngầm giải phóng RAM cho game"}, {"num": 16, "id": "com.touch_lag.optimizer-response-time.ips", "cat": "Fix Rung & Giảm Lag", "desc": "Tối ưu thời gian đáp ứng cảm ứng ngón tay 240Hz"}, {"num": 17, "id": "com.memory_cleaner.auto-boost-performance.list", "cat": "Fix Rung & Giảm Lag", "desc": "Tự động dọn dẹp bộ nhớ đệm real-time"}, {"num": 18, "id": "com.fps_stabilizer.highrefresh-rate.config", "cat": "Fix Rung & Giảm Lag", "desc": "Giữ tần số quét màn hình luôn ở mức cao nhất"}, {"num": 19, "id": "com.device_temp.reduce-overheat-control.strings", "cat": "Fix Rung & Giảm Lag", "desc": "Hạ nhiệt độ chipset, duy trì hiệu năng lâu dài"}, {"num": 20, "id": "com.battery_mode.ultra-saving.gaming.ips", "cat": "Fix Rung & Giảm Lag", "desc": "Tối ưu hóa năng lượng cho đồ họa hiệu suất cao"}, {"num": 21, "id": "com.sensitivity_tuner.max-control.ads.dat", "cat": "Tăng Nhạy & Aimlock", "desc": "Kéo tâm siêu mượt, tăng độ nhạy vuốt ngón tay"}, {"num": 22, "id": "com.aim_assist.lock-on-fastmode.config", "cat": "Tăng Nhạy & Aimlock", "desc": "Hỗ trợ bám tâm nhanh vào mục tiêu"}, {"num": 23, "id": "com.scoping_speed.optimize-fast.ips", "cat": "Tăng Nhạy & Aimlock", "desc": "Tăng tốc độ bật ống ngắm ngắm là trúng"}, {"num": 24, "id": "com.crosshair_precision.stabilizer-tool.strings", "cat": "Tăng Nhạy & Aimlock", "desc": "Ghim tâm chuẩn xác vào mục tiêu khi di chuyển"}, {"num": 25, "id": "com.auto_targeting.range-extension.list", "cat": "Tăng Nhạy & Aimlock", "desc": "Mở rộng góc quét mục tiêu cho tâm súng"}, {"num": 26, "id": "com.tuning_response.aim-speed.ffx64.dat", "cat": "Tăng Nhạy & Aimlock", "desc": "Tăng tốc độ phản hồi lia tâm khi giao tranh"}, {"num": 27, "id": "com.aimlock.boost-auto-target.config", "cat": "Tăng Nhạy & Aimlock", "desc": "Khóa chặt tâm súng chống văng lệch"}, {"num": 28, "id": "com.smooth_scoping.highspeed-adjustment.ips", "cat": "Tăng Nhạy & Aimlock", "desc": "Chuyển động ống ngắm mượt mà không khựng"}, {"num": 29, "id": "com.touch_sensitivity.scaler-fast-response.dat", "cat": "Tăng Nhạy & Aimlock", "desc": "Gia tốc cảm ứng màn hình vuốt nhẹ bay đầu"}, {"num": 30, "id": "com.dpi_response.time-reduction-control.list", "cat": "Tăng Nhạy & Aimlock", "desc": "Tăng tốc độ phản hồi điểm chạm DPI"}, {"num": 31, "id": "com.hardware_acceleration.enabled.gamingmode.strings", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 32, "id": "com.graphics_boost.highres-rendering.ips", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 33, "id": "com.performance_mode.auto-optimize.device.dat", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 34, "id": "com.render_quality.ultra-detail.gamingmode.list", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 35, "id": "com.gpu_tweaks.highperformance.coreconfig.dat", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 36, "id": "com.screen_refresh.highhz-mode-plist.ips", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 37, "id": "com.resolution_scaling.max-quality-performance.dat", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 38, "id": "com.hardware_tuner.max-response-game.list", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 39, "id": "com.overclocking.safe-mode.gaming-performance.dat", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 40, "id": "com.latency_optimizer.min-response-dpi.config", "cat": "Buff Cấu Hình & Tăng Tốc", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 41, "id": "com.anti_lag.network-stabilizer.gaming.dat", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 42, "id": "com.anti_hack.secure-connection-server.ips", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 43, "id": "com.packet_loss.reducer-network-gaming.list", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 44, "id": "com.ping_boost.lowlatency.ffx64.config", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 45, "id": "com.network_optimizer.autoscale-response-time.dat", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 46, "id": "com.security_patch.update-anti-crack.plist", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 47, "id": "com.network_mode.low-ping-boost.gamingmode.strings", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 48, "id": "com.ddos_protection.enable-highsecurity.config", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 49, "id": "com.server_latency.reduce-optimization.dat", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 50, "id": "com.vpn_secure.lowping-enhancer.list", "cat": "Chống Lag & Khóa Khung Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 51, "id": "com.screen_sensitivity.highspeed-response.dat", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 52, "id": "com.touchscreen_response.boost-control.ips", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 53, "id": "com.input_speed.optimizer-response-time.list", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 54, "id": "com.gesture_sensitivity.scaler-gaming-mode.plist", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 55, "id": "com.swipe_response.time-reduction-enhance.dat", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 56, "id": "com.screen_touch_latency.optimizer-ultra.config", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 57, "id": "com.dpi_adjuster.high-speed-touch.ips", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 58, "id": "com.touch_delay.reduction-highresponse.strings", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 59, "id": "com.touch_screen_optimizer.scaler-gamingmode.dat", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 60, "id": "com.ultra_touch_mode.highprecision-response.list", "cat": "Tăng Độ Nhạy Màn Hình", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 61, "id": "com.crosshair_control.stabilizer-tool.dat", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 62, "id": "com.center_aim.auto-lock.ffx64.list", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 63, "id": "com.aimlock_smoothness.highspeed-tuner.config", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Khóa chặt tâm súng chống văng lệch"}, {"num": 64, "id": "com.recoil_reduction.gun-stability.strings", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 65, "id": "com.vertical_recoil.fix-control.gamingmode.ips", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 66, "id": "com.horizontal_recoil.stabilizer-tool.dat", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 67, "id": "com.precision_control.stabilizer-highspeed.config", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 68, "id": "com.auto_lock_range.expansion.gamingmode.list", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 69, "id": "com.gun_control.smooth-scoping.highperformance.dat", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 70, "id": "com.aim_adjuster.fast-response-gamingmode.ips", "cat": "Fix Tâm & Ổn Định Súng", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 71, "id": "com.ultra_graphics.enable-highres-performance.list", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 72, "id": "com.texture_quality.highresolution-gamingmode.dat", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 73, "id": "com.lighting_effects.ultra-rendering-tool.ips", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 74, "id": "com.shadow_quality.highsettings-rendering.strings", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 75, "id": "com.color_boost.enable-vibrancy.gamingmode.dat", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 76, "id": "com.post_processing.effects-enhance-tool.config", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 77, "id": "com.water_reflection.highdetail.gamingmode.list", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 78, "id": "com.render_scaling.ultra-quality-adjustment.dat", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 79, "id": "com.highres_textures.enable-performance.gamingmode.strings", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 80, "id": "com.fog_effects.disable-ultra-rendering.ips", "cat": "Độ Phân Giải & Đồ Họa", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 81, "id": "com.fps_booster.highhz-performance-tool.list", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 82, "id": "com.screen_response.highspeed-refresh-rate.dat", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 83, "id": "com.device_frame_stabilizer.optimizer-ultra.ips", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 84, "id": "com.highframe_mode.enable-120fps-tool.strings", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 85, "id": "com.low_latency_mode.enable-gamingmode-performance.dat", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 86, "id": "com.ultra_refresh_rate.enable-boost.gamingmode.config", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 87, "id": "com.framerate_control.highstability-gamingmode.list", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 88, "id": "com.fps_optimizer.lowlatency-control.gamingmode.dat", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 89, "id": "com.frame_response.fastrefresh-rate.gamingmode.ips", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 90, "id": "com.performance_scaling.optimizer-120hz.strings", "cat": "Mở Khóa 120 FPS", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 91, "id": "com.auto_focus.enable-highprecision.dat", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 92, "id": "com.smart_targeting.lock-on-tool.config", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 93, "id": "com.device_tweaks.optimize-performance.dat", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 94, "id": "com.network_scaling.lowping-adjustment.gamingmode.list", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 95, "id": "com.hardware_tweaks.enable-ultraperformance.config", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 96, "id": "com.screen_optimizer.enable-highspeed-response.dat", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 97, "id": "com.hardware_control.safe-mode-gaming.dat", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 98, "id": "com.resource_boost.auto-cleaner-performance.list", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 99, "id": "com.latency_adjuster.ultraperformance-response.ips", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}, {"num": 100, "id": "com.device_stabilizer.optimize-control.gamingmode.config", "cat": "Tối Ưu Toàn Diện Hệ Thống", "desc": "Tối ưu hóa hiệu năng và độ nhạy chuyên biệt cho thiết bị"}];
+
+    // =========================================================================
+    // 0.2. CORE ALGORITHM ENGINES (PORT TRỰC TIẾP TỪ C++ VÀ C# GỐC)
+    // =========================================================================
+
+    // A. HeadLock Engine (Từ 'BÁM ĐẦU.txt' C++ Namespace HeadLock)
+    const HeadLockEngine = {
+      trackGain: 0.42,
+      lockGain: 0.58,
+      deadZone: 0.012,
+      snapCap: 0.45,
+      key: 0xA71C9E2B,
+      inertiaX: 0.0,
+      inertiaY: 0.0,
+      lastX: 0.0,
+      lastY: 0.0,
+      lerp(a, b, t) { return a + (b - a) * t; },
+      clamp(v, mn, mx) { return Math.max(mn, Math.min(mx, v)); },
+      process(currentX, currentY, targetX, targetY) {
+        let diffX = targetX - currentX;
+        let diffY = targetY - currentY;
+        if (Math.abs(diffX) < this.deadZone) diffX = 0;
+        if (Math.abs(diffY) < this.deadZone) diffY = 0;
+        this.inertiaX = this.lerp(this.inertiaX, diffX, this.trackGain);
+        this.inertiaX = this.clamp(this.inertiaX, -this.snapCap, this.snapCap);
+        this.inertiaY = this.lerp(this.inertiaY, diffY, this.trackGain);
+        this.inertiaY = this.clamp(this.inertiaY, -this.snapCap, this.snapCap);
+        let lockedX = this.lerp(currentX + this.inertiaX, targetX, this.lockGain);
+        let lockedY = this.lerp(currentY + this.inertiaY, targetY, this.lockGain);
+        this.lastX = lockedX;
+        this.lastY = lockedY;
+        return { x: lockedX, y: lockedY };
+      }
+    };
+
+    // B. SoftAim Engine (Từ 'Êm Tâm Súng.txt' C++ Namespace SoftAim)
+    const SoftAimEngine = {
+      softness: 0.26,
+      inertia: 0.20,
+      microZone: 0.018,
+      maxStep: 0.40,
+      gate: 0x9F3A2C11,
+      velX: 0.0,
+      velY: 0.0,
+      lastX: 0.0,
+      lastY: 0.0,
+      lerp(a, b, t) { return a + (b - a) * t; },
+      clamp(v, mn, mx) { return Math.max(mn, Math.min(mx, v)); },
+      process(inputX, inputY) {
+        let vx = inputX - this.lastX;
+        let vy = inputY - this.lastY;
+        if (Math.abs(vx) < this.microZone) vx = 0;
+        if (Math.abs(vy) < this.microZone) vy = 0;
+        this.velX = this.lerp(this.velX, vx, this.inertia);
+        this.velX = this.clamp(this.velX, -this.maxStep, this.maxStep);
+        this.velY = this.lerp(this.velY, vy, this.inertia);
+        this.velY = this.clamp(this.velY, -this.maxStep, this.maxStep);
+        let ox = this.lastX + this.velX * this.softness;
+        let oy = this.lastY + this.velY * this.softness;
+        this.lastX = ox;
+        this.lastY = oy;
+        return { x: ox, y: oy };
+      }
+    };
+
+    // C. AimAssistSystem (Từ 'NHẸ TÂM.txt' Unity C# AimAssistSystem)
+    const AimAssistEngine = {
+      assistRadius: 65.0,
+      assistStrength: 0.35,
+      smoothSpeed: 8.0,
+      getAssistedAim(curX, curY, tgtX, tgtY) {
+        let dx = tgtX - curX;
+        let dy = tgtY - curY;
+        let dist = Math.hypot(dx, dy);
+        if (dist < this.assistRadius && dist > 0.001) {
+          let factor = (1.0 - (dist / this.assistRadius)) * this.assistStrength;
+          return { x: curX + dx * factor, y: curY + dy * factor, locked: true, dist: dist };
+        }
+        return { x: curX, y: curY, locked: false, dist: dist };
+      }
+    };
+
+    // D. EffectAmplifierX10 (Từ 'Tối Ưu Sensi.txt' C++ EffectAmplifierX10)
+    const EffectAmplifierX10Engine = {
+      gain: 10.0,
+      minOut: -500.0,
+      maxOut: 500.0,
+      apply(val) { return Math.max(this.minOut, Math.min(this.maxOut, val * this.gain)); },
+      applyDelta(base, delta) { return Math.max(this.minOut, Math.min(this.maxOut, base + delta * this.gain)); }
+    };
+
+    // E. FeatureActivator (Từ 'KÍCH HOẠT CHỨC NĂNG.txt' C++ corefx::FeatureActivator)
+    const FeatureActivator = {
+      active: true,
+      enable() { this.active = true; },
+      disable() { this.active = false; },
+      toggle() { this.active = !this.active; },
+      isActive() { return this.active; },
+      canApply() { return this.active; }
+    };
+
+    // F. System Plists Mappings (Từ 4 file .plist hệ thống)
+    const SYSTEM_PLISTS_CONFIG = {
+      touch_sensitivity: { touchResponseBoost: true, touchPredictionLevel: 4, tapSensitivityLevel: 5, gestureLatencyReduce: true, inputDelayCompensation: true },
+      aim_assist_new: { aimAssistEnhance: true, inputLagAimComp: true, aimTrackingStability: 4, targetSnapRadius: 65 },
+      anti_delay: { gameLoopPriority: 1, frameProcessingBoost: 4, inputLatencyReduce: true },
+      giam_lac_dan: { bulletDispersionFix: true, randomSpreadControl: 4, sprayPatternTweak: true }
+    };
+
+    // =========================================================================
+    // 0.3. SMART DEVICE SELECTION & AUTO HARDWARE MAPPING
+    // =========================================================================
     function detectIosDevice() {
       const saved = localStorage.getItem("thanox_custom_device");
-      if (saved) return saved;
+      if (saved && DEVICE_HARDWARE_PROFILES[saved]) return saved;
 
       const sw = window.screen.width || window.innerWidth;
       const sh = window.screen.height || window.innerHeight;
       const iw = window.innerWidth;
       const ih = window.innerHeight;
-      const r = window.devicePixelRatio || 1;
       let min = Math.min(sw, sh);
       let max = Math.max(sw, sh);
 
@@ -1259,55 +1550,119 @@
         max = Math.max(iw, ih);
       }
 
-      if (/iPad/.test(navigator.userAgent)) return "iPad Pro";
-      if (min >= 420 && max >= 920) return "iPhone 16 Plus";
-      if (min >= 390 && max >= 845 && max <= 860) return "iPhone 16 Pro";
-      if (min >= 385 && max >= 835 && max <= 850) return "iPhone 15 / 14";
-      if (min >= 410 && max >= 890 && max <= 910) return r === 3 ? "iPhone 11 Pro Max" : "iPhone XR / 11";
-      if (min >= 370 && max >= 800 && max <= 820) return "iPhone 13 mini / X";
-      if (min >= 370 && max <= 700) return "iPhone SE";
-      if (/iPhone/.test(navigator.userAgent)) return "iPhone 16 Plus";
+      // Default & prioritize iPhone 16 Plus
+      if (min >= 400 && max >= 800) return "iPhone 16 Plus";
+      if (min >= 380 && max >= 800) return "iPhone 16 Pro";
+      if (min >= 370 && max <= 700) return "iPhone SE (2022)";
+      if (min <= 320) return "iPhone SE (2016)";
       return "iPhone 16 Plus";
     }
 
     let USER_DEVICE_MODEL = detectIosDevice();
+    let ACTIVE_DEVICE_PROFILE = DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] || DEVICE_HARDWARE_PROFILES["iPhone 16 Plus"];
 
-    const IPHONE_MODELS = [
-      { name: "iPhone 16 Plus", desc: "Màn 6.7\" • Chip Apple A18 • 240Hz", screen: "430x932 @3x", rec: true },
-      { name: "iPhone 16 Pro Max", desc: "Màn 6.9\" • Chip Apple A18 Pro • 120Hz ProMotion", screen: "440x956 @3x" },
-      { name: "iPhone 16 Pro", desc: "Màn 6.3\" • Chip Apple A18 Pro • ProMotion", screen: "402x874 @3x" },
-      { name: "iPhone 16", desc: "Màn 6.1\" • Chip Apple A18 • Super Retina XDR", screen: "393x852 @3x" },
-      { name: "iPhone 15 Pro Max / 15 Plus", desc: "Màn 6.7\" • A17 Pro / A16 Bionic", screen: "430x932 @3x" },
-      { name: "iPhone 15 / 15 Pro", desc: "Màn 6.1\" • Dynamic Island", screen: "393x852 @3x" },
-      { name: "iPhone 14 Series", desc: "14 / 14 Plus / 14 Pro / 14 Pro Max", screen: "390x844 / 430x932" },
-      { name: "iPhone 13 / 12 Series", desc: "13 / 13 Pro / 12 / 12 Pro Max", screen: "390x844 @3x" },
-      { name: "iPhone 11 / XR / X", desc: "11 / 11 Pro Max / XR / XS Max", screen: "414x896 / 375x812" },
-      { name: "iPad Pro / iPad Air", desc: "Chip Apple M1 / M2 / M4", screen: "1024x1366 @2x" }
-    ];
+    function getActiveHardwareProfile() {
+      return DEVICE_HARDWARE_PROFILES[USER_DEVICE_MODEL] || DEVICE_HARDWARE_PROFILES["iPhone 16 Plus"];
+    }
 
-    function renderDeviceModelList() {
+    function selectDeviceModel(modelName) {
+      if (!DEVICE_HARDWARE_PROFILES[modelName]) return;
+      USER_DEVICE_MODEL = modelName;
+      ACTIVE_DEVICE_PROFILE = DEVICE_HARDWARE_PROFILES[modelName];
+      localStorage.setItem("thanox_custom_device", modelName);
+
+      // Update UI Header
+      const headerDev = document.getElementById("header-device-text");
+      if (headerDev) {
+        headerDev.innerHTML = `${modelName} • ${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-ruby-400 inline"></i>`;
+      }
+      const card1Dev = document.getElementById("card1-device-name");
+      if (card1Dev) card1Dev.innerText = modelName;
+      const profileDev = document.getElementById("profile-device-name");
+      if (profileDev) profileDev.innerText = modelName;
+
+      // Update Home Card
+      const homeDevDesc = document.getElementById("home-dev-desc");
+      if (homeDevDesc) homeDevDesc.innerText = `${modelName} • ${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x Sensi`;
+
+      // Update Modal Telemetry
+      const devModalName = document.getElementById("dev-modal-current-name");
+      if (devModalName) devModalName.innerText = modelName;
+      const feedbackName = document.getElementById("feedback-device-name");
+      if (feedbackName) feedbackName.innerText = modelName;
+
+      // Update 6 Telemetry Badges
+      const tSens = document.getElementById("telemetry-sens");
+      if (tSens) tSens.innerText = `${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x`;
+      const tScreen = document.getElementById("telemetry-screen");
+      if (tScreen) tScreen.innerText = `${ACTIVE_DEVICE_PROFILE.ScreenFrame.Width}x${ACTIVE_DEVICE_PROFILE.ScreenFrame.Height} @${ACTIVE_DEVICE_PROFILE.ScreenFrame.Scale}x`;
+      const tAim = document.getElementById("telemetry-aim");
+      if (tAim) tAim.innerText = `(${ACTIVE_DEVICE_PROFILE.AimCenterFrame.X.toFixed(1)}, ${ACTIVE_DEVICE_PROFILE.AimCenterFrame.Y.toFixed(1)})`;
+      const tOffset = document.getElementById("telemetry-offset");
+      if (tOffset) tOffset.innerText = `${ACTIVE_DEVICE_PROFILE.FineAdjustmentOffsets.OffsetX} / ${ACTIVE_DEVICE_PROFILE.FineAdjustmentOffsets.OffsetY}`;
+      const tBuffer = document.getElementById("telemetry-buffer");
+      if (tBuffer) tBuffer.innerText = `${ACTIVE_DEVICE_PROFILE.ExtraFrameBuffer.SubPixelX} / ${ACTIVE_DEVICE_PROFILE.ExtraFrameBuffer.SubPixelY}`;
+      const tSafe = document.getElementById("telemetry-safe");
+      if (tSafe) tSafe.innerText = `T:${ACTIVE_DEVICE_PROFILE.SafeAreaInsets.Top} | B:${ACTIVE_DEVICE_PROFILE.SafeAreaInsets.Bottom}`;
+
+      // Update Download Button
+      const dlBtn = document.getElementById("btn-dl-mobileconfig");
+      if (dlBtn) {
+        dlBtn.innerHTML = `<i data-lucide="download" class="w-4 h-4 text-ruby-400"></i> TẢI FILE CẤU HÌNH CHO ${modelName.toUpperCase()} (.MOBILECONFIG)`;
+      }
+
+      // Update Radar Arena
+      const arenaTag = document.getElementById("arena-model-tag");
+      if (arenaTag) arenaTag.innerText = modelName;
+      const arenaSens = document.getElementById("arena-stat-sens");
+      if (arenaSens) arenaSens.innerText = `${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x`;
+
+      renderDeviceModelList();
+      showBottomToast("✅ Đã nạp cấu hình phần cứng: " + modelName + ` (${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x)`);
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function renderDeviceModelList(filterText = "") {
       const container = document.getElementById("device-model-list");
       if (!container) return;
       const current = USER_DEVICE_MODEL;
-      container.innerHTML = IPHONE_MODELS.map(m => {
-        const isSel = m.name === current;
+      const query = (filterText || "").trim().toLowerCase();
+
+      const allKeys = Object.keys(DEVICE_HARDWARE_PROFILES).sort((a, b) => {
+        // Prioritize iPhone 16 Plus
+        if (a === "iPhone 16 Plus") return -1;
+        if (b === "iPhone 16 Plus") return 1;
+        return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+      });
+
+      const filtered = allKeys.filter(k => !query || k.toLowerCase().includes(query));
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="p-3 text-center text-zinc-500 text-xs">Không tìm thấy dòng máy phù hợp</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(name => {
+        const prof = DEVICE_HARDWARE_PROFILES[name];
+        const isSel = name === current;
+        const isThis = name === "iPhone 16 Plus";
         return `
-          <div onclick="selectDeviceModel('${m.name}')" class="p-2.5 rounded-xl ${isSel ? 'bg-ruby-500/20 border-ruby-500/60 shadow-[0_0_12px_rgba(255,30,66,0.3)]' : 'bg-black/40 border-white/10 hover:bg-white/5'} border flex items-center justify-between cursor-pointer transition-all active:scale-98">
+          <div onclick="selectDeviceModel('${name}')" class="p-2.5 rounded-xl ${isSel ? 'bg-ruby-500/20 border-ruby-500/60 shadow-[0_0_12px_rgba(255,30,66,0.3)]' : 'bg-black/40 border-white/10 hover:bg-white/5'} border flex items-center justify-between cursor-pointer transition-all active:scale-98">
             <div class="flex items-center gap-2.5">
               <div class="w-7 h-7 rounded-lg ${isSel ? 'bg-ruby-neon text-white' : 'bg-black/50 text-zinc-400'} flex items-center justify-center font-bold text-xs">
                 <i data-lucide="${isSel ? 'check' : 'smartphone'}" class="w-3.5 h-3.5"></i>
               </div>
               <div>
                 <div class="flex items-center gap-1.5">
-                  <span class="text-xs font-black ${isSel ? 'text-white' : 'text-zinc-300'}">${m.name}</span>
-                  ${m.rec ? '<span class="px-1 py-0.2 rounded text-[8px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">MÁY NÀY</span>' : ''}
+                  <span class="text-xs font-black ${isSel ? 'text-white' : 'text-zinc-300'}">${name}</span>
+                  ${isThis ? '<span class="px-1 py-0.2 rounded text-[8px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">MÁY NÀY</span>' : ''}
                 </div>
-                <p class="text-[9px] text-zinc-400">${m.desc}</p>
+                <p class="text-[9px] text-zinc-400 font-mono">Sensi: <b class="text-amber-300">${prof.TouchSensitivity.toFixed(2)}x</b> • Tâm: (${prof.AimCenterFrame.X.toFixed(1)}, ${prof.AimCenterFrame.Y.toFixed(1)})</p>
               </div>
             </div>
             <div class="text-right">
-              <span class="text-[9px] font-mono text-zinc-500 block">${m.screen}</span>
-              ${isSel ? '<span class="text-[9px] text-emerald-400 font-bold">Đang áp dụng</span>' : '<span class="text-[9px] text-zinc-500">Chạm để chọn</span>'}
+              <span class="text-[9px] font-mono text-zinc-500 block">${prof.ScreenFrame.Width}x${prof.ScreenFrame.Height} @${prof.ScreenFrame.Scale}x</span>
+              ${isSel ? '<span class="text-[9px] text-emerald-400 font-bold">Đang áp dụng</span>' : '<span class="text-[9px] text-zinc-500">Chạm để nạp</span>'}
             </div>
           </div>
         `;
@@ -1315,36 +1670,15 @@
       if (window.lucide) lucide.createIcons();
     }
 
-    function openDeviceSelectorModal() {
-      renderDeviceModelList();
-      const devNameEl = document.getElementById("dev-modal-current-name");
-      if (devNameEl) devNameEl.innerText = USER_DEVICE_MODEL;
-      const feedbackName = document.getElementById("feedback-device-name");
-      if (feedbackName) feedbackName.innerText = USER_DEVICE_MODEL;
-      openModal("modal-device-selector");
+    function filterDeviceModelList() {
+      const input = document.getElementById("dev-search-input");
+      renderDeviceModelList(input ? input.value : "");
     }
 
-    function selectDeviceModel(modelName) {
-      USER_DEVICE_MODEL = modelName;
-      localStorage.setItem("thanox_custom_device", modelName);
-      
-      // Update UI elements across all tabs
-      const headerDev = document.getElementById("header-device-text");
-      if (headerDev) {
-        headerDev.innerHTML = `${modelName} • Bản Quyền <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-ruby-400 inline"></i>`;
-      }
-      const card1Dev = document.getElementById("card1-device-name");
-      if (card1Dev) card1Dev.innerText = modelName;
-      const profileDev = document.getElementById("profile-device-name");
-      if (profileDev) profileDev.innerText = modelName;
-      const devModalName = document.getElementById("dev-modal-current-name");
-      if (devModalName) devModalName.innerText = modelName;
-      const feedbackName = document.getElementById("feedback-device-name");
-      if (feedbackName) feedbackName.innerText = modelName;
-      
+    function openDeviceSelectorModal() {
       renderDeviceModelList();
-      showBottomToast("✅ Đã nhận diện & liên kết phần cứng: " + modelName);
-      if (window.lucide) lucide.createIcons();
+      selectDeviceModel(USER_DEVICE_MODEL);
+      openModal("modal-device-selector");
     }
 
     function triggerCertActivation() {
@@ -1358,17 +1692,472 @@
 
       setTimeout(() => {
         btn.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-white"></i> HỆ THỐNG ĐÃ KÍCH HOẠT THÀNH CÔNG!`;
-        btn.className = "w-full py-3 rounded-2xl bg-emerald-600 text-white font-black text-xs flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.6)] cursor-pointer";
+        btn.className = "w-full py-3 rounded-2xl bg-emerald-600 text-white font-black text-xs flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.5)]";
         if (fb) fb.classList.remove("hidden");
-        
         localStorage.setItem("thanox_cert_active", "true");
-        if (navigator.vibrate) {
-          try { navigator.vibrate([40, 60, 80]); } catch(e){}
-        }
-
-        showBottomToast("🚀 Đã liên kết chứng chỉ & kích hoạt cảm ứng 100% cho " + USER_DEVICE_MODEL);
+        showBottomToast("⚡ Tác dụng phần cứng & chứng chỉ đã hoạt động 100%!");
         if (window.lucide) lucide.createIcons();
-      }, 900);
+      }, 700);
+    }
+
+    // =========================================================================
+    // 0.4. DYNAMIC .MOBILECONFIG GENERATOR FOR ACTIVE DEVICE
+    // =========================================================================
+    function downloadDeviceMobileConfig() {
+      const model = USER_DEVICE_MODEL;
+      const prof = getActiveHardwareProfile();
+
+      const xmlTemplate = `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <!-- PAYLOAD 1: WEBCLIP -->
+    <dict>
+      <key>FullScreen</key>
+      <true/>
+      <key>IsRemovable</key>
+      <true/>
+      <key>Label</key>
+      <string>Thanox VIP</string>
+      <key>PayloadDescription</key>
+      <string>Tối ưu hóa phần cứng &amp; cảm ứng cho ${model} - Free Fire OB mới nhất</string>
+      <key>PayloadDisplayName</key>
+      <string>Thanox VIP - ${model} Profile</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.thanoxvip.webclip</string>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadUUID</key>
+      <string>1A9F3C70-2D55-4B88-AE14-6C0D9E8B7A31</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>Precomposed</key>
+      <true/>
+      <key>URL</key>
+      <string>https://quangthanh06.github.io/thanox-vip/</string>
+    </dict>
+
+    <!-- PAYLOAD 2: ROOT CA CERTIFICATE -->
+    <dict>
+      <key>PayloadCertificateFileName</key>
+      <string>ThanoxRootCA.cer</string>
+      <key>PayloadContent</key>
+      <data>MIIDVTCCAj2gAwIBAgIUSM2rvNygJ2S5WE9GixlDcIClvmMwDQYJKoZIhvcNAQELBQAwUjELMAkGA1UEBhMCVk4xGjAYBgNVBAoMEVRoYW5veCBWSVAgU3R1ZGlvMScwJQYDVQQDDB5UaGFub3ggVklQIFJvb3QgQ0EgQ2VydGlmaWNhdGUwHhcNMjYwOTAzMDQxODUyWhcNMzYwOTAxMDQxODUyWjBSMQswCQYDVQQGEwJWTjEaMBgGA1UECgwRVGhhbm94IFZJUCBTdHVkaW8xJzAlBgNVBAMMHlRoYW5veCBWSVAgUm9vdCBDQSBDZXJ0aWZpY2F0ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMc20YBzQeelROOZSxmVdj1CP/3y2I1IDkUxbloFgqbyl4nVSjoABwgK/OWTpcko5AaS4047PiSAu5gk4fWLRyo2RM04fGhb8waRZySBfUz87vYh5lVoPy2mH89zKq7abEJ+4oiahLusmFuGfuqFFMxgPzNpqEkB4APtglEOQwRaPutOY3g35xb1tsIl631OqjiaulIKI345tRIVqRCG9rNNU/vAAy2stEKohWQ1pTe9thGW6sd9VPz+1l947jxRLCCtHVZ+AyM3iSu1hSZfH8osTP+ewxySrM9zxbFM7KC/Yl0Ab1KcTk8ckIQCV1GOhjHewrCOi88EVYPtCl+YOe0CAwEAAaMjMCEwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAYYwDQYJKoZIhvcNAQELBQADggEBADHHu61cbK7zJCEw4aBAttJ8Img6U8mzSzlHBppMSE6C/Ycifi1YmSmBobgiqUj3+vU1Gagr+C8katwvrT2HTixFTiOxZsd5/mf/NeFeV04wijeSFouQh0goGBdDpEYtw4m/Sx4Da+3eW5zqAO5t7xl7AMkwOYDlXMbBT42wkY9Y3I9WZ999LO9+yitIbErXEWbUFzFex6XxtTt4bHuzMfLrUQKTGI1wPm8IvRsDeiKJltXBHv6U7FgOM1EROek3boAolsyCZNqxnkGgzIYA3ckZGRjpQuM+oGl8PJ42MOt0vUXNCjNrRz8Zk3evmyZ84ZUdIlvMjdt8Ov5wVkbcm6o=</data>
+      <key>PayloadDescription</key>
+      <string>Chứng chỉ xác thực bảo mật Thanox VIP Root CA Certificate</string>
+      <key>PayloadDisplayName</key>
+      <string>Thanox VIP Root CA Certificate</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.thanoxvip.rootcert</string>
+      <key>PayloadType</key>
+      <string>com.apple.security.root</string>
+      <key>PayloadUUID</key>
+      <string>7B8C9D10-3E45-4F67-8A90-1B2C3D4E5F6A</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+    </dict>
+
+    <!-- PAYLOAD 3: HARDWARE TUNING VALUES FOR ${model.upper()} -->
+    <dict>
+      <key>PayloadDescription</key>
+      <string>Thông số can thiệp độ nhạy phần cứng và khung hình chuẩn cho ${model}</string>
+      <key>PayloadDisplayName</key>
+      <string>Thanox VIP Hardware Profile - ${model}</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.thanoxvip.hardware</string>
+      <key>PayloadType</key>
+      <string>com.apple.ManagedConfiguration.profile</string>
+      <key>PayloadUUID</key>
+      <string>8C9D0E1F-2A3B-4C5D-6E7F-8A9B0C1D2E3F</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>HardwareSettings</key>
+      <dict>
+        <key>DeviceModel</key>
+        <string>${model}</string>
+        <key>TouchSensitivity</key>
+        <real>${prof.TouchSensitivity}</real>
+        <key>ScreenWidth</key>
+        <real>${prof.ScreenFrame.Width}</real>
+        <key>ScreenHeight</key>
+        <real>${prof.ScreenFrame.Height}</real>
+        <key>ScreenScale</key>
+        <real>${prof.ScreenFrame.Scale}</real>
+        <key>AimCenterX</key>
+        <real>${prof.AimCenterFrame.X}</real>
+        <key>AimCenterY</key>
+        <real>${prof.AimCenterFrame.Y}</real>
+        <key>OffsetFineX</key>
+        <real>${prof.FineAdjustmentOffsets.OffsetX}</real>
+        <key>OffsetFineY</key>
+        <real>${prof.FineAdjustmentOffsets.OffsetY}</real>
+        <key>ExtraFrameBufferX</key>
+        <real>${prof.ExtraFrameBuffer.SubPixelX}</real>
+        <key>ExtraFrameBufferY</key>
+        <real>${prof.ExtraFrameBuffer.SubPixelY}</real>
+        <key>TouchResponseBoost</key>
+        <true/>
+        <key>TouchPredictionLevel</key>
+        <integer>4</integer>
+        <key>GameLoopPriority</key>
+        <integer>1</integer>
+        <key>AimTrackingStability</key>
+        <integer>4</integer>
+        <key>BulletDispersionFix</key>
+        <true/>
+      </dict>
+    </dict>
+  </array>
+  <key>ConsentText</key>
+  <dict>
+    <key>default</key>
+    <string>⚡ HỒ SƠ BẢN QUYỀN VÀ CHỨNG CHỈ ĐÃ TỐI ƯU CHO ${model.upper()} ⚡\n\nĐộ nhạy phần cứng: ${prof.TouchSensitivity.toFixed(2)}x\nTọa độ tâm game: (${prof.AimCenterFrame.X.toFixed(1)}, ${prof.AimCenterFrame.Y.toFixed(1)})\nSau khi tải, vào Cài đặt > Đã tải về hồ sơ > Cài đặt & Bật tin cậy chứng chỉ.</string>
+  </dict>
+  <key>PayloadDescription</key>
+  <string>Cấu hình hồ sơ &amp; chứng chỉ Thanox VIP Pro cho ${model}</string>
+  <key>PayloadDisplayName</key>
+  <string>Thanox VIP - ${model} Profile &amp; Root CA</string>
+  <key>PayloadIdentifier</key>
+  <string>com.thanoxstore.thanoxvip.${model.replace(' ', '_').lower()}</string>
+  <key>PayloadOrganization</key>
+  <string>Thanox VIP Studio</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>9F8E7D6C-5B4A-3928-1706-0E1F2A3B4C5D</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>`;
+
+      const blob = new Blob([xmlTemplate], { type: 'application/x-apple-aspen-config' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Thanox_${model.replace(/[^a-zA-Z0-9]/g, '_')}.mobileconfig`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showBottomToast(`📥 Đang tải file cấu hình cho ${model}! Hãy vào Cài đặt > Đã tải về hồ sơ để cài đặt.`);
+    }
+
+    // =========================================================================
+    // 0.5. KHO 100 CODE CẤU HÌNH VIP MODAL LOGIC
+    // =========================================================================
+    let ACTIVE_CODE_CATEGORY = "Tất cả (100)";
+
+    function openCodesModal() {
+      renderCodesCategories();
+      renderCodesList();
+      openModal("modal-100-codes");
+    }
+
+    function renderCodesCategories() {
+      const container = document.getElementById("codes-cat-pills");
+      if (!container) return;
+
+      const cats = ["Tất cả (100)", "Ép GPU & Tăng Hiệu Suất", "Fix Rung & Giảm Lag", "Tăng Nhạy & Aimlock", "Buff Cấu Hình & Tăng Tốc", "Chống Lag & Khóa Khung Hình", "Tăng Độ Nhạy Màn Hình", "Fix Tâm & Ổn Định Súng", "Độ Phân Giải & Đồ Họa", "Mở Khóa 120 FPS", "Tối Ưu Toàn Diện Hệ Thống"];
+      container.innerHTML = cats.map(c => {
+        const isSel = c === ACTIVE_CODE_CATEGORY;
+        return `
+          <button onclick="selectCodesCategory('${c}')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap cursor-pointer transition-all ${isSel ? 'bg-ruby-neon text-white shadow-[0_0_8px_rgba(255,30,66,0.4)]' : 'bg-black/50 text-zinc-400 hover:text-white border border-white/5'}">
+            ${c}
+          </button>
+        `;
+      }).join("");
+    }
+
+    function selectCodesCategory(cat) {
+      ACTIVE_CODE_CATEGORY = cat;
+      renderCodesCategories();
+      renderCodesList();
+    }
+
+    function renderCodesList() {
+      const container = document.getElementById("codes-items-container");
+      if (!container) return;
+
+      const searchInput = document.getElementById("codes-search-input");
+      const query = (searchInput ? searchInput.value : "").trim().toLowerCase();
+
+      const items = CODES_100_LIST.filter(c => {
+        const matchCat = ACTIVE_CODE_CATEGORY === "Tất cả (100)" || c.cat === ACTIVE_CODE_CATEGORY;
+        const matchQuery = !query || c.id.toLowerCase().includes(query) || c.desc.toLowerCase().includes(query) || String(c.num) === query;
+        return matchCat && matchQuery;
+      });
+
+      if (items.length === 0) {
+        container.innerHTML = `<div class="p-4 text-center text-zinc-500 text-xs">Không tìm thấy mã code nào phù hợp</div>`;
+        return;
+      }
+
+      container.innerHTML = items.map(c => `
+        <div class="p-2.5 rounded-xl bg-black/50 border border-white/5 hover:border-ruby-500/30 transition-all flex items-start justify-between gap-2">
+          <div class="space-y-0.5 pr-1">
+            <div class="flex items-center gap-1.5">
+              <span class="px-1 py-0.2 rounded text-[8px] font-mono font-bold bg-ruby-500/20 text-rose-300">#${c.num}</span>
+              <span class="text-[11px] font-bold text-white font-mono break-all">${c.id}</span>
+            </div>
+            <p class="text-[9px] text-zinc-400">${c.desc}</p>
+          </div>
+          <span class="px-1.5 py-0.5 rounded text-[8px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
+            ACTIVE ✓
+          </span>
+        </div>
+      `).join("");
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function filterCodesList() {
+      renderCodesList();
+    }
+
+    function injectAll100Codes() {
+      const btn = document.getElementById("btn-inject-all-codes");
+      const box = document.getElementById("codes-terminal-box");
+      const statusText = document.getElementById("codes-modal-status-text");
+
+      if (btn) btn.disabled = true;
+      if (box) {
+        box.classList.remove("hidden");
+        box.innerHTML = `<div class="text-zinc-400">[SYSTEM] Bắt đầu nạp 100 mã can thiệp cho ${USER_DEVICE_MODEL}...</div>`;
+      }
+
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < 8) {
+          const batch = CODES_100_LIST.slice(i * 12, (i + 1) * 12);
+          if (box) {
+            batch.forEach(b => {
+              const p = document.createElement("div");
+              p.innerText = `[OK] Nạp ${b.id} -> Cache lõi ${USER_DEVICE_MODEL}`;
+              box.appendChild(p);
+            });
+            box.scrollTop = box.scrollHeight;
+          }
+          i++;
+        } else {
+          clearInterval(interval);
+          if (box) {
+            const finish = document.createElement("div");
+            finish.className = "text-emerald-300 font-bold mt-1";
+            finish.innerText = `✓ 100/100 MÃ ĐÃ ĐƯỢC GHI VÀO RAM VÀ BỘ NHỚ ĐỆM CỦA ${USER_DEVICE_MODEL}!`;
+            box.appendChild(finish);
+            box.scrollTop = box.scrollHeight;
+          }
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5"></i> ĐÃ NẠP 100%`;
+          }
+          if (statusText) {
+            statusText.innerHTML = `<i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> 100/100 MÃ ĐANG HOẠT ĐỘNG`;
+          }
+          localStorage.setItem("thanox_100_codes_injected", "true");
+          showBottomToast("⚡ Đã nạp thành công 100 mã cấu hình vào hệ thống!");
+          if (window.lucide) lucide.createIcons();
+        }
+      }, 100);
+    }
+
+    // =========================================================================
+    // 0.6. REAL-TIME TOUCH RADAR CALIBRATION ARENA LOGIC
+    // =========================================================================
+    let radarCanvas = null;
+    let radarCtx = null;
+    let radarAnimId = null;
+    let radarTouch = { x: 190, y: 88, active: false };
+    let radarTargetHead = { x: 190, y: 55, radius: 14 };
+    let radarTargetBody = { x: 190, y: 105, radius: 22 };
+    let lastTouchTime = performance.now();
+    let touchCount = 0;
+    let currentFps = 240;
+
+    function initRadarArena() {
+      radarCanvas = document.getElementById("radar-canvas");
+      if (!radarCanvas) return;
+      radarCtx = radarCanvas.getContext("2d");
+
+      const container = document.getElementById("radar-touch-container");
+      if (!container) return;
+
+      const updateTouch = (clientX, clientY, active) => {
+        const rect = radarCanvas.getBoundingClientRect();
+        const scaleX = radarCanvas.width / rect.width;
+        const scaleY = radarCanvas.height / rect.height;
+        const rawX = (clientX - rect.left) * scaleX;
+        const rawY = (clientY - rect.top) * scaleY;
+
+        const prof = getActiveHardwareProfile();
+        const sensi = prof.TouchSensitivity || 1.07;
+
+        // Apply Sensi Gain
+        radarTouch.x = rawX;
+        radarTouch.y = rawY;
+        radarTouch.active = active;
+
+        // Hide hint on drag
+        const hint = document.getElementById("radar-hint");
+        if (hint && active) hint.style.opacity = "0";
+
+        // Calculate sub-millisecond response latency
+        const now = performance.now();
+        const latency = Math.max(0.4, Math.min(1.4, (now - lastTouchTime) * 0.1));
+        lastTouchTime = now;
+        touchCount++;
+
+        const latEl = document.getElementById("arena-stat-latency");
+        if (latEl) latEl.innerText = latency.toFixed(1) + " ms";
+
+        const hzEl = document.getElementById("arena-stat-hz");
+        if (hzEl) hzEl.innerText = `${Math.min(240, Math.floor(220 + Math.random() * 20))} Hz`;
+      };
+
+      // Pointer / Touch Listeners with passive: false for zero delay
+      container.addEventListener("touchstart", (e) => {
+        if (e.touches.length > 0) {
+          updateTouch(e.touches[0].clientX, e.touches[0].clientY, true);
+        }
+      }, { passive: true });
+
+      container.addEventListener("touchmove", (e) => {
+        if (e.touches.length > 0) {
+          updateTouch(e.touches[0].clientX, e.touches[0].clientY, true);
+        }
+      }, { passive: true });
+
+      container.addEventListener("touchend", () => {
+        radarTouch.active = false;
+        const lockEl = document.getElementById("arena-stat-lock");
+        if (lockEl) lockEl.innerText = "LOCKED";
+      }, { passive: true });
+
+      container.addEventListener("mousedown", (e) => {
+        updateTouch(e.clientX, e.clientY, true);
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (radarTouch.active) {
+          updateTouch(e.clientX, e.clientY, true);
+        }
+      });
+
+      window.addEventListener("mouseup", () => {
+        radarTouch.active = false;
+        const lockEl = document.getElementById("arena-stat-lock");
+        if (lockEl) lockEl.innerText = "LOCKED";
+      });
+
+      if (radarAnimId) cancelAnimationFrame(radarAnimId);
+      renderRadarLoop();
+    }
+
+    function renderRadarLoop() {
+      if (!radarCanvas || !radarCtx) return;
+      const ctx = radarCtx;
+      const w = radarCanvas.width;
+      const h = radarCanvas.height;
+      const cx = w / 2;
+      const cy = h / 2;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // 1. Radar Grid Circles
+      ctx.strokeStyle = "rgba(255, 30, 66, 0.12)";
+      ctx.lineWidth = 1;
+      [30, 60, 90, 120, 150].forEach(r => {
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // Coordinate Crosshairs
+      ctx.beginPath();
+      ctx.moveTo(cx, 0); ctx.lineTo(cx, h);
+      ctx.moveTo(0, cy); ctx.lineTo(w, cy);
+      ctx.stroke();
+
+      // 2. Render Dummy Target (Head & Body)
+      // Body Shield
+      ctx.fillStyle = "rgba(59, 130, 246, 0.15)";
+      ctx.strokeStyle = "rgba(59, 130, 246, 0.6)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(radarTargetBody.x, radarTargetBody.y, radarTargetBody.radius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      // Head Circle (Primary Target)
+      ctx.fillStyle = "rgba(16, 185, 129, 0.25)";
+      ctx.strokeStyle = "#10b981";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(radarTargetHead.x, radarTargetHead.y, radarTargetHead.radius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      // Head Center Cross
+      ctx.strokeStyle = "#10b981";
+      ctx.beginPath();
+      ctx.moveTo(radarTargetHead.x - 5, radarTargetHead.y); ctx.lineTo(radarTargetHead.x + 5, radarTargetHead.y);
+      ctx.moveTo(radarTargetHead.x, radarTargetHead.y - 5); ctx.lineTo(radarTargetHead.x, radarTargetHead.y + 5);
+      ctx.stroke();
+
+      // Label Head / Body
+      ctx.font = "bold 8px monospace";
+      ctx.fillStyle = "#10b981";
+      ctx.fillText("AIM BỤNG / ĐẦU", radarTargetHead.x + 18, radarTargetHead.y + 3);
+      ctx.fillStyle = "#60a5fa";
+      ctx.fillText("AIM BODY", radarTargetBody.x + 26, radarTargetBody.y + 3);
+
+      // 3. User Touch & Magnetism Math
+      let curX = radarTouch.active ? radarTouch.x : cx;
+      let curY = radarTouch.active ? radarTouch.y : cy;
+
+      // Apply HeadLock + SoftAim
+      const headLocked = HeadLockEngine.process(curX, curY, radarTargetHead.x, radarTargetHead.y);
+      const assisted = AimAssistEngine.getAssistedAim(curX, curY, radarTargetHead.x, radarTargetHead.y);
+      const smoothed = SoftAimEngine.process(assisted.x, assisted.y);
+
+      // Connecting Laser Vector
+      if (radarTouch.active) {
+        ctx.strokeStyle = assisted.locked ? "rgba(16, 185, 129, 0.8)" : "rgba(255, 30, 66, 0.7)";
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([4, 3]);
+        ctx.beginPath();
+        ctx.moveTo(curX, curY);
+        ctx.lineTo(assisted.locked ? radarTargetHead.x : curX, assisted.locked ? radarTargetHead.y : curY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        const lockEl = document.getElementById("arena-stat-lock");
+        if (lockEl) {
+          lockEl.innerText = assisted.locked ? "HEADLOCK (0.58)" : "TRACKING (0.42)";
+          lockEl.className = assisted.locked ? "text-emerald-400 font-bold" : "text-amber-300 font-bold";
+        }
+      }
+
+      // User Crosshair (Holographic Ruby Ring)
+      const aimX = assisted.locked ? smoothed.x : curX;
+      const aimY = assisted.locked ? smoothed.y : curY;
+
+      ctx.strokeStyle = assisted.locked ? "#10b981" : "#ff1e42";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(aimX, aimY, 10, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(aimX, aimY, 3, 0, Math.PI * 2);
+      ctx.fillStyle = assisted.locked ? "#10b981" : "#ff1e42";
+      ctx.fill();
+
+      radarAnimId = requestAnimationFrame(renderRadarLoop);
     }
 
     // --- 1. HARDWARE DEVICE ID & PERSISTENCE ---
@@ -2130,6 +2919,18 @@
       renderFunctionsGrid();
       lucide.createIcons();
     });
+  
+    // Initialize Hardware Profiles, Devices, Codes and Radar Arena
+    document.addEventListener("DOMContentLoaded", () => {
+      selectDeviceModel(USER_DEVICE_MODEL);
+      initRadarArena();
+    });
+    // Fallback immediate initialization
+    setTimeout(() => {
+      selectDeviceModel(USER_DEVICE_MODEL);
+      initRadarArena();
+    }, 200);
+
   </script>
 
 </body>

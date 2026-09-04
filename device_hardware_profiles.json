@@ -1,0 +1,1022 @@
+{
+  "iPhone SE (2016)": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 320.0,
+      "Height": 568.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 0.98,
+    "AimCenterFrame": {
+      "X": 160.0,
+      "Y": 284.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.75,
+      "OffsetY": 0.75
+    }
+  },
+  "iPhone SE (2020)": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 667.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.0,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 333.5,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.8,
+      "OffsetY": 0.8
+    }
+  },
+  "iPhone SE (2022)": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 667.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.01,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 333.5,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.82,
+      "OffsetY": 0.82
+    }
+  },
+  "iPhone 13": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 390.0,
+      "Height": 844.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 47.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.02,
+    "AimCenterFrame": {
+      "X": 195.0,
+      "Y": 422.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.85,
+      "OffsetY": 0.85
+    }
+  },
+  "iPhone 13 Pro Max": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 428.0,
+      "Height": 926.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 47.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.04,
+    "AimCenterFrame": {
+      "X": 214.0,
+      "Y": 463.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.9,
+      "OffsetY": 0.9
+    }
+  },
+  "iPhone 13 Pro": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 390.0,
+      "Height": 844.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 47.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.03,
+    "AimCenterFrame": {
+      "X": 195.0,
+      "Y": 422.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.88,
+      "OffsetY": 0.88
+    }
+  },
+  "iPhone 14 Pro": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.03,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.88,
+      "OffsetY": 0.88
+    }
+  },
+  "iPhone 14": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.02,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.85,
+      "OffsetY": 0.85
+    }
+  },
+  "iPhone 14 Plus": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 896.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.05,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 448.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.9,
+      "OffsetY": 0.9
+    }
+  },
+  "iPhone 14 Pro Max": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.04,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.9,
+      "OffsetY": 0.9
+    }
+  },
+  "iPhone 15": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.03,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.88,
+      "OffsetY": 0.88
+    }
+  },
+  "iPhone 15 Pro": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.04,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.9,
+      "OffsetY": 0.9
+    }
+  },
+  "iPhone 15 Pro Max": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.05,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.92,
+      "OffsetY": 0.92
+    }
+  },
+  "iPhone 15 Plus": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 896.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.06,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 448.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.92,
+      "OffsetY": 0.92
+    }
+  },
+  "iPhone 12 Pro": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 390.0,
+      "Height": 844.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 47.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.03,
+    "AimCenterFrame": {
+      "X": 195.0,
+      "Y": 422.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.88,
+      "OffsetY": 0.88
+    }
+  },
+  "iPhone 12": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 390.0,
+      "Height": 844.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 47.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.02,
+    "AimCenterFrame": {
+      "X": 195.0,
+      "Y": 422.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.85,
+      "OffsetY": 0.85
+    }
+  },
+  "iPhone 12 Pro Max": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 428.0,
+      "Height": 926.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 47.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.04,
+    "AimCenterFrame": {
+      "X": 214.0,
+      "Y": 463.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.9,
+      "OffsetY": 0.9
+    }
+  },
+  "iPhone 7 Plus": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 736.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.02,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 368.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.83,
+      "OffsetY": 0.83
+    }
+  },
+  "iPhone 7": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 667.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.01,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 333.5,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.81,
+      "OffsetY": 0.81
+    }
+  },
+  "iPhone Xs Max": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 896.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 44.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.03,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 448.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.88,
+      "OffsetY": 0.88
+    }
+  },
+  "iPhone X": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 812.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 44.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.01,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 406.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.83,
+      "OffsetY": 0.83
+    }
+  },
+  "iPhone Xr": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 896.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 44.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.01,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 448.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.84,
+      "OffsetY": 0.84
+    }
+  },
+  "iPhone Xs": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 812.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 44.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.02,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 406.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.85,
+      "OffsetY": 0.85
+    }
+  },
+  "iPhone 11": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 896.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 44.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.0,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 448.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.8,
+      "OffsetY": 0.8
+    }
+  },
+  "iPhone 11 Pro Max": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 896.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 44.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.0,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 448.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.85,
+      "OffsetY": 0.85
+    }
+  },
+  "iPhone 11 Pro": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 812.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 44.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.0,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 406.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.8,
+      "OffsetY": 0.8
+    }
+  },
+  "iPhone 16 Plus": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 896.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.07,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 448.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.94,
+      "OffsetY": 0.94
+    }
+  },
+  "iPhone 16": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.04,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.88,
+      "OffsetY": 0.88
+    }
+  },
+  "iPhone 16 Pro Max": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.06,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.92,
+      "OffsetY": 0.92
+    }
+  },
+  "iPhone 16 Pro": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 430.0,
+      "Height": 932.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 48.0,
+      "Bottom": 34.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.05,
+    "AimCenterFrame": {
+      "X": 215.0,
+      "Y": 466.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.9,
+      "OffsetY": 0.9
+    }
+  },
+  "iPhone 8 Plus": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 736.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.02,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 368.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.83,
+      "OffsetY": 0.83
+    }
+  },
+  "iPhone 8": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 667.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.01,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 333.5,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.81,
+      "OffsetY": 0.81
+    }
+  },
+  "iPhone 6": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 375.0,
+      "Height": 667.0,
+      "Scale": 2.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.0,
+    "AimCenterFrame": {
+      "X": 187.5,
+      "Y": 333.5,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.8,
+      "OffsetY": 0.8
+    }
+  },
+  "iPhone 6 Plus": {
+    "ScreenFrame": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Width": 414.0,
+      "Height": 736.0,
+      "Scale": 3.0
+    },
+    "SafeAreaInsets": {
+      "Top": 20.0,
+      "Bottom": 0.0,
+      "Left": 0.0,
+      "Right": 0.0
+    },
+    "TouchSensitivity": 1.01,
+    "AimCenterFrame": {
+      "X": 207.0,
+      "Y": 368.0,
+      "Width": 1.0,
+      "Height": 1.0
+    },
+    "ExtraFrameBuffer": {
+      "SubPixelX": 0.5,
+      "SubPixelY": 0.5
+    },
+    "FineAdjustmentOffsets": {
+      "OffsetX": 0.82,
+      "OffsetY": 0.82
+    }
+  }
+}
