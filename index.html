@@ -72,6 +72,16 @@
       touch-action: none;
     }
 
+    /* iOS Safe Area & Dynamic Island / Notch Inset Fix */
+    #top-bar {
+      padding-top: max(54px, calc(env(safe-area-inset-top, 0px) + 12px)) !important;
+    }
+
+    #bottom-nav {
+      bottom: max(14px, calc(env(safe-area-inset-bottom, 0px) + 10px)) !important;
+    }
+
+
     /* Ambient Liquid Mesh Background */
     .liquid-mesh-bg {
       position: fixed;
@@ -231,7 +241,7 @@
           <span class="px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-ruby-neon/20 text-ruby-300 border border-ruby-500/30">PRO</span>
         </div>
         <!-- Exact device model dynamically populated -->
-        <p class="text-[10px] text-zinc-300 font-medium font-mono flex items-center gap-1 hover:text-white" id="header-device-text">iPhone 16 Plus • Bản Quyền <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-ruby-400"></i></p>
+        <p class="text-[10px] text-zinc-300 font-medium font-mono flex items-center gap-1 hover:text-white" id="header-device-text">iPhone 14 Pro Max • Bản Quyền <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-ruby-400"></i></p>
       </div>
     </div>
     
@@ -297,7 +307,7 @@
       <div onclick="openDeviceSelectorModal()" class="mt-2 py-1.5 px-3 rounded-xl bg-ruby-950/40 border border-ruby-500/25 flex items-center justify-between cursor-pointer hover:bg-ruby-900/30 transition-all active:scale-98">
         <div class="flex items-center gap-1.5 text-[10px] text-zinc-300">
           <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Thiết bị: <strong id="card1-device-name" class="text-white font-mono">iPhone 16 Plus</strong></span>
+          <span>Thiết bị: <strong id="card1-device-name" class="text-white font-mono">iPhone 14 Pro Max</strong></span>
         </div>
         <span class="text-[9px] font-bold text-ruby-400 flex items-center gap-0.5">Đổi dòng máy <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
       </div>
@@ -540,7 +550,7 @@
           </div>
           <div>
             <h4 class="text-xs font-black text-white">HỒ SƠ PHẦN CỨNG</h4>
-            <p class="text-[9px] text-zinc-400 mt-0.5" id="home-dev-desc">iPhone 16 Plus • 1.07x Sensi</p>
+            <p class="text-[9px] text-zinc-400 mt-0.5" id="home-dev-desc">iPhone 14 Pro Max • 1.04x Sensi</p>
           </div>
           <div class="pt-1 border-t border-white/5 flex items-center justify-between text-[9px]">
             <span class="text-emerald-400 font-bold">Khớp 100% code</span>
@@ -678,7 +688,7 @@
             <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Bám Đầu (0.58)</span>
             <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Êm Tâm (0.26)</span>
             <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Sensi X10</span>
-            <span class="flex items-center gap-1 text-ruby-400 font-bold" id="arena-model-tag">iPhone 16 Plus</span>
+            <span class="flex items-center gap-1 text-ruby-400 font-bold" id="arena-model-tag">iPhone 14 Pro Max</span>
           </div>
         </div>
 
@@ -893,7 +903,7 @@
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h4 class="text-xs font-black text-white" id="profile-device-name">iPhone 16 Plus</h4>
+              <h4 class="text-xs font-black text-white" id="profile-device-name">iPhone 14 Pro Max</h4>
               <span class="px-1.5 py-0.2 rounded-md bg-emerald-500/20 text-emerald-400 text-[8px] font-bold border border-emerald-500/30">ĐÃ TIN CẬY</span>
             </div>
             <p class="text-[10px] text-zinc-400">Chứng chỉ MobileConfig • Đang có tác dụng</p>
@@ -1223,7 +1233,7 @@
           </div>
           <div>
             <h3 class="text-sm font-black text-white">TIN CẬY CHỨNG CHỈ IOS</h3>
-            <p class="text-[9px] text-zinc-400 font-mono" id="cert-guide-device-tag">iPhone 16 Plus • Root CA</p>
+            <p class="text-[9px] text-zinc-400 font-mono" id="cert-guide-device-tag">iPhone 14 Pro Max • Root CA</p>
           </div>
         </div>
         <button onclick="closeModal('modal-cert')" class="p-1.5 rounded-xl bg-black/40 text-zinc-400 hover:text-white cursor-pointer">
@@ -2061,6 +2071,7 @@
       const sh = window.screen.height || window.innerHeight;
       const iw = window.innerWidth;
       const ih = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
       let min = Math.min(sw, sh);
       let max = Math.max(sw, sh);
 
@@ -2069,12 +2080,43 @@
         max = Math.max(iw, ih);
       }
 
-      // Default & prioritize iPhone 16 Plus
-      if (min >= 400 && max >= 800) return "iPhone 16 Plus";
-      if (min >= 380 && max >= 800) return "iPhone 16 Pro";
-      if (min >= 370 && max <= 700) return "iPhone SE (2022)";
-      if (min <= 320) return "iPhone SE (2016)";
-      return "iPhone 16 Plus";
+      // Precise logical resolution mapping for iOS
+      // 430 x 932 pt -> iPhone 14 Pro Max, 15 Pro Max, 16 Pro Max
+      if (min >= 420 && max >= 900) {
+        return "iPhone 14 Pro Max";
+      }
+      // 393 x 852 pt -> iPhone 14 Pro, 15, 15 Pro, 16
+      if (min >= 390 && max >= 850 && max < 900) {
+        return "iPhone 14 Pro";
+      }
+      // 428 x 926 pt -> iPhone 13 Pro Max, 12 Pro Max
+      if (min >= 420 && max >= 920 && max < 930) {
+        return "iPhone 13 Pro Max";
+      }
+      // 390 x 844 pt -> iPhone 13, 13 Pro, 12, 12 Pro
+      if (min >= 385 && max >= 840 && max < 850) {
+        return "iPhone 13";
+      }
+      // 414 x 896 pt -> iPhone 14 Plus, 15 Plus, 16 Plus, 11 Pro Max, Xs Max
+      if (min >= 410 && max >= 890 && max < 900) {
+        if (dpr >= 3) return "iPhone 14 Plus";
+        return "iPhone 11";
+      }
+      // 375 x 812 pt -> iPhone X, Xs, 11 Pro
+      if (min >= 370 && max >= 800 && max < 820) {
+        return "iPhone 11 Pro";
+      }
+      // 375 x 667 pt -> iPhone SE (2022), SE (2020), 8, 7
+      if (min >= 370 && max <= 700) {
+        return "iPhone SE (2022)";
+      }
+      // 320 x 568 pt -> iPhone SE (2016)
+      if (min <= 320) {
+        return "iPhone SE (2016)";
+      }
+
+      // Fallback default
+      return "iPhone 14 Pro Max";
     }
 
     let USER_DEVICE_MODEL = detectIosDevice();
@@ -2130,11 +2172,13 @@
         dlBtn.innerHTML = `<i data-lucide="download" class="w-4 h-4 text-ruby-400"></i> TẢI FILE CẤU HÌNH CHO ${modelName.toUpperCase()} (.MOBILECONFIG)`;
       }
 
-      // Update Radar Arena
+      // Update Radar Arena & Certificate Guide Tag
       const arenaTag = document.getElementById("arena-model-tag");
       if (arenaTag) arenaTag.innerText = modelName;
       const arenaSens = document.getElementById("arena-stat-sens");
       if (arenaSens) arenaSens.innerText = `${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x`;
+      const certTag = document.getElementById("cert-guide-device-tag");
+      if (certTag) certTag.innerText = `${modelName} • Root CA`;
 
       renderDeviceModelList();
       showBottomToast("✅ Đã nạp cấu hình phần cứng: " + modelName + ` (${ACTIVE_DEVICE_PROFILE.TouchSensitivity.toFixed(2)}x)`);
@@ -2148,9 +2192,9 @@
       const query = (filterText || "").trim().toLowerCase();
 
       const allKeys = Object.keys(DEVICE_HARDWARE_PROFILES).sort((a, b) => {
-        // Prioritize iPhone 16 Plus
-        if (a === "iPhone 16 Plus") return -1;
-        if (b === "iPhone 16 Plus") return 1;
+        // Prioritize currently active/detected device
+        if (a === current) return -1;
+        if (b === current) return 1;
         return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
       });
 
@@ -2164,7 +2208,7 @@
       container.innerHTML = filtered.map(name => {
         const prof = DEVICE_HARDWARE_PROFILES[name];
         const isSel = name === current;
-        const isThis = name === "iPhone 16 Plus";
+        const isThis = name === current;
         return `
           <div onclick="selectDeviceModel('${name}')" class="p-2.5 rounded-xl ${isSel ? 'bg-ruby-500/20 border-ruby-500/60 shadow-[0_0_12px_rgba(255,30,66,0.3)]' : 'bg-black/40 border-white/10 hover:bg-white/5'} border flex items-center justify-between cursor-pointer transition-all active:scale-98">
             <div class="flex items-center gap-2.5">
