@@ -14,6 +14,8 @@ public struct PatchTarget: Codable, Hashable, Identifiable {
     public let relativeDirectory: String
     public let filename: String
 
+    public var targetIdentifier: String { bundleIdentifier }
+
     public init(
         id: String,
         displayName: String,

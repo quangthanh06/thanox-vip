@@ -15,6 +15,7 @@ public enum PatchTransactionState: String, Codable {
     case committed
     case rollingBack
     case rolledBack
+    case restored
     case failed
 }
 

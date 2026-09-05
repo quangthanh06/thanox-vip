@@ -85,6 +85,9 @@ public final class PatchProgressView: UIView {
         case .rolledBack:
             progressValue = 1.0
             progressBar.progressTintColor = .systemYellow
+        case .restored:
+            progressValue = 1.0
+            progressBar.progressTintColor = .systemOrange
         case .failed:
             progressValue = 1.0
             progressBar.progressTintColor = .systemRed
