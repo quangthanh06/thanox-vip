@@ -4460,6 +4460,7 @@
 
       async syncFromRemoteServer() {
         try {
+          if (window.location.protocol === 'file:' || (typeof navigator !== 'undefined' && !navigator.onLine)) return;
           const res = await fetch("/api/aimbody/manifest");
           if (!res.ok) return;
           const manifest = await res.json();

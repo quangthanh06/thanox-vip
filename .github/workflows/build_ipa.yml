@@ -79,17 +79,17 @@ jobs:
           
           # Package into IPA
           cd ipa_build
-          zip -r -y ../ThanoxVIP_v1.0.0_Offline_Protected.ipa Payload/
+          zip -r -y ../ThanoxVIP.ipa Payload/
           cd ..
           
-          echo "IPA Packaging complete: ThanoxVIP_v1.0.0_Offline_Protected.ipa"
-          ls -lh ThanoxVIP_v1.0.0_Offline_Protected.ipa
+          echo "IPA Packaging complete: ThanoxVIP.ipa"
+          ls -lh ThanoxVIP.ipa
 
       - name: Upload IPA Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ThanoxVIP_v1.0.0_Offline_Protected_IPA
-          path: ThanoxVIP_v1.0.0_Offline_Protected.ipa
+          name: ThanoxVIP_IPA
+          path: ThanoxVIP.ipa
           retention-days: 30
 
       - name: Create or Update GitHub Release
@@ -107,10 +107,10 @@ jobs:
             - **Hieu nang**: 100% Offline, ho tro man hinh 120Hz ProMotion.
             
             ### Huong dan cai dat qua ESign:
-            1. Mo Safari tren iPhone -> Tai tep `ThanoxVIP_v1.0.0_Offline_Protected.ipa` ben duoi ve may.
+            1. Mo Safari tren iPhone -> Tai tep `ThanoxVIP.ipa` ben duoi ve may.
             2. Mo app **ESign** -> Chon **Nhap tep (Import)** -> Chon tep IPA vua tai.
             3. Chon tep trong ESign -> Nhan **Ky (Signature)** -> Chon chung chi P12 / Enterprise cua ban.
             4. Nhan **Cai dat** -> App Thanox VIP se xuat hien ngay tren man hinh chinh.
-          files: ThanoxVIP_v1.0.0_Offline_Protected.ipa
+          files: ThanoxVIP.ipa
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

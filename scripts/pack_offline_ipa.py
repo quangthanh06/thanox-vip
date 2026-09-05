@@ -7,9 +7,9 @@ IOS_DIR = os.path.join(APP_DIR, "ios-native", "ThanoxVIP")
 OUT_IPA_DIR = os.path.join(APP_DIR, "dist")
 os.makedirs(OUT_IPA_DIR, exist_ok=True)
 
-OUT_IPA_PATH = os.path.join(OUT_IPA_DIR, "ThanoxVIP_v1.0.0_Offline_Protected.ipa")
+OUT_IPA_PATH = os.path.join(OUT_IPA_DIR, "ThanoxVIP.ipa")
 PARENT_DIR = os.path.dirname(APP_DIR)
-ROOT_IPA_PATH = os.path.join(PARENT_DIR, "ThanoxVIP_v1.0.0_Offline_Protected.ipa")
+ROOT_IPA_PATH = os.path.join(PARENT_DIR, "ThanoxVIP.ipa")
 
 print("=== BẮT ĐẦU ĐÓNG GÓI GÓI CÀI ĐẶT THANOX VIP IPA OFFLINE ===")
 

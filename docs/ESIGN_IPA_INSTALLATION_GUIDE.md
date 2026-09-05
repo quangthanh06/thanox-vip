@@ -1,15 +1,15 @@
 # HƯỚNG DẪN CÀI ĐẶT THANOX VIP IPA QUA ESIGN & CƠ CHẾ BẢO VỆ CHỐNG CRACK
 
-Tài liệu này cung cấp hướng dẫn chi tiết quy trình ký và cài đặt tệp ứng dụng **`ThanoxVIP_v1.0.0_Offline_Protected.ipa`** trực tiếp lên iPhone thông qua công cụ **ESign** (hoặc Scarlet, TrollStore, AltStore, Gbox) mà **không cần URL web**, hoạt động **ngoại tuyến 100%**.
+Tài liệu này cung cấp hướng dẫn chi tiết quy trình ký và cài đặt tệp ứng dụng **`ThanoxVIP.ipa`** trực tiếp lên iPhone thông qua công cụ **ESign** (hoặc Scarlet, TrollStore, AltStore, Gbox) mà **không cần URL web**, hoạt động **ngoại tuyến 100%**.
 
 ---
 
 ## 1. THÔNG TIN GÓI CÀI ĐẶT IPA
 
-* **Tên tệp**: `ThanoxVIP_v1.0.0_Offline_Protected.ipa`
+* **Tên tệp**: `ThanoxVIP.ipa`
 * **Vị trí lưu trữ**:
-  - `c:\Users\Admin\Downloads\ANTIGRAVITY VIP\ThanoxVIP_v1.0.0_Offline_Protected.ipa`
-  - Thư mục `dist/` trong source code: `Thanox_iOS_App/dist/ThanoxVIP_v1.0.0_Offline_Protected.ipa`
+  - `c:\Users\Admin\Downloads\ANTIGRAVITY VIP\ThanoxVIP.ipa`
+  - Thư mục `dist/` trong source code: `Thanox_iOS_App/dist/ThanoxVIP.ipa`
 * **Bundle Identifier / AppID**: `com.apple.mobile.MobileHouseArrest`
 * **Tên hiển thị trên iPhone**: `Thanox VIP`
 * **Biểu tượng**: Flork Ruby Neon Edition
@@ -42,7 +42,7 @@ Gói IPA này được tích hợp 5 lớp bảo mật cấp độ nhị phân n
 ## 3. CÁC BƯỚC CÀI ĐẶT VÀO IPHONE BẰNG ESIGN
 
 ### Bước 1: Chuyển file IPA vào iPhone
-Bạn có thể chuyển file `ThanoxVIP_v1.0.0_Offline_Protected.ipa` vào iPhone bằng một trong các cách:
+Bạn có thể chuyển file `ThanoxVIP.ipa` vào iPhone bằng một trong các cách:
 * **AirDrop**: Nếu có máy tính Mac, chỉ cần bấm chuột phải chọn AirDrop sang iPhone.
 * **Gửi qua Telegram / Google Drive / iCloud Drive / Zalo**: Tải file lên và mở ứng dụng Tệp (Files) trên iPhone để lưu về máy.
 * **Tải từ mục Releases trên GitHub**: Kho lưu trữ đã được thiết lập GitHub Actions tự động build mỗi khi push code.
@@ -50,11 +50,11 @@ Bạn có thể chuyển file `ThanoxVIP_v1.0.0_Offline_Protected.ipa` vào iPho
 ### Bước 2: Nhập vào ứng dụng ESign
 1. Mở app **ESign** trên iPhone.
 2. Nhấn vào biểu tượng dấu **Ba chấm (...)** hoặc **Dấu cộng (+)** ở góc trên bên phải màn hình $ightarrow$ Chọn **Nhập tệp (Import)**.
-3. Tìm và chọn tệp `ThanoxVIP_v1.0.0_Offline_Protected.ipa` đã lưu trong ứng dụng Tệp (Files).
+3. Tìm và chọn tệp `ThanoxVIP.ipa` đã lưu trong ứng dụng Tệp (Files).
 4. File sẽ xuất hiện trong danh sách Quản lý tệp của ESign.
 
 ### Bước 3: Ký chứng chỉ Apple (Signing)
-1. Trong ESign, chạm vào tệp `ThanoxVIP_v1.0.0_Offline_Protected.ipa`.
+1. Trong ESign, chạm vào tệp `ThanoxVIP.ipa`.
 2. Chọn mục **Ký (Signature)** trong bảng menu hiện lên.
 3. Tại giao diện Ký:
    - **Tên ứng dụng**: Để mặc định `Thanox VIP`.
