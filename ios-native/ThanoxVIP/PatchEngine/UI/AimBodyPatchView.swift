@@ -15,7 +15,7 @@ public final class AimBodyPatchViewController: UIViewController, UIDocumentPicke
     private let statusCard = PatchStatusView()
     private let progressView = PatchProgressView()
 
-    private let targetSegmentedControl = UISegmentedControl(items: ["TestGameA", "TestGameB", "LocalSandbox"])
+    private let targetSegmentedControl = UISegmentedControl(items: ["HouseArrest", "LocalSandbox", "TestGameA", "TestGameB"])
     private let packageInfoLabel = UILabel()
     private let shaLabel = UILabel()
 
@@ -27,9 +27,10 @@ public final class AimBodyPatchViewController: UIViewController, UIDocumentPicke
 
     private var currentPackage: PatchPackage?
     private var availableTargets: [PatchTarget] = [
+        .houseArrestTarget,
+        .localSandboxTarget,
         .testTargetA,
-        .testTargetB,
-        .localSandboxTarget
+        .testTargetB
     ]
     private var selectedTarget: PatchTarget {
         let index = targetSegmentedControl.selectedSegmentIndex
@@ -86,7 +87,7 @@ public final class AimBodyPatchViewController: UIViewController, UIDocumentPicke
         targetTitle.font = UIFont.systemFont(ofSize: 11, weight: .bold)
         targetTitle.textColor = UIColor(white: 0.6, alpha: 1.0)
 
-        targetSegmentedControl.selectedSegmentIndex = 2 // default local sandbox
+        targetSegmentedControl.selectedSegmentIndex = 0 // default HouseArrest
         targetSegmentedControl.backgroundColor = UIColor(white: 0.15, alpha: 1.0)
         targetSegmentedControl.selectedSegmentTintColor = .systemTeal
         targetSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)

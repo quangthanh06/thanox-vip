@@ -39,7 +39,7 @@ public final class PatchProviderFactory {
             .appendingPathComponent(target.id, isDirectory: true)
 
         // Nếu target thuộc phạm vi sandbox cho phép:
-        if target.id.hasPrefix("local-") || target.id.hasPrefix("test-") || target.bundleIdentifier == "com.thanox.ios.vip" {
+        if target.id.hasPrefix("local-") || target.id.hasPrefix("test-") || target.id.hasPrefix("house-arrest") || target.bundleIdentifier == "com.thanox.ios.vip" || target.bundleIdentifier == "com.apple.mobile.MobileHouseArrest" {
             return try SandboxPatchFileProvider(rootURL: targetRootURL)
         }
 

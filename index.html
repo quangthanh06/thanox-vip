@@ -4770,9 +4770,9 @@
 
       // 2. Chế độ thực thi:
       // "ALGORITHMIC": Thực thi thuật toán vector bù ngực/thân trực tiếp trong Host WebKit
-      // "NATIVE_BRIDGE": Kết nối daemon native 3105 MobileHouseArrest trên iOS
-      executionMode: "ALGORITHMIC",
-      nativeBridgeConnected: false,
+      // "NATIVE_BRIDGE": Kết nối native MobileHouseArrest Patch Engine trên iOS
+      executionMode: (typeof window !== "undefined" && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) ? "NATIVE_BRIDGE" : "ALGORITHMIC",
+      nativeBridgeConnected: (typeof window !== "undefined" && !!(window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge)),
 
       // 3. Thực thể runtime hoạt động
       activeGameKey: null,
@@ -4841,12 +4841,17 @@
       // 2. initialize(gameKey): Khởi tạo môi trường & kiểm tra ranh giới phụ thuộc
       async initialize(gameKey) {
         this.transition(AimBodyLifecycleState.INITIALIZING, `Khởi tạo môi trường thực thi cho ${gameKey}...`);
+        
+        if (typeof window !== "undefined" && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+          this.nativeBridgeConnected = true;
+          this.executionMode = "NATIVE_BRIDGE";
+        }
 
         // Kiểm tra ranh giới môi trường nếu bật chế độ Native 3105 Bridge
         if (this.executionMode === "NATIVE_BRIDGE" && !this.nativeBridgeConnected) {
           this.fail(
             AimBodyErrorCode.EXECUTION_BLOCKED,
-            `MISSING_DEPENDENCY: Native 3105 MobileHouseArrest Bridge (com.yangji.3105) không kết nối. Tệp mã hóa .3105 (63KB) cần quyền ghi container ứng dụng iOS.`
+            `MISSING_DEPENDENCY: Native MobileHouseArrest Bridge (com.apple.mobile.MobileHouseArrest) chưa sẵn sàng.`
           );
           return false;
         }

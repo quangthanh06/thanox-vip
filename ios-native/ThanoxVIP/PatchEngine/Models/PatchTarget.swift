@@ -54,4 +54,12 @@ public struct PatchTarget: Codable, Hashable, Identifiable {
         relativeDirectory: "LocalWorkspaces",
         filename: "sandbox_test.bin"
     )
+
+    public static let houseArrestTarget = PatchTarget(
+        id: "house-arrest",
+        displayName: "MobileHouseArrest",
+        bundleIdentifier: "com.apple.mobile.MobileHouseArrest",
+        relativeDirectory: "Workspaces/MobileHouseArrest",
+        filename: "payload.3105"
+    )
 }
