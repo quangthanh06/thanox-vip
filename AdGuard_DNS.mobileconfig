@@ -8,7 +8,7 @@
       <key>PayloadDescription</key>
       <string>Hồ sơ DNS AdGuard - Tự động chặn quảng cáo, bảo vệ quyền riêng tư và tiết kiệm pin băng thông</string>
       <key>PayloadDisplayName</key>
-      <string>AdGuard AdBlock & Security DNS (DoH)</string>
+      <string>AdGuard AdBlock &amp; Security DNS (DoH)</string>
       <key>PayloadIdentifier</key>
       <string>com.thanoxstore.adguard.dns.dns</string>
       <key>PayloadType</key>
@@ -36,7 +36,7 @@
   <key>PayloadDescription</key>
   <string>Hồ sơ DNS AdGuard - Tự động chặn quảng cáo, bảo vệ quyền riêng tư và tiết kiệm pin băng thông</string>
   <key>PayloadDisplayName</key>
-  <string>AdGuard AdBlock & Security DNS (DoH)</string>
+  <string>AdGuard AdBlock &amp; Security DNS (DoH)</string>
   <key>PayloadIdentifier</key>
   <string>com.thanoxstore.adguard.dns</string>
   <key>PayloadOrganization</key>
