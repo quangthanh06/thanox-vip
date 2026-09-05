@@ -4,6 +4,7 @@
 <dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>threeoneosfive</string>
 		<string>freefiremobile</string>
 		<string>freefiremax</string>
 		<string>freefire</string>

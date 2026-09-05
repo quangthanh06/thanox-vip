@@ -318,12 +318,12 @@
       </div>
 
       <!-- Interactive Device Hardware Selector Strip -->
-      <div onclick="openDeviceSelectorModal()" class="mt-2 py-1.5 px-3 rounded-xl bg-ruby-950/40 border border-ruby-500/25 flex items-center justify-between cursor-pointer hover:bg-ruby-900/30 transition-all active:scale-98">
+      <div class="mt-2 py-1.5 px-3 rounded-xl bg-black/50 border border-emerald-500/25 flex items-center justify-between">
         <div class="flex items-center gap-1.5 text-[10px] text-zinc-300">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Thiết bị: <strong id="card1-device-name" class="text-white font-mono">iPhone 14 Pro Max</strong></span>
+          <i data-lucide="lock" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Thiết bị phần cứng: <strong id="card1-device-name" class="text-white font-mono">iPhone 14 Pro Max</strong></span>
         </div>
-        <span class="text-[9px] font-bold text-ruby-400 flex items-center gap-0.5">Đổi dòng máy <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        <span class="text-[9px] font-bold text-emerald-400 flex items-center gap-0.5">Máy nào quét dùng máy nấy</span>
       </div>
 
     </div>
@@ -354,9 +354,9 @@
 
       <!-- Bottom Actions Row -->
       <div class="flex items-center justify-between pt-0.5 text-[11px]">
-        <button onclick="openResetModal()" class="font-bold text-zinc-400 hover:text-rose-300 flex items-center gap-1 transition-colors cursor-pointer">
-          <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-ruby-400"></i> Đổi máy / Reset thiết bị
-        </button>
+        <span class="text-[10px] text-zinc-400 font-mono flex items-center gap-1">
+          <i data-lucide="shield-check" class="w-3 h-3 text-emerald-400"></i> Tự động nhận diện phần cứng
+        </span>
         <span class="text-[10px] text-zinc-500 font-medium">v3.0.0 Pro Liquid</span>
       </div>
 
@@ -578,12 +578,12 @@
         </div>
 
         <!-- Card 2: Full 34 Dòng Máy Hardware Sync -->
-        <div onclick="openDeviceSelectorModal()" class="liquid-glass-ruby rounded-2xl p-3.5 space-y-2 border-ruby-500/40 cursor-pointer active:scale-95 transition-transform">
+        <div class="liquid-glass-ruby rounded-2xl p-3.5 space-y-2 border-ruby-500/40">
           <div class="flex items-center justify-between">
             <div class="w-8 h-8 rounded-xl bg-ruby-neon/20 border border-ruby-500/40 flex items-center justify-center text-ruby-400">
               <i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i>
             </div>
-            <span class="px-1.5 py-0.5 rounded text-[8px] font-bold bg-ruby-500/20 text-ruby-300 border border-ruby-500/30">34 DÒNG MÁY</span>
+            <span class="px-1.5 py-0.5 rounded text-[8px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">KHÓA CỐ ĐỊNH</span>
           </div>
           <div>
             <h4 class="text-xs font-black text-white">HỒ SƠ PHẦN CỨNG</h4>
@@ -591,7 +591,7 @@
           </div>
           <div class="pt-1 border-t border-white/5 flex items-center justify-between text-[9px]">
             <span class="text-emerald-400 font-bold">Khớp 100% code</span>
-            <span class="text-ruby-400 font-black">Đổi &gt;</span>
+            <span class="text-emerald-400 font-mono font-bold">Đã khóa máy</span>
           </div>
         </div>
       </div>
@@ -952,26 +952,6 @@
               <div id="aimbody-error-desc" class="text-zinc-400 text-[8px] leading-tight"></div>
             </div>
 
-            <!-- Execution Mode & Live Trace Bar -->
-            <div class="flex items-center justify-between text-[9px] pt-1 border-t border-white/5 text-zinc-400 font-mono">
-              <div class="flex items-center gap-2">
-                <span>Lượt chạy: <b id="aimbody-stat-execs" class="text-white">0</b></span>
-                <span>Trễ: <b id="aimbody-stat-latency" class="text-emerald-400">0.0ms</b></span>
-              </div>
-              <button onclick="toggleAimBodyTraceConsole()" class="text-ruby-400 hover:text-ruby-300 flex items-center gap-1 cursor-pointer font-bold">
-                <i data-lucide="terminal" class="w-3 h-3"></i> <span id="aimbody-trace-btn-label">Trace Log</span>
-              </button>
-            </div>
-
-            <!-- Live Execution Trace Console Dropdown -->
-            <div id="aimbody-trace-console" class="hidden p-2 rounded-xl bg-[#04060a] border border-white/10 text-[8px] font-mono max-h-32 overflow-y-auto space-y-1 text-zinc-400 no-scrollbar">
-              <div class="text-zinc-500 flex items-center justify-between border-b border-white/5 pb-1">
-                <span>// AIMBODY Execution Trace Stream (Mục 20)</span>
-                <button onclick="AimBodyRuntime.clearTraceLogs()" class="text-zinc-500 hover:text-zinc-300 underline">Xóa log</button>
-              </div>
-              <div id="aimbody-trace-entries" class="space-y-0.5">
-                <div class="text-zinc-600">// Runtime đang ở trạng thái OFF</div>
-              </div>
             <!-- Native PatchEngine Diagnostics & Manager -->
             <div class="pt-1.5 border-t border-white/5">
               <button onclick="openNativePatchEngine()" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-cyan-950/80 to-blue-950/80 border border-cyan-500/40 text-[10px] font-bold text-cyan-300 flex items-center justify-center gap-1.5 active:scale-95 transition-all cursor-pointer shadow-[0_0_15px_rgba(6,182,212,0.2)]">
@@ -992,275 +972,74 @@
           </button>
         </div>
 
-        <!-- Master Launch Button -->
-        <button onclick="launchGameSequence()" class="w-full py-4 rounded-3xl btn-ruby-primary text-white text-sm font-black tracking-wider flex items-center justify-center gap-2 shadow-[0_8px_30px_rgba(255,30,66,0.65)] cursor-pointer active:scale-98 transition-transform">
-          <i data-lucide="rocket" class="w-5 h-5 text-amber-300 animate-bounce"></i> ÁP DỤNG &amp; KHỞI CHẠY GAME
-        </button>
+        <!-- Direct 1-Tap Game Launchers (Bật Aim là nạp xong - Vào game trực tiếp) -->
+        <div class="grid grid-cols-2 gap-2.5">
+          <button onclick="openGameDirectly('Free Fire')" class="py-4 px-3 rounded-3xl btn-ruby-primary text-white text-xs font-black tracking-wider flex items-center justify-center gap-2 shadow-[0_6px_25px_rgba(255,30,66,0.6)] cursor-pointer active:scale-95 transition-transform">
+            <i data-lucide="play" class="w-4 h-4 text-amber-300"></i> VÀO FREE FIRE
+          </button>
+          <button onclick="openGameDirectly('Free Fire MAX')" class="py-4 px-3 rounded-3xl bg-gradient-to-r from-amber-600 via-rose-600 to-amber-600 text-white text-xs font-black tracking-wider flex items-center justify-center gap-2 shadow-[0_6px_25px_rgba(245,158,11,0.4)] cursor-pointer active:scale-95 transition-transform">
+            <i data-lucide="flame" class="w-4 h-4 text-yellow-200"></i> VÀO FF MAX
+          </button>
+        </div>
 
       </div>
 
     </div>
 
-  </div>
-
     <!-- ---------------- TAB: DNS & KẾT NỐI DỮ LIỆU SERVER VIP ---------------- -->
-    <div id="tab-dns" class="tab-content hidden px-4 space-y-4 pt-1 pb-10">
+    <div id="tab-dns" class="tab-content hidden px-4 space-y-4 pt-2 pb-28">
       
-      <!-- DNS & Server Header Banner -->
-      <div class="liquid-glass-ruby rounded-3xl p-4.5 space-y-3 border-emerald-500/40 shadow-lg relative overflow-hidden">
-        <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 relative shadow-inner shrink-0">
-              <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
-              <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-500"></span>
-              <i data-lucide="shield-check" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <div class="flex items-center gap-2">
-                <h2 class="text-sm font-black text-white">DNS &amp; SERVER DỮ LIỆU GAME</h2>
-                <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[9px] font-black text-emerald-300">
-                  ONLINE
-                </span>
-              </div>
-              <p class="text-[11px] text-zinc-400">Định tuyến DoH/DoT siêu tốc 1ms &amp; Đọc dữ liệu máy chủ VIP</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Real-time Status Grid -->
-        <div class="grid grid-cols-2 gap-2 pt-1 text-[11px]">
-          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
-            <span class="text-zinc-400 text-[10px]">Trạng Thái Mạng:</span>
-            <div class="text-emerald-400 font-bold flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Đã Kết Nối DoH
-            </div>
-          </div>
-          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
-            <span class="text-zinc-400 text-[10px]">Độ Trễ Ping:</span>
-            <div id="dns-ping-display" class="text-rose-400 font-black flex items-center gap-1.5">
-              <i data-lucide="activity" class="w-3.5 h-3.5"></i> 11ms (Siêu Tốc)
-            </div>
-          </div>
-          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
-            <span class="text-zinc-400 text-[10px]">Chứng Chỉ Root CA:</span>
-            <div class="text-amber-300 font-bold flex items-center gap-1.5">
-              <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-400"></i> Thanox VIP Root CA
-            </div>
-          </div>
-          <div class="p-2.5 rounded-2xl bg-black/40 border border-zinc-800/80 space-y-0.5">
-            <span class="text-zinc-400 text-[10px]">Đọc Gói Tin Server:</span>
-            <div id="dns-packet-sync-status" class="text-cyan-300 font-bold flex items-center gap-1.5">
-              <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 3105 Đồng Bộ
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Test & Sync Buttons -->
-        <div class="grid grid-cols-2 gap-2 pt-1">
-          <button onclick="runDnsPingTest()" id="btn-ping-test" class="py-2.5 px-3 rounded-2xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-700/60 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
-            <i data-lucide="activity" class="w-3.5 h-3.5 text-rose-400"></i> Đo Độ Trễ Ping
-          </button>
-          <button onclick="syncServerDataLive()" id="btn-sync-server" class="py-2.5 px-3 rounded-2xl bg-gradient-to-r from-emerald-600/80 to-teal-600/80 hover:from-emerald-600 hover:to-teal-600 border border-emerald-500/50 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all shadow-md shadow-emerald-950/40">
-            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-emerald-300"></i> Đọc Dữ Liệu Server
-          </button>
-        </div>
-      </div>
-
-      <!-- Section: TẢI & CÀI ĐẶT HỒ SƠ DNS ANTIBAN -->
+      <!-- PRIMARY CARD: DNS ANTIBAN (OPENS DIRECTLY IN SAFARI) -->
       <div class="space-y-3">
         <div class="flex items-center justify-between px-1">
           <h3 class="text-xs font-black tracking-wider text-zinc-300 uppercase flex items-center gap-1.5">
-            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-emerald-400"></i> HỒ SƠ DNS ANTIBAN &amp; SERVER DỮ LIỆU
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> HỒ SƠ DNS ANTIBAN GAMING
           </h3>
-          <span class="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">ANTIBAN 100%</span>
+          <span class="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/30">CHỐNG KHÓA 100%</span>
         </div>
 
-        <!-- PRIMARY CARD: DNS ANTIBAN (OPENS DIRECTLY IN SAFARI) -->
-        <div class="liquid-glass-ruby rounded-3xl p-4.5 space-y-3.5 border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.15)] relative overflow-hidden">
-          <div class="absolute -right-8 -bottom-8 w-28 h-28 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="liquid-glass-ruby rounded-3xl p-5 space-y-4 border-emerald-500/50 shadow-[0_0_25px_rgba(16,185,129,0.2)] relative overflow-hidden">
+          <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none"></div>
           
           <div class="flex items-start justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-500/30 border border-emerald-500/60 flex items-center justify-center text-emerald-300 shrink-0 shadow-inner">
-                <i data-lucide="shield-check" class="w-6 h-6"></i>
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-500/30 border border-emerald-500/60 flex items-center justify-center text-emerald-300 shrink-0 shadow-inner">
+                <i data-lucide="shield-check" class="w-7 h-7"></i>
               </div>
               <div>
                 <div class="flex items-center gap-2">
-                  <h4 class="text-sm font-black text-white">Tải File DNS ANTIBAN</h4>
+                  <h4 class="text-base font-black text-white">Tải File DNS ANTIBAN</h4>
                   <span class="px-2 py-0.5 rounded-full bg-emerald-500/25 text-emerald-300 text-[9px] font-black tracking-wide border border-emerald-500/40">1ms DoH</span>
                 </div>
-                <p class="text-[11px] text-zinc-400 font-medium mt-0.5">Tự động mở Safari • Cài đặt hồ sơ chống quét &amp; giảm ping 0ms</p>
+                <p class="text-xs text-zinc-400 font-medium mt-0.5">Tự động mở Safari • Cài đặt hồ sơ chống quét &amp; giảm ping 0ms</p>
               </div>
             </div>
           </div>
           
-          <div class="bg-black/40 p-3 rounded-2xl border border-zinc-800/80 space-y-1.5">
-            <p class="text-[11px] text-zinc-200 leading-relaxed font-medium">
+          <div class="bg-black/50 p-3.5 rounded-2xl border border-zinc-800/80 space-y-2">
+            <p class="text-xs text-zinc-200 leading-relaxed font-medium">
               🛡️ <span class="text-emerald-300 font-bold">Chức năng Antiban Gaming:</span> Mã hóa toàn bộ gói tin DNS qua DoH, định tuyến trực tiếp tới máy chủ Garena không qua ISP trung gian, triệt tiêu giật lag 240Hz và ngăn chặn hoàn toàn hệ thống game quét phát hiện.
             </p>
-            <p class="text-[10px] text-zinc-400 leading-normal">
+            <p class="text-[11px] text-zinc-400 leading-normal">
               ⚡ Tích hợp chứng chỉ đọc dữ liệu máy chủ để đồng bộ bảng tọa độ <span class="text-rose-300 font-bold">AIMBODY (.3105)</span> vào game mà không sửa file gốc.
             </p>
           </div>
 
-          <!-- Extra Prominent Action Buttons -->
-          <div class="space-y-2 pt-0.5">
-            <button onclick="installProfileSafari('Thanox_DNS_VIP.mobileconfig')" class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.35)] active:scale-98 transition-all">
+          <!-- Prominent Action Buttons -->
+          <div class="space-y-2.5 pt-1">
+            <button onclick="installProfileSafari('Thanox_DNS_VIP.mobileconfig')" class="w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_25px_rgba(16,185,129,0.4)] active:scale-98 transition-all">
               <i data-lucide="external-link" class="w-4 h-4 text-emerald-200"></i> CÀI ĐẶT DNS ANTIBAN QUA SAFARI (1 CHẠM)
             </button>
             
-            <div class="grid grid-cols-2 gap-2">
-              <button onclick="downloadMobileconfigFile('Thanox_DNS_VIP.mobileconfig')" class="py-2.5 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
-                <i data-lucide="download" class="w-3.5 h-3.5 text-zinc-300"></i> Tải File Cấu Hình
+            <div class="grid grid-cols-2 gap-2.5">
+              <button onclick="downloadMobileconfigFile('Thanox_DNS_VIP.mobileconfig')" class="py-3 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+                <i data-lucide="download" class="w-4 h-4 text-zinc-300"></i> Tải File Cấu Hình
               </button>
-              <button onclick="copyDnsText('https://quangthanh06.github.io/thanox-vip/Thanox_DNS_VIP.mobileconfig', 'Đã sao chép link tải DNS Antiban')" class="py-2.5 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-300 text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
-                <i data-lucide="copy" class="w-3.5 h-3.5 text-zinc-400"></i> Sao Chép Link
+              <button onclick="copyDnsText('https://quangthanh06.github.io/thanox-vip/Thanox_DNS_VIP.mobileconfig', 'Đã sao chép link tải DNS Antiban')" class="py-3 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-300 text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
+                <i data-lucide="copy" class="w-4 h-4 text-zinc-400"></i> Sao Chép Link
               </button>
             </div>
           </div>
-        </div>
-
-        <!-- SECONDARY CARD: THANOX ROOT CA CERTIFICATE -->
-        <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-amber-500/30 shadow-md">
-          <div class="flex items-start justify-between">
-            <div class="flex items-center gap-2.5">
-              <div class="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
-                <i data-lucide="lock" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h4 class="text-xs font-black text-white">Chứng Chỉ Bảo Mật Thanox Root CA</h4>
-                <p class="text-[10px] text-zinc-400">Chuẩn X.509 (.CER) • Cấp quyền tin cậy đọc gói tin máy chủ</p>
-              </div>
-            </div>
-            <span class="text-[9px] font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/25">ĐỌC DỮ LIỆU</span>
-          </div>
-
-          <div class="grid grid-cols-2 gap-2">
-            <button onclick="installProfileSafari('ThanoxRootCA.cer')" class="py-2.5 px-3 rounded-2xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Cài Đặt Qua Safari
-            </button>
-            <button onclick="downloadRootCACert()" class="py-2.5 px-3 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-all">
-              <i data-lucide="download" class="w-3.5 h-3.5"></i> Lưu Tệp .cer
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section: TRÌNH ĐỌC DỮ LIỆU GÓI TIN SERVER (SERVER PACKET READER CONSOLE) -->
-      <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-zinc-800/80 shadow-md">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
-            <h3 class="text-xs font-black text-white tracking-wide">LUỒNG ĐỌC GÓI TIN MÁY CHỦ (LIVE MONITOR)</h3>
-          </div>
-          <button onclick="refreshDnsConsole()" class="text-[10px] text-zinc-400 hover:text-white flex items-center gap-1 cursor-pointer">
-            <i data-lucide="refresh-cw" class="w-3 h-3"></i> Làm mới
-          </button>
-        </div>
-
-        <div id="dns-console-logs" class="bg-black/90 p-3 rounded-2xl border border-zinc-900 text-[10px] font-mono text-zinc-300 space-y-1 h-36 overflow-y-auto leading-relaxed">
-          <div class="text-emerald-400 font-bold">[GATEWAY] Kết nối thành công máy chủ https://quangthanh06.github.io/thanox-vip/ [200 OK]</div>
-          <div class="text-cyan-300">[DOH-RESOLVE] cloudflare-dns.com/dns-query -> Định tuyến cổng game Garena 1ms</div>
-          <div class="text-amber-300">[SECURITY] ThanoxRootCA.cer: Đã xác thực tin cậy SSL/TLS Handshake</div>
-          <div class="text-rose-300">[PACKET-READER] Đang phân tích luồng buffer dữ liệu game (Port 8080/443)...</div>
-          <div class="text-emerald-300">[AIMBODY-SYNC] Bảng thông số tọa độ 64KB từ file .3105 nạp thành công!</div>
-          <div class="text-zinc-400">[MONITOR] Ping: 11ms • Jitter: 0.1ms • Packet Loss: 0% • Trạng thái: TỐI ƯU TUYỆT ĐỐI</div>
-        </div>
-      </div>
-
-      <!-- Section: CẤU HÌNH THỦ CÔNG (SHADOWROCKET, LOON, QUANTUMULT X, STASH) -->
-      <div class="liquid-glass-ruby rounded-3xl p-4 space-y-3 border-zinc-800/80 shadow-md">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xs font-black text-white tracking-wide flex items-center gap-1.5">
-            <i data-lucide="copy" class="w-3.5 h-3.5 text-zinc-400"></i> THÔNG SỐ CẤU HÌNH THỦ CÔNG
-          </h3>
-          <span class="text-[9px] text-zinc-500 font-bold">Dành Cho Shadowrocket / Loon</span>
-        </div>
-
-        <div class="space-y-2 text-[11px]">
-          <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-zinc-800">
-            <div class="space-y-0.5 overflow-hidden pr-2">
-              <div class="text-[9px] text-zinc-400">Đường dẫn DoH URL (DNS over HTTPS):</div>
-              <div class="text-white font-mono font-bold truncate">https://cloudflare-dns.com/dns-query</div>
-            </div>
-            <button onclick="copyDnsText('https://cloudflare-dns.com/dns-query', 'Đã sao chép link DoH')" class="px-2.5 py-1 rounded-lg bg-ruby-neon/20 hover:bg-ruby-neon/30 text-ruby-300 text-[10px] font-bold shrink-0 cursor-pointer">
-              Sao Chép
-            </button>
-          </div>
-
-          <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-zinc-800">
-            <div class="space-y-0.5 overflow-hidden pr-2">
-              <div class="text-[9px] text-zinc-400">Máy chủ DNS IPv4:</div>
-              <div class="text-white font-mono font-bold">1.1.1.1 , 1.0.0.1</div>
-            </div>
-            <button onclick="copyDnsText('1.1.1.1, 1.0.0.1', 'Đã sao chép IP DNS')" class="px-2.5 py-1 rounded-lg bg-ruby-neon/20 hover:bg-ruby-neon/30 text-ruby-300 text-[10px] font-bold shrink-0 cursor-pointer">
-              Sao Chép
-            </button>
-          </div>
-
-          <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-zinc-800">
-            <div class="space-y-0.5 overflow-hidden pr-2">
-              <div class="text-[9px] text-zinc-400">Server Dữ Liệu Thanox VIP:</div>
-              <div class="text-white font-mono font-bold truncate">https://quangthanh06.github.io/thanox-vip/</div>
-            </div>
-            <button onclick="copyDnsText('https://quangthanh06.github.io/thanox-vip/', 'Đã sao chép Server URL')" class="px-2.5 py-1 rounded-lg bg-ruby-neon/20 hover:bg-ruby-neon/30 text-ruby-300 text-[10px] font-bold shrink-0 cursor-pointer">
-              Sao Chép
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section: HƯỚNG DẪN CÀI ĐẶT 4 BƯỚC -->
-      <div class="liquid-glass-ruby rounded-3xl p-4.5 space-y-3.5 border-ruby-500/40 shadow-lg">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xs font-black text-white tracking-wide flex items-center gap-1.5">
-            <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i> HƯỚNG DẪN KÍCH HOẠT 4 BƯỚC
-          </h3>
-          <span class="px-2 py-0.5 rounded-full bg-ruby-neon/20 text-ruby-300 text-[9px] font-bold">BẮT BUỘC</span>
-        </div>
-
-        <div class="space-y-2.5 text-xs text-zinc-300">
-          <!-- Step 1 -->
-          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
-            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-black text-[11px] flex items-center justify-center shrink-0">1</div>
-            <div>
-              <div class="font-bold text-white">Tải Hồ Sơ Cấu Hình</div>
-              <p class="text-[10px] text-zinc-400 mt-0.5">Nhấn <span class="text-emerald-400 font-bold">[Cài qua Safari]</span> ở trên. Safari mở ra, bấm <span class="text-white font-bold">Cho phép</span> để tải hồ sơ về iPhone.</p>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
-            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-black text-[11px] flex items-center justify-center shrink-0">2</div>
-            <div>
-              <div class="font-bold text-white">Cài Đặt Hồ Sơ Trong Cài Đặt iPhone</div>
-              <p class="text-[10px] text-zinc-400 mt-0.5">Mở <span class="text-white font-bold">Cài đặt (Settings)</span> trên iPhone &gt; Nhấn dòng <span class="text-emerald-400 font-bold">Đã tải về hồ sơ</span> ở trên cùng &gt; Nhấn <span class="text-white font-bold">Cài đặt (Install)</span> ở góc phải.</p>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
-            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-300 font-black text-[11px] flex items-center justify-center shrink-0">3</div>
-            <div>
-              <div class="font-bold text-white">Bật Tin Cậy Chứng Chỉ Root CA (Đọc Dữ Liệu)</div>
-              <p class="text-[10px] text-zinc-400 mt-0.5">Vào <span class="text-white font-bold">Cài đặt &gt; Cài đặt chung &gt; Giới thiệu &gt; Cài đặt tin cậy chứng chỉ</span> &gt; Gạt bật xanh <span class="text-amber-400 font-bold">Thanox VIP Root CA Certificate</span>.</p>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="flex items-start gap-2.5 bg-black/30 p-2.5 rounded-2xl border border-zinc-800/60">
-            <div class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-300 font-black text-[11px] flex items-center justify-center shrink-0">4</div>
-            <div>
-              <div class="font-bold text-white">Kích Hoạt DNS Gaming Siêu Tốc</div>
-              <p class="text-[10px] text-zinc-400 mt-0.5">Vào <span class="text-white font-bold">Cài đặt &gt; Cài đặt chung &gt; VPN &amp; Quản lý thiết bị &gt; DNS</span> &gt; Chọn tích vào <span class="text-rose-400 font-bold">Thanox VIP Gaming DNS</span>.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-2.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-300 flex items-center gap-2">
-          <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-emerald-400"></i>
-          <span>Sau khi hoàn tất, mở game Free Fire hoặc FF MAX. Gói tin cảm ứng và thông số AIMBODY sẽ tự động được đồng bộ mượt mà!</span>
         </div>
       </div>
 
@@ -1305,7 +1084,7 @@
       </div>
 
       <!-- Device Hardware & Certificate Card in Profile -->
-      <div onclick="openDeviceSelectorModal()" class="liquid-glass-ruby rounded-2xl p-3.5 flex items-center justify-between border-ruby-500/40 cursor-pointer active:scale-98 transition-transform">
+      <div class="liquid-glass-ruby rounded-2xl p-3.5 flex items-center justify-between border-ruby-500/40">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.3)]">
             <i data-lucide="smartphone" class="w-5 h-5"></i>
@@ -1313,14 +1092,14 @@
           <div>
             <div class="flex items-center gap-2">
               <h4 class="text-xs font-black text-white" id="profile-device-name">iPhone 14 Pro Max</h4>
-              <span class="px-1.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[8px] font-bold border border-emerald-500/30">ĐÃ TIN CẬY</span>
+              <span class="px-1.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[8px] font-bold border border-emerald-500/30">ĐÃ KHÓA MÁY</span>
             </div>
-            <p class="text-[10px] text-zinc-400">Chứng chỉ MobileConfig • Đang có tác dụng</p>
+            <p class="text-[10px] text-zinc-400">Máy nào quét dùng máy nấy • Cố định phần cứng</p>
           </div>
         </div>
-        <button class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-[10px] font-black flex items-center gap-1 border border-white/10 cursor-pointer">
-          Đổi máy <i data-lucide="chevron-right" class="w-3 h-3"></i>
-        </button>
+        <span class="px-2.5 py-1 rounded-xl bg-emerald-500/15 text-emerald-300 text-[9px] font-mono font-bold border border-emerald-500/30">
+          LOCKED
+        </span>
       </div>
 
       <!-- Cloud Network & Security Stats Card -->
@@ -1350,44 +1129,17 @@
         </div>
       </div>
 
-      <!-- Enterprise Certificate Trust Status (MobileConfig + Cert Combined) -->
-      <div class="liquid-glass rounded-3xl p-4 space-y-3">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-zinc-300 flex items-center gap-1.5">
-            <i data-lucide="file-check" class="w-4 h-4 text-emerald-400"></i> Chứng Chỉ Tin Cậy Doanh Nghiệp
-          </span>
-          <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[9px] font-bold border border-emerald-500/30" id="cert-status-badge">
-            ĐÃ KÍCH HOẠT
-          </span>
-        </div>
-        <p class="text-[11px] text-zinc-400 leading-relaxed">
-          Cấu hình tích hợp All-In-One: Cài đặt 1 file duy nhất chứa cả WebClip Thanox VIP và Chứng chỉ Root CA CAO CẤP.
-        </p>
-
-        <!-- 1 Single Direct All-in-One Download Button -->
-        <a href="https://quangthanh06.github.io/thanox-vip/Thanox.mobileconfig" class="w-full py-3 rounded-2xl btn-ruby-primary text-white text-xs font-black flex items-center justify-center gap-2 text-center shadow-[0_4px_20px_rgba(255,30,66,0.5)] active:scale-98 transition-transform block">
-          <i data-lucide="download-cloud" class="w-4 h-4 text-amber-300"></i> Cài Đặt Cấu Hình &amp; Chứng Chỉ (All-In-One)
-        </a>
-
-        <button onclick="openCertGuideModal()" class="w-full py-2.5 rounded-2xl bg-black/40 border border-ruby-500/25 text-xs font-bold text-rose-300 hover:text-white flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-          <i data-lucide="help-circle" class="w-4 h-4 text-ruby-400"></i> Hướng Dẫn Tin Cậy Trong Cài Đặt iOS
-        </button>
-      </div>
-
-      <!-- Support & Reset Device Section -->
+      <!-- Support & Storage Section -->
       <div class="liquid-glass rounded-3xl p-4 space-y-2.5">
-        <span class="text-xs font-bold text-zinc-300 block">Quản Lý Thiết Bị</span>
+        <span class="text-xs font-bold text-zinc-300 block">Quản Lý Bộ Nhớ &amp; Phiên</span>
         <div class="grid grid-cols-2 gap-2">
-          <button onclick="openResetModal()" class="py-3 rounded-2xl bg-black/50 border border-ruby-500/30 text-xs font-bold text-zinc-300 hover:text-white flex items-center justify-center gap-1.5 active:scale-95 transition-all cursor-pointer">
-            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-ruby-400"></i> Đổi Máy VIP
-          </button>
           <button onclick="clearCacheAction()" class="py-3 rounded-2xl bg-black/50 border border-ruby-500/30 text-xs font-bold text-zinc-300 hover:text-white flex items-center justify-center gap-1.5 active:scale-95 transition-all cursor-pointer">
-            <i data-lucide="trash-2" class="w-3.5 h-3.5 text-amber-400"></i> Xóa Cache
+            <i data-lucide="trash-2" class="w-3.5 h-3.5 text-amber-400"></i> Xóa Cache Dữ Liệu
+          </button>
+          <button onclick="handleLogout()" class="py-3 rounded-2xl bg-red-950/40 border border-red-500/20 text-xs font-bold text-rose-400 hover:text-red-300 flex items-center justify-center gap-1.5 active:scale-95 transition-all cursor-pointer">
+            <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Đăng Xuất
           </button>
         </div>
-        <button onclick="handleLogout()" class="w-full py-2.5 rounded-2xl bg-red-950/40 border border-red-500/20 text-xs font-bold text-rose-400 hover:text-red-300 flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-          <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Đăng Xuất Khỏi Thiết Bị
-        </button>
       </div>
 
       <!-- Admin Management Panel Access -->
@@ -1418,7 +1170,7 @@
         <span class="absolute top-1.5 right-3.5 w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
         <span class="absolute top-1.5 right-3.5 w-2 h-2 rounded-full bg-emerald-500"></span>
         <i data-lucide="shield-check" class="w-5 h-5"></i>
-        <span class="text-[10px] font-bold tracking-wide">DNS Server</span>
+        <span class="text-[10px] font-bold tracking-wide">DNS Antiban</span>
       </button>
       <button onclick="switchTab('profile')" id="nav-btn-profile" class="nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-300 text-zinc-400 hover:text-white cursor-pointer">
         <i data-lucide="user" class="w-5 h-5"></i>
@@ -2653,7 +2405,7 @@
       // Update UI Header
       const headerDev = document.getElementById("header-device-text");
       if (headerDev) {
-        headerDev.innerHTML = `${modelName} • Bản Quyền VIP <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-ruby-400 inline"></i>`; if (window.lucide) lucide.createIcons();
+        headerDev.innerHTML = `<i data-lucide="lock" class="w-2.5 h-2.5 text-emerald-400 inline"></i> <span id="header-dev-name">${modelName}</span> • Khóa Cố Định`; if (window.lucide) lucide.createIcons();
       }
       const card1Dev = document.getElementById("card1-device-name");
       if (card1Dev) card1Dev.innerText = modelName;
@@ -2757,9 +2509,11 @@
     }
 
     function openDeviceSelectorModal() {
-      renderDeviceModelList();
-      selectDeviceModel(USER_DEVICE_MODEL);
-      openModal("modal-device-selector");
+      showBottomToast(`🔒 Máy đã được khóa cố định: ${USER_DEVICE_MODEL} (Máy nào quét dùng máy nấy)`);
+    }
+
+    function openResetModal() {
+      showBottomToast(`🔒 Thiết bị đã được nhận diện và khóa cố định theo máy!`);
     }
 
     function triggerCertActivation() {
@@ -3749,7 +3503,7 @@
           if (!started) {
             showBottomToast(`⚠️ AIM BODY: ${AimBodyRuntime.errorCode}`);
           } else {
-            showBottomToast(`⚡ Đã kích hoạt thực thi: AIM BODY (${gameKey} v${AimBodyRuntime.getVersion()})`);
+            showBottomToast(`✅ ĐÃ BẬT AIM BODY! Vào game Free Fire để trải nghiệm ngay.`);
           }
         } else {
           showBottomToast("⚡ Đã kích hoạt duy nhất: " + titles[engineKey]);
@@ -4169,9 +3923,7 @@
       renderSensSliders();
       openModal("modal-sens");
     }
-    function openResetModal() {
-      openModal("modal-reset");
-    }
+    // openResetModal disabled - máy nào quét dùng máy nấy
     function openCertGuideModal() {
       openModal("modal-cert");
     }
