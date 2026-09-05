@@ -29,7 +29,7 @@ public final class PatchJournalRecoveryManager {
                 switch manifest.state {
                 case .preparing, .backingUp, .applying, .verifying, .rollingBack:
                     incomplete.append(manifest)
-                case .committed, .rolledBack, .failed:
+                case .committed, .rolledBack, .restored, .failed:
                     break
                 }
             }
