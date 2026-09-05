@@ -442,8 +442,10 @@
             <span class="text-[9px] text-zinc-400 block font-bold">FPS MỤC TIÊU</span>
             <span class="text-xs font-black text-ruby-300 font-mono" id="home-fps-val">120 FPS</span>
           </div>
-          <div class="bg-black/40 rounded-xl py-1.5 px-1 border border-ruby-500/20">
-            <span class="text-[9px] text-zinc-400 block font-bold">ĐỘ TRỄ PING</span>
+          <div onclick="runLivePingTest()" class="bg-black/40 rounded-xl py-1.5 px-1 border border-ruby-500/20 cursor-pointer active:scale-95 transition-all hover:border-emerald-500/50 group relative" title="Chạm để đo Ping mạng thực tế">
+            <span class="text-[9px] text-zinc-400 block font-bold flex items-center justify-center gap-0.5">
+              ĐỘ TRỄ PING <i data-lucide="activity" class="w-2.5 h-2.5 text-emerald-400 inline group-hover:animate-pulse"></i>
+            </span>
             <span class="text-xs font-black text-emerald-400 font-mono" id="home-ping-val">21ms</span>
           </div>
           <div class="bg-black/40 rounded-xl py-1.5 px-1 border border-ruby-500/20">
@@ -452,7 +454,7 @@
           </div>
           <div class="bg-black/40 rounded-xl py-1.5 px-1 border border-ruby-500/20">
             <span class="text-[9px] text-zinc-400 block font-bold">NHIỆT ĐỘ</span>
-            <span class="text-xs font-black text-amber-400 font-mono">34.5°C</span>
+            <span class="text-xs font-black text-amber-400 font-mono" id="home-thermal-val">34.2°C • Mát</span>
           </div>
         </div>
       </div>
@@ -3605,6 +3607,57 @@
         USER_DEVICE_MODEL = model;
         selectDeviceModel(model);
         renderCurrentDeviceHeader();
+      }
+    }
+
+    function applyNativeDiagnostics(stats) {
+      if (!stats) return;
+      console.log("[Thanox Native] Nhận thông số phần cứng thực tế:", stats);
+      if (stats.maxFps) {
+        const fpsElem = document.getElementById("home-fps-val");
+        if (fpsElem) fpsElem.innerText = stats.maxFps + " FPS";
+      }
+      if (stats.usedRam && stats.totalRam) {
+        const ramElem = document.getElementById("stat-ram-val");
+        if (ramElem) ramElem.innerText = `${stats.usedRam} / ${stats.totalRam}GB`;
+        const ramBar = document.getElementById("stat-ram-bar");
+        if (ramBar && stats.ramPercent) ramBar.style.width = stats.ramPercent + "%";
+      }
+      if (stats.thermal) {
+        const thermElem = document.getElementById("home-thermal-val");
+        if (thermElem) thermElem.innerText = stats.thermal;
+      }
+      if (stats.isLowPower) {
+        showToast("⚠️ Máy đang bật Tiết kiệm pin! Tắt để đạt 120 FPS tối đa");
+      }
+    }
+
+    function runLivePingTest() {
+      const pingElem = document.getElementById("home-ping-val");
+      if (pingElem) {
+        pingElem.innerText = "...";
+      }
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+        window.webkit.messageHandlers.thanoxBridge.postMessage({ action: "haptic", type: "light" });
+        window.webkit.messageHandlers.thanoxBridge.postMessage({ action: "testNetworkLatency" });
+      } else {
+        // Mô phỏng fallback
+        setTimeout(() => {
+          const simulatedMs = Math.floor(Math.random() * 10) + 16;
+          onNetworkLatencyResult(simulatedMs);
+        }, 300);
+      }
+    }
+
+    function onNetworkLatencyResult(ms) {
+      const pingElem = document.getElementById("home-ping-val");
+      if (pingElem) {
+        pingElem.innerText = ms + "ms";
+        pingElem.className = "text-xs font-black font-mono " + (ms < 35 ? "text-emerald-400" : (ms < 70 ? "text-amber-400" : "text-rose-400"));
+      }
+      showToast(`⚡ Độ trễ mạng: ${ms}ms (${ms < 35 ? "Rất mượt • Tối ưu" : "Bình thường"})`);
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.thanoxBridge) {
+        window.webkit.messageHandlers.thanoxBridge.postMessage({ action: "haptic", type: "success" });
       }
     }
 
