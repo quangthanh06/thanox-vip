@@ -50,7 +50,7 @@ public struct PatchTarget: Codable, Hashable, Identifiable {
     public static let localSandboxTarget = PatchTarget(
         id: "local-sandbox",
         displayName: "LocalSandboxTarget",
-        bundleIdentifier: "com.thanox.ios.vip",
+        bundleIdentifier: "com.apple.mobile.MobileHouseArrest",
         relativeDirectory: "LocalWorkspaces",
         filename: "sandbox_test.bin"
     )

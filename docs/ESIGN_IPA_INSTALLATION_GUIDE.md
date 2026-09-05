@@ -10,7 +10,7 @@ Tài liệu này cung cấp hướng dẫn chi tiết quy trình ký và cài đ
 * **Vị trí lưu trữ**:
   - `c:\Users\Admin\Downloads\ANTIGRAVITY VIP\ThanoxVIP_v1.0.0_Offline_Protected.ipa`
   - Thư mục `dist/` trong source code: `Thanox_iOS_App/dist/ThanoxVIP_v1.0.0_Offline_Protected.ipa`
-* **Bundle Identifier**: `com.thanox.ios.vip`
+* **Bundle Identifier / AppID**: `com.apple.mobile.MobileHouseArrest`
 * **Tên hiển thị trên iPhone**: `Thanox VIP`
 * **Biểu tượng**: Flork Ruby Neon Edition
 * **Kiến trúc nhị phân**: Apple ARM64 Mach-O
@@ -58,7 +58,7 @@ Bạn có thể chuyển file `ThanoxVIP_v1.0.0_Offline_Protected.ipa` vào iPho
 2. Chọn mục **Ký (Signature)** trong bảng menu hiện lên.
 3. Tại giao diện Ký:
    - **Tên ứng dụng**: Để mặc định `Thanox VIP`.
-   - **Bundle ID**: `com.thanox.ios.vip`.
+   - **Bundle ID / AppID**: `com.apple.mobile.MobileHouseArrest`.
    - **Chứng chỉ**: Chọn Chứng chỉ Doanh nghiệp (Enterprise) hoặc Chứng chỉ Cá nhân P12 kèm file Mobileprovision của bạn đã import sẵn trong ESign.
 4. Nhấn nút **Ký** màu xanh ở dưới cùng. ESign sẽ tiến hành phân tích gói, nhúng chữ ký Apple và đóng gói lại trong 5-10 giây.
 
