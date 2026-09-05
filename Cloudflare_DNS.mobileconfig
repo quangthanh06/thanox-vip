@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadDescription</key>
+      <string>Hồ sơ DNS mã hóa Cloudflare 1.1.1.1 - Tối ưu hóa độ trễ, giảm ping mạng quốc tế trên iOS</string>
+      <key>PayloadDisplayName</key>
+      <string>Cloudflare 1.1.1.1 Gaming DNS (DoH)</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.cloudflare.dns.dns</string>
+      <key>PayloadType</key>
+      <string>com.apple.dnsSettings.managed</string>
+      <key>PayloadUUID</key>
+      <string>93C82825-F5E4-48E5-9479-A2282108EF41</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>DNSSettings</key>
+      <dict>
+        <key>DNSProtocol</key>
+        <string>HTTPS</string>
+        <key>ServerURL</key>
+        <string>https://cloudflare-dns.com/dns-query</string>
+        <key>ServerAddresses</key>
+        <array>
+          <string>1.1.1.1</string>
+          <string>1.0.0.1</string>
+          <string>2606:4700:4700::1111</string>
+          <string>2606:4700:4700::1001</string>
+        </array>
+      </dict>
+    </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>Hồ sơ DNS mã hóa Cloudflare 1.1.1.1 - Tối ưu hóa độ trễ, giảm ping mạng quốc tế trên iOS</string>
+  <key>PayloadDisplayName</key>
+  <string>Cloudflare 1.1.1.1 Gaming DNS (DoH)</string>
+  <key>PayloadIdentifier</key>
+  <string>com.thanoxstore.cloudflare.dns</string>
+  <key>PayloadOrganization</key>
+  <string>Thanox VIP Studio</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>0C299183-6695-4A09-8CBE-C04F44BE3596</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>

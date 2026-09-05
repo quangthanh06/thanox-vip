@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadDescription</key>
+      <string>Hồ sơ DNS mã hóa Google Public DNS 8.8.8.8 - Cực kỳ ổn định, chống nghẽn và rớt gói tin</string>
+      <key>PayloadDisplayName</key>
+      <string>Google Public DNS 8.8.8.8 (DoH)</string>
+      <key>PayloadIdentifier</key>
+      <string>com.thanoxstore.google.dns.dns</string>
+      <key>PayloadType</key>
+      <string>com.apple.dnsSettings.managed</string>
+      <key>PayloadUUID</key>
+      <string>D1235FF6-B6BA-43FC-9AA7-C6CFEE859E74</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>DNSSettings</key>
+      <dict>
+        <key>DNSProtocol</key>
+        <string>HTTPS</string>
+        <key>ServerURL</key>
+        <string>https://dns.google/dns-query</string>
+        <key>ServerAddresses</key>
+        <array>
+          <string>8.8.8.8</string>
+          <string>8.8.4.4</string>
+          <string>2001:4860:4860::8888</string>
+          <string>2001:4860:4860::8844</string>
+        </array>
+      </dict>
+    </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>Hồ sơ DNS mã hóa Google Public DNS 8.8.8.8 - Cực kỳ ổn định, chống nghẽn và rớt gói tin</string>
+  <key>PayloadDisplayName</key>
+  <string>Google Public DNS 8.8.8.8 (DoH)</string>
+  <key>PayloadIdentifier</key>
+  <string>com.thanoxstore.google.dns</string>
+  <key>PayloadOrganization</key>
+  <string>Thanox VIP Studio</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>5DFC7B81-39E4-41CF-8037-3B4FD8B23A7A</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>

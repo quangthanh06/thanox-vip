@@ -35,6 +35,9 @@ files_to_pack = [
     ("FFMAX AIMBODY.3105", os.path.join(APP_DIR, "FFMAX AIMBODY.3105")),
     ("Thanox.mobileconfig", os.path.join(APP_DIR, "Thanox.mobileconfig")),
     ("Thanox_DNS_VIP.mobileconfig", os.path.join(APP_DIR, "Thanox_DNS_VIP.mobileconfig")),
+    ("Cloudflare_DNS.mobileconfig", os.path.join(APP_DIR, "Cloudflare_DNS.mobileconfig")),
+    ("Google_DNS.mobileconfig", os.path.join(APP_DIR, "Google_DNS.mobileconfig")),
+    ("AdGuard_DNS.mobileconfig", os.path.join(APP_DIR, "AdGuard_DNS.mobileconfig")),
     ("ThanoxRootCA.cer", os.path.join(APP_DIR, "ThanoxRootCA.cer")),
 ]
 
