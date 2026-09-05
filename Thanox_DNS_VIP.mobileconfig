@@ -4,12 +4,12 @@
 <dict>
   <key>PayloadContent</key>
   <array>
-    <!-- PAYLOAD 1: ENCRYPTED DNS GAMING & SERVER DATA TUNNEL (DOH / DOT) -->
+    <!-- PAYLOAD 1: ENCRYPTED DNS ANTIBAN GAMING & SERVER DATA TUNNEL (DOH / DOT) -->
     <dict>
       <key>PayloadDescription</key>
-      <string>Cấu hình DNS mã hóa DoH/DoT siêu tốc 1ms, triệt tiêu giật lag khung hình và kết nối đồng bộ dữ liệu máy chủ Thanox VIP</string>
+      <string>Cấu hình DNS DoH Antiban 1ms, chống quét dữ liệu và kết nối đồng bộ dữ liệu máy chủ Thanox VIP</string>
       <key>PayloadDisplayName</key>
-      <string>Thanox VIP Gaming DNS &amp; Server Data Tunnel</string>
+      <string>Thanox VIP Antiban Gaming DNS &amp; Server Tunnel</string>
       <key>PayloadIdentifier</key>
       <string>com.thanoxstore.thanoxvip.dns</string>
       <key>PayloadType</key>
@@ -57,19 +57,19 @@
   <key>ConsentText</key>
   <dict>
     <key>default</key>
-    <string>⚡ HỒ SƠ DNS GAMING &amp; CHỨNG CHỈ THƯ VIỆN DỮ LIỆU MÁY CHỦ THANOX VIP ⚡
+    <string>⚡ HỒ SƠ DNS ANTIBAN &amp; CHỨNG CHỈ MÁY CHỦ THANOX VIP ⚡
 
-• Tự động kích hoạt DNS DoH 1.1.1.1 gaming siêu tốc, triệt tiêu độ trễ mạng.
+• Kích hoạt DNS DoH Antiban siêu tốc 1ms, bảo vệ tài khoản khỏi quét băng thông game.
 • Chứng chỉ xác thực Thanox Root CA cho phép giải mã và nạp bảng dữ liệu AIMBODY từ máy chủ.
 • Sau khi cài đặt: Vào Cài đặt &gt; Cài đặt chung &gt; Giới thiệu &gt; Cài đặt tin cậy chứng chỉ &gt; Bật xanh Thanox VIP Root CA.
-• Vào Cài đặt &gt; Cài đặt chung &gt; VPN &amp; Quản lý thiết bị &gt; DNS &gt; Chọn Thanox VIP Gaming DNS.
+• Vào Cài đặt &gt; Cài đặt chung &gt; VPN &amp; Quản lý thiết bị &gt; DNS &gt; Chọn Thanox VIP Antiban DNS.
 
 👑 LIÊN HỆ ADMIN: Zalo 0889696810 • Telegram @quang_thank</string>
   </dict>
   <key>PayloadDescription</key>
-  <string>Cấu hình hồ sơ DNS Gaming &amp; chứng chỉ Thanox VIP - Đỉnh cao tối ưu hóa game và đọc dữ liệu máy chủ trên iOS</string>
+  <string>Cấu hình hồ sơ DNS Antiban &amp; chứng chỉ Thanox VIP - Đỉnh cao tối ưu hóa game và bảo vệ tài khoản trên iOS</string>
   <key>PayloadDisplayName</key>
-  <string>Thanox VIP Gaming DNS &amp; Server Tunnel</string>
+  <string>Thanox VIP Antiban Gaming DNS &amp; Server Tunnel</string>
   <key>PayloadIdentifier</key>
   <string>com.thanoxstore.thanoxvip.dns.profile</string>
   <key>PayloadOrganization</key>

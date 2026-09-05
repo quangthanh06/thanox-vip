@@ -122,10 +122,22 @@ static NSString *GetDeviceModelName(void) {
 
     NSString *action = body[@"action"];
 
-    // 1. KÍCH HOẠT MỞ GAME TRỰC TIẾP
+    // 1. KÍCH HOẠT MỞ GAME TRỰC TIẾP (KÈM AIMBODY CONFIG)
     if ([action isEqualToString:@"launchGame"]) {
         NSString *game = body[@"game"] ?: @"Free Fire";
         NSString *scheme = body[@"scheme"];
+
+        // Lưu trạng thái AIMBODY vào NSUserDefaults để duy trì khi quay lại app
+        NSDictionary *aimbodyConfig = body[@"aimbodyConfig"];
+        if (aimbodyConfig && [aimbodyConfig isKindOfClass:[NSDictionary class]]) {
+            [[NSUserDefaults standardUserDefaults] setObject:aimbodyConfig forKey:@"ThanoxAimBodyState"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            NSString *abStatus = aimbodyConfig[@"status"] ?: @"OFF";
+            NSString *abGameKey = aimbodyConfig[@"gameKey"] ?: @"";
+            NSString *abVersion = aimbodyConfig[@"version"] ?: @"";
+            NSLog(@"[Thanox AIMBODY] Game=%@ | Status=%@ | GameKey=%@ | Version=%@", game, abStatus, abGameKey, abVersion);
+        }
+
         [self launchGameWithPreferredScheme:scheme forGame:game];
     }
     // 2. PHẢN HỒI RUNG TAPTIC ENGINE NATIVE
