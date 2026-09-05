@@ -193,6 +193,20 @@ static NSString *GetDeviceModelName(void) {
             });
         }
     }
+    // 5. MỞ GIAO DIỆN PATCH ENGINE NATIVE (PORTABLE PATCHES)
+    else if ([action isEqualToString:@"openPatchEngine"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            Class patchVCClass = NSClassFromString(@"ThanoxVIP.AimBodyPatchViewController");
+            if (patchVCClass) {
+                UIViewController *vc = [[patchVCClass alloc] init];
+                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+                nav.modalPresentationStyle = UIModalPresentationFormSheet;
+                [self presentViewController:nav animated:YES completion:nil];
+            } else {
+                NSLog(@"[Thanox] AimBodyPatchViewController class not found");
+            }
+        });
+    }
 }
 
 #pragma mark - Native Game Launching Engine

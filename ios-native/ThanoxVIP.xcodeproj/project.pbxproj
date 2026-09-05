@@ -16,6 +16,37 @@
 		A10000072C85000100000001 /* assets.enc in Resources */ = {isa = PBXBuildFile; fileRef = B10000072C85000100000001 /* assets.enc */; };
 		A10000082C85000100000001 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10000082C85000100000001 /* WebKit.framework */; };
 		A10000092C85000100000001 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10000092C85000100000001 /* Security.framework */; };
+		A20000012C85000100000001 /* PatchLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000012C85000100000001 /* PatchLogger.swift */; };
+		A20000022C85000100000001 /* PatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000022C85000100000001 /* PatchManager.swift */; };
+		A20000032C85000100000001 /* PatchExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000032C85000100000001 /* PatchExporter.swift */; };
+		A20000042C85000100000001 /* PatchShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000042C85000100000001 /* PatchShareManager.swift */; };
+		A20000052C85000100000001 /* MockPatchFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000052C85000100000001 /* MockPatchFileProvider.swift */; };
+		A20000062C85000100000001 /* PatchFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000062C85000100000001 /* PatchFileProvider.swift */; };
+		A20000072C85000100000001 /* PatchProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000072C85000100000001 /* PatchProviderFactory.swift */; };
+		A20000082C85000100000001 /* SandboxPatchFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000082C85000100000001 /* SandboxPatchFileProvider.swift */; };
+		A20000092C85000100000001 /* SecurePathResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000092C85000100000001 /* SecurePathResolver.swift */; };
+		A200000A2C85000100000001 /* PatchEngineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000A2C85000100000001 /* PatchEngineError.swift */; };
+		A200000B2C85000100000001 /* PatchFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000B2C85000100000001 /* PatchFile.swift */; };
+		A200000C2C85000100000001 /* PatchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000C2C85000100000001 /* PatchMetadata.swift */; };
+		A200000D2C85000100000001 /* PatchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000D2C85000100000001 /* PatchTarget.swift */; };
+		A200000E2C85000100000001 /* PatchTransactionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000E2C85000100000001 /* PatchTransactionResult.swift */; };
+		A200000F2C85000100000001 /* PatchPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000F2C85000100000001 /* PatchPackage.swift */; };
+		A20000102C85000100000001 /* PatchPackageCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000102C85000100000001 /* PatchPackageCodec.swift */; };
+		A20000112C85000100000001 /* PatchPackageImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000112C85000100000001 /* PatchPackageImporter.swift */; };
+		A20000122C85000100000001 /* PatchPackageValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000122C85000100000001 /* PatchPackageValidator.swift */; };
+		A20000132C85000100000001 /* PatchPackageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000132C85000100000001 /* PatchPackageTests.swift */; };
+		A20000142C85000100000001 /* PatchRollbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000142C85000100000001 /* PatchRollbackTests.swift */; };
+		A20000152C85000100000001 /* PatchSecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000152C85000100000001 /* PatchSecurityTests.swift */; };
+		A20000162C85000100000001 /* PatchTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000162C85000100000001 /* PatchTransactionTests.swift */; };
+		A20000172C85000100000001 /* PatchBackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000172C85000100000001 /* PatchBackupManager.swift */; };
+		A20000182C85000100000001 /* PatchJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000182C85000100000001 /* PatchJournal.swift */; };
+		A20000192C85000100000001 /* PatchJournalRecoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000192C85000100000001 /* PatchJournalRecoveryManager.swift */; };
+		A200001A2C85000100000001 /* PatchRollbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001A2C85000100000001 /* PatchRollbackManager.swift */; };
+		A200001B2C85000100000001 /* PatchTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001B2C85000100000001 /* PatchTransaction.swift */; };
+		A200001C2C85000100000001 /* PatchTransactionExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001C2C85000100000001 /* PatchTransactionExecutor.swift */; };
+		A200001D2C85000100000001 /* AimBodyPatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001D2C85000100000001 /* AimBodyPatchView.swift */; };
+		A200001E2C85000100000001 /* PatchProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001E2C85000100000001 /* PatchProgressView.swift */; };
+		A200001F2C85000100000001 /* PatchStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001F2C85000100000001 /* PatchStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +66,38 @@
 		B10000172C85000100000001 /* ThanoxVIP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThanoxVIP.entitlements; sourceTree = "<group>"; };
 		B10000082C85000100000001 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B10000092C85000100000001 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B20000012C85000100000001 /* PatchLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/PatchLogger.swift"; sourceTree = "<group>"; };
+		B20000022C85000100000001 /* PatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/PatchManager.swift"; sourceTree = "<group>"; };
+		B20000032C85000100000001 /* PatchExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Export/PatchExporter.swift"; sourceTree = "<group>"; };
+		B20000042C85000100000001 /* PatchShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Export/PatchShareManager.swift"; sourceTree = "<group>"; };
+		B20000052C85000100000001 /* MockPatchFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Filesystem/MockPatchFileProvider.swift"; sourceTree = "<group>"; };
+		B20000062C85000100000001 /* PatchFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Filesystem/PatchFileProvider.swift"; sourceTree = "<group>"; };
+		B20000072C85000100000001 /* PatchProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Filesystem/PatchProviderFactory.swift"; sourceTree = "<group>"; };
+		B20000082C85000100000001 /* SandboxPatchFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Filesystem/SandboxPatchFileProvider.swift"; sourceTree = "<group>"; };
+		B20000092C85000100000001 /* SecurePathResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Filesystem/SecurePathResolver.swift"; sourceTree = "<group>"; };
+		B200000A2C85000100000001 /* PatchEngineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Models/PatchEngineError.swift"; sourceTree = "<group>"; };
+		B200000B2C85000100000001 /* PatchFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Models/PatchFile.swift"; sourceTree = "<group>"; };
+		B200000C2C85000100000001 /* PatchMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Models/PatchMetadata.swift"; sourceTree = "<group>"; };
+		B200000D2C85000100000001 /* PatchTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Models/PatchTarget.swift"; sourceTree = "<group>"; };
+		B200000E2C85000100000001 /* PatchTransactionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Models/PatchTransactionResult.swift"; sourceTree = "<group>"; };
+		B200000F2C85000100000001 /* PatchPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Package/PatchPackage.swift"; sourceTree = "<group>"; };
+		B20000102C85000100000001 /* PatchPackageCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Package/PatchPackageCodec.swift"; sourceTree = "<group>"; };
+		B20000112C85000100000001 /* PatchPackageImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Package/PatchPackageImporter.swift"; sourceTree = "<group>"; };
+		B20000122C85000100000001 /* PatchPackageValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Package/PatchPackageValidator.swift"; sourceTree = "<group>"; };
+		B20000132C85000100000001 /* PatchPackageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchPackageTests.swift"; sourceTree = "<group>"; };
+		B20000142C85000100000001 /* PatchRollbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchRollbackTests.swift"; sourceTree = "<group>"; };
+		B20000152C85000100000001 /* PatchSecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchSecurityTests.swift"; sourceTree = "<group>"; };
+		B20000162C85000100000001 /* PatchTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchTransactionTests.swift"; sourceTree = "<group>"; };
+		B20000172C85000100000001 /* PatchBackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchBackupManager.swift"; sourceTree = "<group>"; };
+		B20000182C85000100000001 /* PatchJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchJournal.swift"; sourceTree = "<group>"; };
+		B20000192C85000100000001 /* PatchJournalRecoveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchJournalRecoveryManager.swift"; sourceTree = "<group>"; };
+		B200001A2C85000100000001 /* PatchRollbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchRollbackManager.swift"; sourceTree = "<group>"; };
+		B200001B2C85000100000001 /* PatchTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchTransaction.swift"; sourceTree = "<group>"; };
+		B200001C2C85000100000001 /* PatchTransactionExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchTransactionExecutor.swift"; sourceTree = "<group>"; };
+		B200001D2C85000100000001 /* AimBodyPatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/AimBodyPatchView.swift"; sourceTree = "<group>"; };
+		B200001E2C85000100000001 /* PatchProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/PatchProgressView.swift"; sourceTree = "<group>"; };
+		B200001F2C85000100000001 /* PatchStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/PatchStatusView.swift"; sourceTree = "<group>"; };
+		B200FFF02C85000100000001 /* ThanoxVIP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThanoxVIP-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +138,38 @@
 				B10000072C85000100000001 /* assets.enc */,
 				B10000162C85000100000001 /* Info.plist */,
 				B10000172C85000100000001 /* ThanoxVIP.entitlements */,
+				B20000012C85000100000001 /* PatchLogger.swift */,
+				B20000022C85000100000001 /* PatchManager.swift */,
+				B20000032C85000100000001 /* PatchExporter.swift */,
+				B20000042C85000100000001 /* PatchShareManager.swift */,
+				B20000052C85000100000001 /* MockPatchFileProvider.swift */,
+				B20000062C85000100000001 /* PatchFileProvider.swift */,
+				B20000072C85000100000001 /* PatchProviderFactory.swift */,
+				B20000082C85000100000001 /* SandboxPatchFileProvider.swift */,
+				B20000092C85000100000001 /* SecurePathResolver.swift */,
+				B200000A2C85000100000001 /* PatchEngineError.swift */,
+				B200000B2C85000100000001 /* PatchFile.swift */,
+				B200000C2C85000100000001 /* PatchMetadata.swift */,
+				B200000D2C85000100000001 /* PatchTarget.swift */,
+				B200000E2C85000100000001 /* PatchTransactionResult.swift */,
+				B200000F2C85000100000001 /* PatchPackage.swift */,
+				B20000102C85000100000001 /* PatchPackageCodec.swift */,
+				B20000112C85000100000001 /* PatchPackageImporter.swift */,
+				B20000122C85000100000001 /* PatchPackageValidator.swift */,
+				B20000132C85000100000001 /* PatchPackageTests.swift */,
+				B20000142C85000100000001 /* PatchRollbackTests.swift */,
+				B20000152C85000100000001 /* PatchSecurityTests.swift */,
+				B20000162C85000100000001 /* PatchTransactionTests.swift */,
+				B20000172C85000100000001 /* PatchBackupManager.swift */,
+				B20000182C85000100000001 /* PatchJournal.swift */,
+				B20000192C85000100000001 /* PatchJournalRecoveryManager.swift */,
+				B200001A2C85000100000001 /* PatchRollbackManager.swift */,
+				B200001B2C85000100000001 /* PatchTransaction.swift */,
+				B200001C2C85000100000001 /* PatchTransactionExecutor.swift */,
+				B200001D2C85000100000001 /* AimBodyPatchView.swift */,
+				B200001E2C85000100000001 /* PatchProgressView.swift */,
+				B200001F2C85000100000001 /* PatchStatusView.swift */,
+				B200FFF02C85000100000001 /* ThanoxVIP-Bridging-Header.h */,
 			);
 			path = ThanoxVIP;
 			sourceTree = "<group>";
@@ -170,6 +265,37 @@
 				A10000032C85000100000001 /* ViewController.m in Sources */,
 				A10000042C85000100000001 /* SecurityShield.m in Sources */,
 				A10000052C85000100000001 /* LocalSchemeHandler.m in Sources */,
+				A20000012C85000100000001 /* PatchLogger.swift in Sources */,
+				A20000022C85000100000001 /* PatchManager.swift in Sources */,
+				A20000032C85000100000001 /* PatchExporter.swift in Sources */,
+				A20000042C85000100000001 /* PatchShareManager.swift in Sources */,
+				A20000052C85000100000001 /* MockPatchFileProvider.swift in Sources */,
+				A20000062C85000100000001 /* PatchFileProvider.swift in Sources */,
+				A20000072C85000100000001 /* PatchProviderFactory.swift in Sources */,
+				A20000082C85000100000001 /* SandboxPatchFileProvider.swift in Sources */,
+				A20000092C85000100000001 /* SecurePathResolver.swift in Sources */,
+				A200000A2C85000100000001 /* PatchEngineError.swift in Sources */,
+				A200000B2C85000100000001 /* PatchFile.swift in Sources */,
+				A200000C2C85000100000001 /* PatchMetadata.swift in Sources */,
+				A200000D2C85000100000001 /* PatchTarget.swift in Sources */,
+				A200000E2C85000100000001 /* PatchTransactionResult.swift in Sources */,
+				A200000F2C85000100000001 /* PatchPackage.swift in Sources */,
+				A20000102C85000100000001 /* PatchPackageCodec.swift in Sources */,
+				A20000112C85000100000001 /* PatchPackageImporter.swift in Sources */,
+				A20000122C85000100000001 /* PatchPackageValidator.swift in Sources */,
+				A20000132C85000100000001 /* PatchPackageTests.swift in Sources */,
+				A20000142C85000100000001 /* PatchRollbackTests.swift in Sources */,
+				A20000152C85000100000001 /* PatchSecurityTests.swift in Sources */,
+				A20000162C85000100000001 /* PatchTransactionTests.swift in Sources */,
+				A20000172C85000100000001 /* PatchBackupManager.swift in Sources */,
+				A20000182C85000100000001 /* PatchJournal.swift in Sources */,
+				A20000192C85000100000001 /* PatchJournalRecoveryManager.swift in Sources */,
+				A200001A2C85000100000001 /* PatchRollbackManager.swift in Sources */,
+				A200001B2C85000100000001 /* PatchTransaction.swift in Sources */,
+				A200001C2C85000100000001 /* PatchTransactionExecutor.swift in Sources */,
+				A200001D2C85000100000001 /* AimBodyPatchView.swift in Sources */,
+				A200001E2C85000100000001 /* PatchProgressView.swift in Sources */,
+				A200001F2C85000100000001 /* PatchStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +346,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -263,6 +390,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				STRIP_INSTALLED_PRODUCT = YES;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -284,6 +412,9 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thanox.ios.vip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "ThanoxVIP/ThanoxVIP-Bridging-Header.h";
+				CLANG_ENABLE_MODULES = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +437,9 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thanox.ios.vip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "ThanoxVIP/ThanoxVIP-Bridging-Header.h";
+				CLANG_ENABLE_MODULES = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
