@@ -5,8 +5,8 @@
 //  Created for PatchEngine Framework Tests.
 //
 
+#if canImport(XCTest)
 import XCTest
-@testable import ThanoxVIP
 
 final class PatchTransactionTests: XCTestCase {
     var tempDirectoryURL: URL!
@@ -83,3 +83,4 @@ final class PatchTransactionTests: XCTestCase {
         XCTAssertEqual(destData, payloadData)
     }
 }
+#endif

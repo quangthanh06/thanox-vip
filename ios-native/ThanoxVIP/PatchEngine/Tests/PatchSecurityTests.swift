@@ -5,8 +5,8 @@
 //  Created for PatchEngine Framework Tests.
 //
 
+#if canImport(XCTest)
 import XCTest
-@testable import ThanoxVIP
 
 final class PatchSecurityTests: XCTestCase {
     var rootURL: URL!
@@ -87,3 +87,4 @@ final class PatchSecurityTests: XCTestCase {
         }
     }
 }
+#endif

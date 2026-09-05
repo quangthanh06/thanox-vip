@@ -271,17 +271,15 @@ public final class AimBodyPatchViewController: UIViewController, UIDocumentPicke
         selfTestButton.setTitle("Đang kiểm tra...", for: .normal)
 
         Task {
-            do {
-                let success = try await PatchManager.shared.runDiagnosticsSelfTest()
-                if success {
-                    self.statusCard.update(status: "SELF TEST PASSED", details: "Backup → Apply → Verify → Rollback: 100% OK", color: .systemGreen)
-                    self.showAlert(title: "Self-Test Thành Công", message: "Toàn bộ chu trình Patch Engine (Backup → Apply → Verify → Rollback) hoạt động hoàn hảo trên sandbox thiết bị thật!")
-                } else {
-                    self.statusCard.update(status: "SELF TEST FAILED", details: "Lỗi trong quy trình đối soát", color: .systemRed)
-                }
-            } catch {
-                self.statusCard.update(status: "SELF TEST ERROR", details: error.localizedDescription, color: .systemRed)
-                self.showAlert(title: "Lỗi Self-Test", message: error.localizedDescription)
+            let report = await PatchEngineDiagnostics.runSelfTest()
+            if report.isSuccess {
+                self.statusCard.update(status: "SELF TEST PASSED", details: "\(report.totalPassed) kiểm thử đạt 100% OK", color: .systemGreen)
+                let message = "Toàn bộ chu trình Patch Engine (Security Path Resolver, Codec, Transaction, Backup, Rollback) đã vượt qua kiểm thử thành công trên sandbox thiết bị thật!\n\n" + report.logs.joined(separator: "\n")
+                self.showAlert(title: "Self-Test Thành Công (\(report.totalPassed)/\(report.totalPassed))", message: message)
+            } else {
+                self.statusCard.update(status: "SELF TEST FAILED", details: "\(report.totalFailed) kiểm thử thất bại", color: .systemRed)
+                let message = "Phát hiện lỗi trong quy trình kiểm thử:\n\n" + report.logs.joined(separator: "\n")
+                self.showAlert(title: "Self-Test Thất Bại", message: message)
             }
 
             self.selfTestButton.isEnabled = true

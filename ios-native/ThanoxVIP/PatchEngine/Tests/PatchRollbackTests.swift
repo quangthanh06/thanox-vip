@@ -5,8 +5,8 @@
 //  Created for PatchEngine Framework Tests.
 //
 
+#if canImport(XCTest)
 import XCTest
-@testable import ThanoxVIP
 
 final class PatchRollbackTests: XCTestCase {
     var tempDirectoryURL: URL!
@@ -104,3 +104,4 @@ final class PatchRollbackTests: XCTestCase {
         XCTAssertFalse(mockProvider.exists(targetURL), "Tệp mới tạo phải bị xóa sạch sau rollback")
     }
 }
+#endif

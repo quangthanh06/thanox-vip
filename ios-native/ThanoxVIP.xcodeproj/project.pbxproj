@@ -34,19 +34,20 @@
 		A20000102C85000100000001 /* PatchPackageCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000102C85000100000001 /* PatchPackageCodec.swift */; };
 		A20000112C85000100000001 /* PatchPackageImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000112C85000100000001 /* PatchPackageImporter.swift */; };
 		A20000122C85000100000001 /* PatchPackageValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000122C85000100000001 /* PatchPackageValidator.swift */; };
-		A20000132C85000100000001 /* PatchPackageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000132C85000100000001 /* PatchPackageTests.swift */; };
-		A20000142C85000100000001 /* PatchRollbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000142C85000100000001 /* PatchRollbackTests.swift */; };
-		A20000152C85000100000001 /* PatchSecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000152C85000100000001 /* PatchSecurityTests.swift */; };
-		A20000162C85000100000001 /* PatchTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000162C85000100000001 /* PatchTransactionTests.swift */; };
-		A20000172C85000100000001 /* PatchBackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000172C85000100000001 /* PatchBackupManager.swift */; };
-		A20000182C85000100000001 /* PatchJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000182C85000100000001 /* PatchJournal.swift */; };
-		A20000192C85000100000001 /* PatchJournalRecoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000192C85000100000001 /* PatchJournalRecoveryManager.swift */; };
-		A200001A2C85000100000001 /* PatchRollbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001A2C85000100000001 /* PatchRollbackManager.swift */; };
-		A200001B2C85000100000001 /* PatchTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001B2C85000100000001 /* PatchTransaction.swift */; };
-		A200001C2C85000100000001 /* PatchTransactionExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001C2C85000100000001 /* PatchTransactionExecutor.swift */; };
-		A200001D2C85000100000001 /* AimBodyPatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001D2C85000100000001 /* AimBodyPatchView.swift */; };
-		A200001E2C85000100000001 /* PatchProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001E2C85000100000001 /* PatchProgressView.swift */; };
-		A200001F2C85000100000001 /* PatchStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001F2C85000100000001 /* PatchStatusView.swift */; };
+		A20000132C85000100000001 /* PatchEngineDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000132C85000100000001 /* PatchEngineDiagnostics.swift */; };
+		A20000142C85000100000001 /* PatchPackageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000142C85000100000001 /* PatchPackageTests.swift */; };
+		A20000152C85000100000001 /* PatchRollbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000152C85000100000001 /* PatchRollbackTests.swift */; };
+		A20000162C85000100000001 /* PatchSecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000162C85000100000001 /* PatchSecurityTests.swift */; };
+		A20000172C85000100000001 /* PatchTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000172C85000100000001 /* PatchTransactionTests.swift */; };
+		A20000182C85000100000001 /* PatchBackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000182C85000100000001 /* PatchBackupManager.swift */; };
+		A20000192C85000100000001 /* PatchJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000192C85000100000001 /* PatchJournal.swift */; };
+		A200001A2C85000100000001 /* PatchJournalRecoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001A2C85000100000001 /* PatchJournalRecoveryManager.swift */; };
+		A200001B2C85000100000001 /* PatchRollbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001B2C85000100000001 /* PatchRollbackManager.swift */; };
+		A200001C2C85000100000001 /* PatchTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001C2C85000100000001 /* PatchTransaction.swift */; };
+		A200001D2C85000100000001 /* PatchTransactionExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001D2C85000100000001 /* PatchTransactionExecutor.swift */; };
+		A200001E2C85000100000001 /* AimBodyPatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001E2C85000100000001 /* AimBodyPatchView.swift */; };
+		A200001F2C85000100000001 /* PatchProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200001F2C85000100000001 /* PatchProgressView.swift */; };
+		A20000202C85000100000001 /* PatchStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000202C85000100000001 /* PatchStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,19 +85,20 @@
 		B20000102C85000100000001 /* PatchPackageCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Package/PatchPackageCodec.swift"; sourceTree = "<group>"; };
 		B20000112C85000100000001 /* PatchPackageImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Package/PatchPackageImporter.swift"; sourceTree = "<group>"; };
 		B20000122C85000100000001 /* PatchPackageValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Package/PatchPackageValidator.swift"; sourceTree = "<group>"; };
-		B20000132C85000100000001 /* PatchPackageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchPackageTests.swift"; sourceTree = "<group>"; };
-		B20000142C85000100000001 /* PatchRollbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchRollbackTests.swift"; sourceTree = "<group>"; };
-		B20000152C85000100000001 /* PatchSecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchSecurityTests.swift"; sourceTree = "<group>"; };
-		B20000162C85000100000001 /* PatchTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchTransactionTests.swift"; sourceTree = "<group>"; };
-		B20000172C85000100000001 /* PatchBackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchBackupManager.swift"; sourceTree = "<group>"; };
-		B20000182C85000100000001 /* PatchJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchJournal.swift"; sourceTree = "<group>"; };
-		B20000192C85000100000001 /* PatchJournalRecoveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchJournalRecoveryManager.swift"; sourceTree = "<group>"; };
-		B200001A2C85000100000001 /* PatchRollbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchRollbackManager.swift"; sourceTree = "<group>"; };
-		B200001B2C85000100000001 /* PatchTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchTransaction.swift"; sourceTree = "<group>"; };
-		B200001C2C85000100000001 /* PatchTransactionExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchTransactionExecutor.swift"; sourceTree = "<group>"; };
-		B200001D2C85000100000001 /* AimBodyPatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/AimBodyPatchView.swift"; sourceTree = "<group>"; };
-		B200001E2C85000100000001 /* PatchProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/PatchProgressView.swift"; sourceTree = "<group>"; };
-		B200001F2C85000100000001 /* PatchStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/PatchStatusView.swift"; sourceTree = "<group>"; };
+		B20000132C85000100000001 /* PatchEngineDiagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchEngineDiagnostics.swift"; sourceTree = "<group>"; };
+		B20000142C85000100000001 /* PatchPackageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchPackageTests.swift"; sourceTree = "<group>"; };
+		B20000152C85000100000001 /* PatchRollbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchRollbackTests.swift"; sourceTree = "<group>"; };
+		B20000162C85000100000001 /* PatchSecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchSecurityTests.swift"; sourceTree = "<group>"; };
+		B20000172C85000100000001 /* PatchTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Tests/PatchTransactionTests.swift"; sourceTree = "<group>"; };
+		B20000182C85000100000001 /* PatchBackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchBackupManager.swift"; sourceTree = "<group>"; };
+		B20000192C85000100000001 /* PatchJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchJournal.swift"; sourceTree = "<group>"; };
+		B200001A2C85000100000001 /* PatchJournalRecoveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchJournalRecoveryManager.swift"; sourceTree = "<group>"; };
+		B200001B2C85000100000001 /* PatchRollbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchRollbackManager.swift"; sourceTree = "<group>"; };
+		B200001C2C85000100000001 /* PatchTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchTransaction.swift"; sourceTree = "<group>"; };
+		B200001D2C85000100000001 /* PatchTransactionExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/Transaction/PatchTransactionExecutor.swift"; sourceTree = "<group>"; };
+		B200001E2C85000100000001 /* AimBodyPatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/AimBodyPatchView.swift"; sourceTree = "<group>"; };
+		B200001F2C85000100000001 /* PatchProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/PatchProgressView.swift"; sourceTree = "<group>"; };
+		B20000202C85000100000001 /* PatchStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PatchEngine/UI/PatchStatusView.swift"; sourceTree = "<group>"; };
 		B200FFF02C85000100000001 /* ThanoxVIP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThanoxVIP-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,19 +158,20 @@
 				B20000102C85000100000001 /* PatchPackageCodec.swift */,
 				B20000112C85000100000001 /* PatchPackageImporter.swift */,
 				B20000122C85000100000001 /* PatchPackageValidator.swift */,
-				B20000132C85000100000001 /* PatchPackageTests.swift */,
-				B20000142C85000100000001 /* PatchRollbackTests.swift */,
-				B20000152C85000100000001 /* PatchSecurityTests.swift */,
-				B20000162C85000100000001 /* PatchTransactionTests.swift */,
-				B20000172C85000100000001 /* PatchBackupManager.swift */,
-				B20000182C85000100000001 /* PatchJournal.swift */,
-				B20000192C85000100000001 /* PatchJournalRecoveryManager.swift */,
-				B200001A2C85000100000001 /* PatchRollbackManager.swift */,
-				B200001B2C85000100000001 /* PatchTransaction.swift */,
-				B200001C2C85000100000001 /* PatchTransactionExecutor.swift */,
-				B200001D2C85000100000001 /* AimBodyPatchView.swift */,
-				B200001E2C85000100000001 /* PatchProgressView.swift */,
-				B200001F2C85000100000001 /* PatchStatusView.swift */,
+				B20000132C85000100000001 /* PatchEngineDiagnostics.swift */,
+				B20000142C85000100000001 /* PatchPackageTests.swift */,
+				B20000152C85000100000001 /* PatchRollbackTests.swift */,
+				B20000162C85000100000001 /* PatchSecurityTests.swift */,
+				B20000172C85000100000001 /* PatchTransactionTests.swift */,
+				B20000182C85000100000001 /* PatchBackupManager.swift */,
+				B20000192C85000100000001 /* PatchJournal.swift */,
+				B200001A2C85000100000001 /* PatchJournalRecoveryManager.swift */,
+				B200001B2C85000100000001 /* PatchRollbackManager.swift */,
+				B200001C2C85000100000001 /* PatchTransaction.swift */,
+				B200001D2C85000100000001 /* PatchTransactionExecutor.swift */,
+				B200001E2C85000100000001 /* AimBodyPatchView.swift */,
+				B200001F2C85000100000001 /* PatchProgressView.swift */,
+				B20000202C85000100000001 /* PatchStatusView.swift */,
 				B200FFF02C85000100000001 /* ThanoxVIP-Bridging-Header.h */,
 			);
 			path = ThanoxVIP;
@@ -283,19 +286,20 @@
 				A20000102C85000100000001 /* PatchPackageCodec.swift in Sources */,
 				A20000112C85000100000001 /* PatchPackageImporter.swift in Sources */,
 				A20000122C85000100000001 /* PatchPackageValidator.swift in Sources */,
-				A20000132C85000100000001 /* PatchPackageTests.swift in Sources */,
-				A20000142C85000100000001 /* PatchRollbackTests.swift in Sources */,
-				A20000152C85000100000001 /* PatchSecurityTests.swift in Sources */,
-				A20000162C85000100000001 /* PatchTransactionTests.swift in Sources */,
-				A20000172C85000100000001 /* PatchBackupManager.swift in Sources */,
-				A20000182C85000100000001 /* PatchJournal.swift in Sources */,
-				A20000192C85000100000001 /* PatchJournalRecoveryManager.swift in Sources */,
-				A200001A2C85000100000001 /* PatchRollbackManager.swift in Sources */,
-				A200001B2C85000100000001 /* PatchTransaction.swift in Sources */,
-				A200001C2C85000100000001 /* PatchTransactionExecutor.swift in Sources */,
-				A200001D2C85000100000001 /* AimBodyPatchView.swift in Sources */,
-				A200001E2C85000100000001 /* PatchProgressView.swift in Sources */,
-				A200001F2C85000100000001 /* PatchStatusView.swift in Sources */,
+				A20000132C85000100000001 /* PatchEngineDiagnostics.swift in Sources */,
+				A20000142C85000100000001 /* PatchPackageTests.swift in Sources */,
+				A20000152C85000100000001 /* PatchRollbackTests.swift in Sources */,
+				A20000162C85000100000001 /* PatchSecurityTests.swift in Sources */,
+				A20000172C85000100000001 /* PatchTransactionTests.swift in Sources */,
+				A20000182C85000100000001 /* PatchBackupManager.swift in Sources */,
+				A20000192C85000100000001 /* PatchJournal.swift in Sources */,
+				A200001A2C85000100000001 /* PatchJournalRecoveryManager.swift in Sources */,
+				A200001B2C85000100000001 /* PatchRollbackManager.swift in Sources */,
+				A200001C2C85000100000001 /* PatchTransaction.swift in Sources */,
+				A200001D2C85000100000001 /* PatchTransactionExecutor.swift in Sources */,
+				A200001E2C85000100000001 /* AimBodyPatchView.swift in Sources */,
+				A200001F2C85000100000001 /* PatchProgressView.swift in Sources */,
+				A20000202C85000100000001 /* PatchStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
