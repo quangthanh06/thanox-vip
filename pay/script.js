@@ -197,7 +197,7 @@
     }
 
     // --------------------------------------------------------------------------
-    // 8. SAVE QR AS HIGH-RESOLUTION PNG (FAIL-SAFE FOR IOS, ANDROID, DESKTOP)
+    // 8. SAVE QR AS HIGH-RESOLUTION PNG (NO ZALO POPUP, CLEAN DOWNLOAD)
     // --------------------------------------------------------------------------
     async function saveQRCodeImage() {
         const qrUrl = buildVietQRUrl(state.transferCode);
@@ -206,7 +206,7 @@
         showToast("Đang chuẩn bị lưu ảnh QR...");
 
         try {
-            // 1. Fetch direct binary blob (img.vietqr.io supports CORS: *)
+            // 1. Fetch direct binary blob
             let blob = null;
             try {
                 const response = await fetch(qrUrl, { mode: 'cors', cache: 'no-cache' });
@@ -217,7 +217,7 @@
                 console.warn('Fetch blob failed, fallback to canvas:', fetchErr);
             }
 
-            // 2. Fallback to offscreen canvas if fetch is blocked
+            // 2. Fallback to offscreen canvas
             if (!blob) {
                 blob = await new Promise((resolve) => {
                     const canvas = document.createElement('canvas');
@@ -236,55 +236,40 @@
                 throw new Error("Không thể tạo dữ liệu ảnh");
             }
 
-            // 3. Mobile Native Web Share API (Best for iOS Safari Camera Roll & Android Gallery)
+            // 3. Detect Zalo & In-App WebViews (NEVER call navigator.share in Zalo to avoid 'Thoát Zalo' warning)
+            const isZalo = /Zalo/i.test(navigator.userAgent);
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            if (isMobile && navigator.canShare) {
-                try {
-                    const file = new File([blob], fileName, { type: 'image/png' });
-                    if (navigator.canShare({ files: [file] })) {
-                        await navigator.share({
-                            files: [file],
-                            title: 'Mã VietQR Thanox',
-                            text: `Lưu mã QR thanh toán MB Bank: ${state.transferCode}`
-                        });
-                        showToast("✓ Đã mở tùy chọn lưu ảnh!");
-                        triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
-                        return;
-                    }
-                } catch (shareErr) {
-                    if (shareErr.name === 'AbortError') return;
-                    console.warn('Native share cancelled or failed, falling back to download link:', shareErr);
+
+            // Convert blob to base64 Data URL for smooth in-browser saving
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64Url = reader.result;
+
+                // Create silent download anchor
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = base64Url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => a.remove(), 1200);
+
+                if (isZalo) {
+                    // In Zalo, open focus mode and guide user to long-press without leaving Zalo
+                    openFocusMode();
+                    showToast("✓ Nhấn giữ 1 giây vào ảnh QR để Lưu vào máy nhé!");
+                } else {
+                    showToast("✓ Đã tải ảnh QR thành công!");
                 }
-            }
+                triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
+            };
+            reader.readAsDataURL(blob);
 
-            // 4. Desktop / Blob Download
-            const blobUrl = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = blobUrl;
-            a.download = fileName;
-            document.body.appendChild(a);
-            a.click();
-
-            setTimeout(() => {
-                a.remove();
-                URL.revokeObjectURL(blobUrl);
-            }, 2000);
-
-            showToast("✓ Đã tải ảnh QR thành công!");
-            triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
         } catch (err) {
-            console.error('Save QR error, using ultimate fallback:', err);
-            // 5. Ultimate fallback: open in new tab (user can long-press to save on mobile)
-            const fallbackLink = document.createElement('a');
-            fallbackLink.href = qrUrl;
-            fallbackLink.target = '_blank';
-            fallbackLink.download = fileName;
-            document.body.appendChild(fallbackLink);
-            fallbackLink.click();
-            setTimeout(() => fallbackLink.remove(), 1000);
-
-            showToast("✓ Đã mở ảnh QR (Nhấn giữ để lưu)!");
+            console.error('Save QR error:', err);
+            // Fallback: Open focus mode
+            openFocusMode();
+            showToast("✓ Nhấn giữ vào ảnh QR để Lưu vào máy!");
             triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
         }
     }
