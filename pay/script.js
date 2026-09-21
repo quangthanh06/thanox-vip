@@ -197,61 +197,95 @@
     }
 
     // --------------------------------------------------------------------------
-    // 8. SAVE QR AS HIGH-RESOLUTION PNG
+    // 8. SAVE QR AS HIGH-RESOLUTION PNG (FAIL-SAFE FOR IOS, ANDROID, DESKTOP)
     // --------------------------------------------------------------------------
     async function saveQRCodeImage() {
+        const qrUrl = buildVietQRUrl(state.transferCode);
+        const fileName = `Thanox-QR-${state.transferCode}.png`;
+
+        showToast("Đang chuẩn bị lưu ảnh QR...");
+
         try {
-            showToast("Đang chuẩn bị file ảnh QR...");
-            const qrUrl = buildVietQRUrl(state.transferCode);
+            // 1. Fetch direct binary blob (img.vietqr.io supports CORS: *)
+            let blob = null;
+            try {
+                const response = await fetch(qrUrl, { mode: 'cors', cache: 'no-cache' });
+                if (response.ok) {
+                    blob = await response.blob();
+                }
+            } catch (fetchErr) {
+                console.warn('Fetch blob failed, fallback to canvas:', fetchErr);
+            }
 
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const img = new Image();
-            img.crossOrigin = 'anonymous';
+            // 2. Fallback to offscreen canvas if fetch is blocked
+            if (!blob) {
+                blob = await new Promise((resolve) => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    const img = dom.qrImage || new Image();
+                    canvas.width = img.naturalWidth || 600;
+                    canvas.height = img.naturalHeight || 600;
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    canvas.toBlob((b) => resolve(b), 'image/png');
+                });
+            }
 
-            img.onload = () => {
-                canvas.width = img.naturalWidth || 600;
-                canvas.height = img.naturalHeight || 600;
+            if (!blob) {
+                throw new Error("Không thể tạo dữ liệu ảnh");
+            }
 
-                ctx.fillStyle = '#FFFFFF';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                canvas.toBlob((blob) => {
-                    if (!blob) {
-                        window.open(qrUrl, '_blank');
+            // 3. Mobile Native Web Share API (Best for iOS Safari Camera Roll & Android Gallery)
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile && navigator.canShare) {
+                try {
+                    const file = new File([blob], fileName, { type: 'image/png' });
+                    if (navigator.canShare({ files: [file] })) {
+                        await navigator.share({
+                            files: [file],
+                            title: 'Mã VietQR Thanox',
+                            text: `Lưu mã QR thanh toán MB Bank: ${state.transferCode}`
+                        });
+                        showToast("✓ Đã mở tùy chọn lưu ảnh!");
+                        triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
                         return;
                     }
-                    const url = URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = `Thanox-QR-${state.transferCode}.png`;
-                    document.body.appendChild(link);
-                    link.click();
-                    link.remove();
-                    URL.revokeObjectURL(url);
+                } catch (shareErr) {
+                    if (shareErr.name === 'AbortError') return;
+                    console.warn('Native share cancelled or failed, falling back to download link:', shareErr);
+                }
+            }
 
-                    showToast("✓ Đã tải ảnh QR thành công!");
-                    triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
-                }, 'image/png');
-            };
+            // 4. Desktop / Blob Download
+            const blobUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = blobUrl;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
 
-            img.onerror = () => {
-                const link = document.createElement('a');
-                link.href = qrUrl;
-                link.target = '_blank';
-                link.download = `Thanox-QR-${state.transferCode}.png`;
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
-                showToast("✓ Đã mở ảnh QR!");
-                triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
-            };
+            setTimeout(() => {
+                a.remove();
+                URL.revokeObjectURL(blobUrl);
+            }, 2000);
 
-            img.src = qrUrl;
+            showToast("✓ Đã tải ảnh QR thành công!");
+            triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
         } catch (err) {
-            console.error('Save QR error:', err);
-            window.open(buildVietQRUrl(state.transferCode), '_blank');
+            console.error('Save QR error, using ultimate fallback:', err);
+            // 5. Ultimate fallback: open in new tab (user can long-press to save on mobile)
+            const fallbackLink = document.createElement('a');
+            fallbackLink.href = qrUrl;
+            fallbackLink.target = '_blank';
+            fallbackLink.download = fileName;
+            document.body.appendChild(fallbackLink);
+            fallbackLink.click();
+            setTimeout(() => fallbackLink.remove(), 1000);
+
+            showToast("✓ Đã mở ảnh QR (Nhấn giữ để lưu)!");
+            triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
         }
     }
 
