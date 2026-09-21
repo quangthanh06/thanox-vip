@@ -197,9 +197,21 @@
     }
 
     // --------------------------------------------------------------------------
-    // 8. SAVE QR AS HIGH-RESOLUTION PNG (NO ZALO POPUP, CLEAN DOWNLOAD)
+    // 8. SAVE QR AS HIGH-RESOLUTION PNG (ZERO POPUP IN ZALO, CLEAN LONG-PRESS)
     // --------------------------------------------------------------------------
     async function saveQRCodeImage() {
+        const isZalo = /Zalo/i.test(navigator.userAgent) || /Zalo/i.test(navigator.appVersion);
+        const isInApp = /Zalo|FBAN|FBAV|Instagram|Line|ByteDance|TikTok/i.test(navigator.userAgent);
+
+        // In Zalo and In-App browsers: NEVER call a.click() or download links
+        // In-app webviews intercept file downloads and show 'Bạn sẽ thoát Zalo để tải tệp'
+        if (isZalo || isInApp) {
+            openFocusMode();
+            showToast("👉 Chạm giữ vào ảnh QR 1 giây để Lưu vào máy!");
+            triggerFloatingBillLayer("ĐÃ MỞ ẢNH QR ĐỂ LƯU");
+            return;
+        }
+
         const qrUrl = buildVietQRUrl(state.transferCode);
         const fileName = `Thanox-QR-${state.transferCode}.png`;
 
@@ -236,16 +248,11 @@
                 throw new Error("Không thể tạo dữ liệu ảnh");
             }
 
-            // 3. Detect Zalo & In-App WebViews (NEVER call navigator.share in Zalo to avoid 'Thoát Zalo' warning)
-            const isZalo = /Zalo/i.test(navigator.userAgent);
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-            // Convert blob to base64 Data URL for smooth in-browser saving
+            // 3. For standard desktop & mobile browsers (Chrome, Safari, Edge)
             const reader = new FileReader();
             reader.onloadend = () => {
                 const base64Url = reader.result;
 
-                // Create silent download anchor
                 const a = document.createElement('a');
                 a.style.display = 'none';
                 a.href = base64Url;
@@ -254,20 +261,13 @@
                 a.click();
                 setTimeout(() => a.remove(), 1200);
 
-                if (isZalo) {
-                    // In Zalo, open focus mode and guide user to long-press without leaving Zalo
-                    openFocusMode();
-                    showToast("✓ Nhấn giữ 1 giây vào ảnh QR để Lưu vào máy nhé!");
-                } else {
-                    showToast("✓ Đã tải ảnh QR thành công!");
-                }
+                showToast("✓ Đã tải ảnh QR thành công!");
                 triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
             };
             reader.readAsDataURL(blob);
 
         } catch (err) {
             console.error('Save QR error:', err);
-            // Fallback: Open focus mode
             openFocusMode();
             showToast("✓ Nhấn giữ vào ảnh QR để Lưu vào máy!");
             triggerFloatingBillLayer("ĐÃ LƯU ẢNH QR THANH TOÁN");
@@ -363,6 +363,12 @@
         // Save QR Action
         if (dom.btnSaveQR) {
             dom.btnSaveQR.addEventListener('click', saveQRCodeImage);
+        }
+
+        // Zalo In-App optimization for Send Bill link
+        const isZalo = /Zalo/i.test(navigator.userAgent) || /Zalo/i.test(navigator.appVersion);
+        if (isZalo && dom.btnSendBillAdmin) {
+            dom.btnSendBillAdmin.removeAttribute('target');
         }
 
         // Expand QR Action
