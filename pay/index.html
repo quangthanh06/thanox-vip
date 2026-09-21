@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#050505">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>THANOX QR TERMINAL — Cổng Thanh Toán Trực Tiếp</title>
+    
+    <!-- Premium Editorial & Monospace Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-body">
+    <!-- 0. AMBIENT DEPTH LAYER & 3D SPATIAL ORB -->
+    <div class="terminal-atmosphere" aria-hidden="true">
+        <div class="ambient-glow glow-gold"></div>
+        <div class="ambient-glow glow-white"></div>
+        <div class="ambient-glow glow-accent"></div>
+        <div class="hardware-grid-lines"></div>
+
+        <!-- 3D Spatial Liquid Glass Orb ("Quả cầu xoay xoay") -->
+        <div class="thanox-spatial-orb-stage">
+            <div class="spatial-glass-sphere">
+                <div class="orb-core-glow"></div>
+                <div class="orb-orbital-ring ring-x"></div>
+                <div class="orb-orbital-ring ring-y"></div>
+                <div class="orb-orbital-ring ring-z"></div>
+            </div>
+        </div>
+
+        <!-- Micro dust / photon particles -->
+        <div class="photon p-1"></div>
+        <div class="photon p-2"></div>
+        <div class="photon p-3"></div>
+        <div class="photon p-4"></div>
+        <div class="photon p-5"></div>
+    </div>
+
+    <!-- Desktop Cursor Spotlight Glow -->
+    <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
+
+    <!-- 1. TOP MINIMAL HARDWARE HUD -->
+    <header class="terminal-hud">
+        <div class="hud-brand">
+            <div class="brand-glyph">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+            </div>
+            <div class="brand-titles">
+                <span class="brand-name">THANOX</span>
+                <span class="brand-sub">PAYMENT TERMINAL</span>
+            </div>
+            <span class="hud-chip">v2.7 SECURE</span>
+        </div>
+
+        <div class="hud-telemetry">
+            <div class="telemetry-pill">
+                <span class="pulse-indicator">
+                    <span class="pulse-ring"></span>
+                    <span class="pulse-core"></span>
+                </span>
+                <span class="telemetry-text">SYSTEM ONLINE</span>
+            </div>
+            <div class="hud-countdown" id="hudCountdown">
+                <span class="countdown-label">EXPIRES IN</span>
+                <span class="countdown-timer" id="timerValue">29:59</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. MAIN ASYMMETRIC FULLSCREEN TERMINAL CANVAS -->
+    <main class="terminal-canvas">
+        
+        <!-- LEFT COLUMN: EDITORIAL TYPOGRAPHY & APPLE AMOUNT CONTROL -->
+        <section class="canvas-col-left">
+            <!-- Editorial Monumental Typography -->
+            <div class="editorial-hero">
+                <h1 class="hero-line hero-scan">SCAN</h1>
+                <h1 class="hero-line hero-pay">PAY</h1>
+                <h1 class="hero-line hero-done">DONE</h1>
+            </div>
+
+            <p class="terminal-intro">
+                Quét mã VietQR tự động qua bất kỳ ứng dụng ngân hàng hoặc ví điện tử. Xác nhận tức thì 24/7.
+            </p>
+
+            <!-- Terminal Flow Guide (No fixed amount needed - user enters amount in banking app) -->
+            <div class="terminal-flow-module glass-module">
+                <div class="flow-header">
+                    <span class="flow-tag">HƯỚNG DẪN THANH TOÁN TRỰC TIẾP</span>
+                    <button type="button" class="btn-refresh-code" id="btnRefreshCode" title="Đổi mã nội dung chuyển khoản mới">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                        </svg>
+                        <span>ĐỔI MÃ CK</span>
+                    </button>
+                </div>
+
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <span class="flow-step-idx">01</span>
+                        <div class="flow-step-body">
+                            <span class="flow-step-title">MỞ APP NGÂN HÀNG & QUÉT QR</span>
+                            <span class="flow-step-desc">Dùng bất kỳ App Ngân hàng hoặc Ví MoMo, ZaloPay, ViettelPay.</span>
+                        </div>
+                    </div>
+                    <div class="flow-hairline"></div>
+                    <div class="flow-step">
+                        <span class="flow-step-idx highlight-gold">02</span>
+                        <div class="flow-step-body">
+                            <span class="flow-step-title highlight-gold">TỰ NHẬP SỐ TIỀN THANH TOÁN</span>
+                            <span class="flow-step-desc">Số tiền do bạn tự quyết định và nhập trực tiếp trên ứng dụng.</span>
+                        </div>
+                    </div>
+                    <div class="flow-hairline"></div>
+                    <div class="flow-step">
+                        <span class="flow-step-idx">03</span>
+                        <div class="flow-step-body">
+                            <span class="flow-step-title">GỬI BILL CHO ADMIN XÁC NHẬN</span>
+                            <span class="flow-step-desc">Sau khi chuyển khoản, bấm Lưu QR / Sao chép để gửi Bill qua Zalo.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minimal Hardware Payment Specs -->
+            <div class="hardware-specs glass-module">
+                <div class="spec-row">
+                    <span class="spec-label">NGÂN HÀNG</span>
+                    <span class="spec-value highlight-gold">MB BANK</span>
+                </div>
+                <div class="spec-hairline"></div>
+                <div class="spec-row">
+                    <span class="spec-label">SỐ TÀI KHOẢN</span>
+                    <div class="spec-value-action">
+                        <span class="spec-value mono" id="specAccount">0326884292</span>
+                        <button type="button" class="btn-mini-copy" data-copy="0326884292" title="Sao chép số tài khoản">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span>COPY</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="spec-hairline"></div>
+                <div class="spec-row">
+                    <span class="spec-label">CHỦ TÀI KHOẢN</span>
+                    <div class="spec-value-action">
+                        <span class="spec-value name-tag" id="specAccountName">TRAN QUANG THANH</span>
+                        <button type="button" class="btn-mini-copy" data-copy="TRAN QUANG THANH" title="Sao chép tên chủ tài khoản">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span>COPY</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="spec-hairline"></div>
+                <div class="spec-row">
+                    <span class="spec-label">SỐ TIỀN</span>
+                    <span class="spec-value highlight-gold">TÙY Ý (NHẬP TRÊN APP)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CENTER COLUMN: THE FLOATING HARDWARE QR CORE -->
+        <section class="canvas-col-core">
+            <div class="hardware-qr-unit" id="hardwareQRUnit">
+                
+                <!-- Physical Terminal Hardware Frame -->
+                <div class="hardware-chassis">
+                    
+                    <!-- Top Hardware Laser Etch Header -->
+                    <div class="chassis-header">
+                        <div class="chassis-marks">
+                            <span class="bracket">⌜</span>
+                            <span class="hardware-model">MB BANK // VIETQR CORE</span>
+                            <span class="bracket">⌝</span>
+                        </div>
+                        <div class="chassis-status-tag">
+                            <span class="dot-amber"></span>
+                            <span id="terminalStateText">WAITING FOR PAYMENT</span>
+                        </div>
+                    </div>
+
+                    <!-- Pure Crisp White QR Chamber -->
+                    <div class="qr-chamber-wrap">
+                        <div class="qr-corner corner-tl"></div>
+                        <div class="qr-corner corner-tr"></div>
+                        <div class="qr-corner corner-bl"></div>
+                        <div class="qr-corner corner-br"></div>
+
+                        <!-- Scannable Pure White Surface -->
+                        <div class="qr-scannable-surface" id="qrSurface">
+                            <img 
+                                id="qrImage" 
+                                class="qr-pure-img" 
+                                src="https://img.vietqr.io/image/970422-0326884292-compact2.png?addInfo=TANGQUA4821&accountName=TRAN%20QUANG%20THANH" 
+                                alt="Mã VietQR Thanh Toán MB Bank TRAN QUANG THANH"
+                                crossorigin="anonymous"
+                            >
+                            <!-- Loading Spinner -->
+                            <div class="qr-loader" id="qrLoader">
+                                <div class="loader-spinner"></div>
+                                <span class="loader-text">ĐANG TẠO MÃ QR...</span>
+                            </div>
+                        </div>
+
+                        <!-- Scanline Laser Effect (strictly outside QR content) -->
+                        <div class="qr-laser-glow" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Transfer Code Module -->
+                    <div class="transfer-code-module">
+                        <div class="code-label-row">
+                            <span class="code-label">NỘI DUNG CHUYỂN KHOẢN (TRANSFER CODE)</span>
+                            <span class="code-hint">Chính xác 100%</span>
+                        </div>
+                        <div class="code-box">
+                            <span class="code-mono" id="transferCodeText">TANGQUA4821</span>
+                            <button type="button" class="btn-copy-code" id="btnCopyCode" title="Sao chép nội dung chuyển khoản">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                <span class="btn-copy-label">SAO CHÉP</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hardware Action Buttons -->
+                    <div class="chassis-actions">
+                        <button type="button" class="btn-action-hardware" id="btnSaveQR">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            <span>LƯU ẢNH QR</span>
+                        </button>
+                        <button type="button" class="btn-action-hardware" id="btnExpandQR">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                            <span>PHÓNG TO</span>
+                        </button>
+                    </div>
+
+                    <!-- Bottom Hardware Footer Marks -->
+                    <div class="chassis-footer">
+                        <span class="security-text">256-BIT ENCRYPTION • TỰ ĐỘNG CẬP NHẬT GIAO DỊCH</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. DYNAMIC FLOATING BOTTOM ACTION LAYER (TRIGGERED ONLY WHEN COPY OR SAVE QR) -->
+    <!-- Không để chữ tĩnh trên trang - xuất hiện mượt mà khi người dùng tương tác -->
+    <aside class="floating-bill-action-layer" id="floatingBillLayer" aria-hidden="true">
+        <div class="floating-bill-panel glass-strong">
+            <div class="bill-info-block">
+                <div class="bill-step-badge">
+                    <span class="badge-icon">✓</span>
+                    <span id="floatingActionTitle">ĐÃ SAO CHÉP / LƯU QR</span>
+                </div>
+                <div class="bill-step-text">
+                    <span class="bill-main-notice">BƯỚC TIẾP THEO: QUÉT QR THANH TOÁN → GỬI BILL CHO ADMIN</span>
+                    <span class="bill-sub-notice">Sau khi thanh toán thành công, hãy gửi hình chụp hóa đơn để Admin kích hoạt giao dịch tức thì.</span>
+                </div>
+            </div>
+
+            <div class="bill-actions-block">
+                <a href="https://zalo.me/0889696810" target="_blank" rel="noopener noreferrer" class="btn-send-bill-cta" id="btnSendBillAdmin">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path d="M22 2L11 13"></path>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                    <span>GỬI BILL CHO ADMIN (ZALO)</span>
+                </a>
+                <div class="zalo-hotline-pill">
+                    <span class="hotline-title">Zalo:</span>
+                    <span class="hotline-num">0889 696 810</span>
+                </div>
+                <button type="button" class="btn-close-layer" id="btnCloseBillLayer" aria-label="Đóng thông báo">
+                    ✕
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 4. VISIONOS FULLSCREEN FOCUS MODE MODAL -->
+    <div class="visionos-modal" id="focusModeModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-hardware-card glass-strong">
+            <div class="modal-header">
+                <div class="modal-brand">
+                    <span class="modal-title">THANOX TERMINAL</span>
+                    <span class="modal-sub">MB BANK • TRAN QUANG THANH</span>
+                </div>
+                <button type="button" class="btn-modal-close" id="btnCloseModal" aria-label="Đóng">✕</button>
+            </div>
+
+            <div class="modal-qr-frame">
+                <img id="modalQrImage" class="modal-qr-img" src="" alt="Mã QR Focus Mode">
+            </div>
+
+            <div class="modal-info-bar">
+                <div class="modal-info-col">
+                    <span class="m-label">SỐ TÀI KHOẢN</span>
+                    <span class="m-val mono">0326884292</span>
+                </div>
+                <div class="modal-info-col">
+                    <span class="m-label">NỘI DUNG CK</span>
+                    <span class="m-val mono" id="modalCode">TANGQUA4821</span>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-action" id="btnModalSaveQR">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>LƯU ẢNH QR</span>
+                </button>
+                <button type="button" class="btn-modal-action" id="btnModalCopyCode">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>COPY MÃ</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. FLOATING MICRO TOAST -->
+    <div class="terminal-toast" id="terminalToast" role="status" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message" id="toastText">Đã sao chép vào bộ nhớ tạm!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
